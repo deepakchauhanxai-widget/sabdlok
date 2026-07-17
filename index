@@ -1,0 +1,1031 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>शब्दलोक - हिंदी कविताएँ</title>
+    <!-- ===== META TAGS (पहले जैसे ही) ===== -->
+    <meta name="description" content="शब्दलोक पर पढ़ें मौलिक हिंदी कविताएँ। प्रेम, माँ, पिता, संघर्ष, जीवन, प्रकृति, अकेलापन और प्रेरणा पर दिल को छू लेने वाली कविताएँ।">
+    <meta name="keywords" content="हिंदी कविता, कविता, poem, hindi poem, प्रेम कविता, माँ पर कविता, प्रेरणा कविता, शब्दलोक">
+    <meta name="robots" content="index, follow">
+    <meta name="theme-color" content="#FAF7F2">
+    <link rel="canonical" href="https://shabdalok.in/">
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="शब्दलोक">
+    <meta property="og:title" content="शब्दलोक - हिंदी कविताएँ">
+    <meta property="og:description" content="दिल से निकली हिंदी कविताएँ। प्रेम, माँ, पिता, संघर्ष, जीवन और एहसास पर मौलिक रचनाएँ।">
+    <meta property="og:url" content="https://shabdalok.in/">
+    <meta property="og:locale" content="hi_IN">
+    <meta property="og:image" content="https://shabdalok.in/images/sabdalock.webp">
+    <meta property="og:image:secure_url" content="https://shabdalok.in/images/sabdalock.webp">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:image:alt" content="शब्दलोक - दिल की कलम">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="शब्दलोक - हिंदी कविताएँ">
+    <meta name="twitter:description" content="दिल से निकली हिंदी कविताएँ।">
+    <meta name="twitter:image" content="https://shabdalok.in/images/sabdalock.webp">
+    <link rel="icon" href="/favicon.ico">
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+Devanagari:wght@400;600;700&family=Playfair+Display:ital,wght@0,400;0,600;1,400&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="flower-rain.css">
+    <style>
+        /* ===== YOUR EXISTING CSS (SAME) ===== */
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            position: relative;
+            min-height: 100vh;
+            font-family: 'Poppins', sans-serif;
+            color: #1e293b;
+            line-height: 1.6;
+            padding: 0 1rem;
+            background: linear-gradient(135deg, #f8d9ee 0%, #d8e7fb 100%);
+            background-attachment: fixed;
+        }
+        .container {
+            position: relative;
+            z-index: 1;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 1rem 0;
+        }
+        .glass {
+            position: relative;
+            z-index: 1;
+            background: rgba(255, 255, 255, 0.25);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            border-radius: 24px;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.06);
+        }
+        /* HEADER */
+        .site-header {
+            position: relative;
+            z-index: 1;
+            padding: 1rem 1.6rem;
+            margin: 1rem 0 0.5rem;
+            background: rgba(255, 255, 255, 0.2);
+            border: 1px solid rgba(255, 255, 255, 0.25);
+            border-radius: 35px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.04);
+        }
+        .header-flex {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            align-items: center;
+            gap: 0.8rem;
+        }
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 0.7rem;
+        }
+        .logo-img {
+            height: 44px;
+            width: auto;
+            max-width: 120px;
+            object-fit: contain;
+            filter: drop-shadow(0 2px 6px rgba(0, 0, 0, 0.06));
+        }
+        .logo-text-group {
+            display: flex;
+            flex-direction: column;
+            line-height: 1.2;
+        }
+        .logo-text {
+            font-family: 'Playfair Display', serif;
+            font-weight: 600;
+            font-size: 1.8rem;
+            color: #1e293b;
+            letter-spacing: 1px;
+        }
+        .logo-sub {
+            font-family: 'Noto Serif Devanagari', serif;
+            font-size: 0.85rem;
+            color: #475569;
+            border-left: 2px solid rgba(255, 255, 255, 0.6);
+            padding-left: 0.6rem;
+            margin-left: 0.1rem;
+        }
+        .nav-links {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1.2rem 1.8rem;
+            font-weight: 400;
+        }
+        .nav-links a {
+            position: relative;
+            z-index: 2;
+            text-decoration: none;
+            color: #1e293b;
+            font-size: 0.98rem;
+            transition: all 0.2s;
+            padding: 0.2rem 0.4rem;
+            border-radius: 30px;
+        }
+        .nav-links a::after {
+            content: "";
+            position: absolute;
+            left: 50%;
+            bottom: -3px;
+            width: 0;
+            height: 2px;
+            background: #D97706;
+            transition: .3s;
+            transform: translateX(-50%);
+        }
+        .nav-links a:hover::after {
+            width: 70%;
+        }
+        .nav-links a:hover {
+            color: #ffffff;
+            background: rgba(255, 255, 255, 0.3);
+        }
+
+        /* HERO */
+        .hero {
+            position: relative;
+            z-index: 1;
+            padding: 4rem 2.5rem;
+            margin: 1.5rem 0;
+            text-align: center;
+            background: rgba(255, 255, 255, 0.2);
+            border: 1px solid rgba(255, 255, 255, 0.25);
+            border-radius: 40px;
+            box-shadow: 0 20px 60px rgba(0,0,0,.08);
+            transition: padding 0.3s ease;
+        }
+        .hero-icon { font-size: 3.2rem; margin-bottom: 0.3rem; }
+        .hero-title {
+            font-family: 'Playfair Display', serif;
+            font-weight: 600;
+            font-size: 2.8rem;
+            line-height: 1.2;
+            color: #0f172a;
+            max-width: 700px;
+            margin: 0 auto 0.5rem;
+        }
+        .hero-sub {
+            font-family: 'Noto Serif Devanagari', serif;
+            font-size: 1.3rem;
+            color: #334155;
+            margin: 1rem 0 1.8rem;
+        }
+        .search-wrap {
+            position: relative;
+            z-index: 999;
+            display: flex;
+            align-items: center;
+            background: rgba(255, 255, 255, 0.3);
+            border: 1px solid rgba(255, 255, 255, 0.4);
+            border-radius: 60px;
+            padding: 0.3rem 0.8rem 0.3rem 1.2rem;
+            max-width: 460px;
+            margin: 0 auto 2rem;
+            box-shadow: 0 4px 16px rgba(0, 0, 0, 0.04);
+        }
+        .search-wrap:focus-within {
+            border-color: #F59E0B;
+            box-shadow: 0 0 25px rgba(245,158,11,.18);
+        }
+        .search-icon { font-size: 1.2rem; color: #475569; margin-right: 0.5rem; }
+        .search-input {
+            border: none;
+            outline: none;
+            background: transparent;
+            font-family: 'Poppins', sans-serif;
+            font-size: 1rem;
+            padding: 0.7rem 0;
+            width: 100%;
+            color: #0f172a;
+        }
+        .search-input::placeholder { color: #64748b; }
+
+        /* BUTTONS & CARDS */
+        .btn-primary {
+            position: relative;
+            z-index: 2;
+            display: inline-block;
+            background: rgba(255,255,255,.55);
+            border: 1px solid rgba(255, 255, 255, 0.4);
+            color: #0f172a;
+            padding: 0.9rem 2.5rem;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 1.1rem;
+            text-decoration: none;
+            transition: all 0.25s;
+            box-shadow: 0 4px 16px rgba(0, 0, 0, 0.04);
+        }
+        .btn-primary:hover {
+            background: rgba(255, 255, 255, 0.55);
+            border-color: rgba(255, 255, 255, 0.8);
+            transform: translateY(-2px);
+            box-shadow: 0 8px 28px rgba(0, 0, 0, 0.08);
+        }
+
+        .categories { padding: 1.5rem 0 1.8rem; }
+        .section-title {
+            font-family: 'Playfair Display', serif;
+            font-weight: 600;
+            font-size: 2rem;
+            color: #0f172a;
+            margin-bottom: 1.2rem;
+        }
+        .category-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.8rem 1.2rem;
+        }
+        .cat-tag {
+            position: relative;
+            z-index: 2;
+            background: rgba(255, 255, 255, 0.25);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            padding: 0.4rem 1.3rem;
+            border-radius: 40px;
+            font-size: 0.95rem;
+            color: #0f172a;
+            text-decoration: none;
+            display: inline-block;
+            transition: all 0.2s;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.03);
+        }
+        .cat-tag:hover {
+            background: rgba(255, 255, 255, 0.5);
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.06);
+        }
+
+        .latest-poems, .popular-poems { padding: 2rem 0 2.5rem; }
+        .section-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 0.5rem 1rem;
+            margin-bottom: 1.2rem;
+        }
+        .badge-new {
+            background: rgba(255, 255, 255, 0.35);
+            border: 1px solid rgba(255, 255, 255, 0.4);
+            color: #0f172a;
+            font-size: 0.8rem;
+            font-weight: 600;
+            padding: 0.2rem 1rem;
+            border-radius: 40px;
+            letter-spacing: 0.3px;
+            text-transform: uppercase;
+        }
+        .poem-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 1.8rem;
+        }
+        .poem-card {
+            position: relative;
+            z-index: 1;
+            background: rgba(255, 255, 255, 0.25);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            border-radius: 20px;
+            padding: 1.5rem;
+            display: flex;
+            flex-direction: column;
+            transition: all 0.25s;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.04);
+        }
+        .poem-card:hover {
+            transform: translateY(-3px);
+            background: rgba(255, 255, 255, 0.4);
+            box-shadow: 0 12px 40px rgba(0, 0, 0, 0.08);
+            border-color: rgba(255, 255, 255, 0.6);
+        }
+        .poem-emoji { font-size: 2rem; margin-bottom: 0.2rem; }
+        .poem-title {
+            font-family: 'Playfair Display', serif;
+            font-weight: 600;
+            font-size: 1.4rem;
+            color: #0f172a;
+            margin-bottom: 0.3rem;
+        }
+        /* अपने CSS में ये जोड़ें या replace करें */
+        .poem-excerpt {
+            font-family: 'Noto Serif Devanagari', serif;
+            color: #334155;
+            font-size: 0.98rem;
+            line-height: 1.6;
+            margin: 0.2rem 0 0.6rem;
+            flex: 1;
+        /* पूरी कविता दिखाने के लिए */
+           display: block;
+           overflow: visible;
+           -webkit-line-clamp: unset;
+           -webkit-box-orient: unset;
+           max-height: none;
+        }
+        .poem-meta {
+            font-size: 0.8rem;
+            color: #475569;
+            margin: 0.3rem 0 0.8rem;
+            display: flex;
+            gap: 0.8rem;
+            flex-wrap: wrap;
+            border-top: 1px solid rgba(255, 255, 255, 0.3);
+            padding-top: 0.6rem;
+        }
+        .poem-meta a {
+            text-decoration: none;
+            color: #1e293b;
+            font-weight: 500;
+        }
+        .poem-meta a:hover { text-decoration: underline; }
+        .btn-outline {
+            position: relative;
+            z-index: 2;
+            align-self: flex-start;
+            background: rgba(255, 255, 255, 0.25);
+            border: 1px solid rgba(255, 255, 255, 0.4);
+            color: #0f172a;
+            padding: 0.3rem 1.2rem;
+            border-radius: 50px;
+            font-weight: 400;
+            font-size: 0.85rem;
+            text-decoration: none;
+            transition: all 0.2s;
+            display: inline-block;
+        }
+        .btn-outline:hover {
+            background: rgba(255, 255, 255, 0.5);
+            border-color: rgba(255, 255, 255, 0.8);
+            transform: translateX(4px);
+        }
+
+        /* QUOTE, ABOUT, STATS, AUTHOR, FOOTER */
+        .quote-section { padding: 2.8rem 0; }
+        .quote-block {
+            position: relative;
+            z-index: 1;
+            text-align: center;
+            background: rgba(255, 255, 255, 0.2);
+            border: 1px solid rgba(255, 255, 255, 0.25);
+            border-radius: 40px;
+            padding: 2.5rem 1.5rem;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.04);
+        }
+        .quote-mark {
+            font-size: 3.2rem;
+            color: rgba(255, 255, 255, 0.6);
+            font-family: 'Playfair Display', serif;
+            display: block;
+            line-height: 1;
+        }
+        .quote-mark.end { transform: rotate(180deg); margin-top: -0.5rem; }
+        .quote-text {
+            font-family: 'Playfair Display', serif;
+            font-size: 2rem;
+            font-style: italic;
+            color: #0f172a;
+            max-width: 700px;
+            margin: 0.2rem auto;
+        }
+        .about-section { padding: 2.5rem 0; }
+        .about-box {
+            position: relative;
+            z-index: 1;
+            background: rgba(255, 255, 255, 0.25);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            border-radius: 30px;
+            padding: 2.2rem 2rem;
+            text-align: center;
+            max-width: 550px;
+            margin: 0 auto;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.04);
+        }
+        .about-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.4rem;
+            color: #0f172a;
+        }
+        .about-text {
+            font-family: 'Noto Serif Devanagari', serif;
+            font-size: 1.2rem;
+            color: #334155;
+            margin: 0.5rem 0 1.2rem;
+        }
+        .stats-section { padding: 2rem 0; }
+        .stats-grid {
+            position: relative;
+            z-index: 1;
+            display: flex;
+            justify-content: center;
+            gap: 3rem;
+            flex-wrap: wrap;
+            background: rgba(255, 255, 255, 0.2);
+            border: 1px solid rgba(255, 255, 255, 0.25);
+            border-radius: 40px;
+            padding: 2rem 1.5rem;
+        }
+        .stat-item { text-align: center; }
+        .stat-number {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.2rem;
+            font-weight: 600;
+            color: #0f172a;
+            display: block;
+        }
+        .stat-label {
+            font-size: 0.9rem;
+            color: #475569;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        .author-section { padding: 2.5rem 0; }
+        .author-block {
+            position: relative;
+            z-index: 1;
+            text-align: center;
+            background: rgba(255, 255, 255, 0.2);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            border-radius: 40px;
+            padding: 2.5rem 1.5rem;
+        }
+        .author-photo {
+            width: 130px;
+            height: 130px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 4px solid rgba(255, 255, 255, 0.5);
+            margin-bottom: 0.5rem;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
+        }
+        .author-name {
+            font-family: 'Playfair Display', serif;
+            font-weight: 600;
+            font-size: 2rem;
+            color: #0f172a;
+        }
+        .author-desc {
+            font-family: 'Noto Serif Devanagari', serif;
+            font-size: 1.2rem;
+            color: #334155;
+            max-width: 500px;
+            margin: 0.2rem auto;
+        }
+        .repeat-categories { padding: 1.5rem 0 1.8rem; }
+        
+        /* ============================================================
+   ✨ आज की कविता (Live) – EXACT MATCH WITH WEBSITE
+   ============================================================ */
+
+.daily-poem-live {
+    margin: 1.5rem 0 2rem;
+    position: relative;
+    z-index: 1;
+}
+
+.daily-poem-box {
+    background: rgba(255, 255, 255, 0.25);  /* ← EXACT same as .glass */
+    border: 1px solid rgba(255, 255, 255, 0.3);  /* ← EXACT same */
+    border-radius: 24px;  /* ← EXACT same */
+    padding: 2rem 2.5rem;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.06);  /* ← EXACT same */
+    transition: all 0.3s ease;
+    position: relative;
+    z-index: 2;
+}
+
+.daily-poem-box:hover {
+    transform: translateY(-3px);
+    background: rgba(255, 255, 255, 0.4);  /* ← EXACT same as poem-card hover */
+    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.08);  /* ← EXACT same */
+    border-color: rgba(255, 255, 255, 0.6);  /* ← EXACT same */
+}
+
+/* ===== HEADER ===== */
+.daily-header {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 0.8rem 1.2rem;
+    margin-bottom: 0.8rem;
+}
+
+.live-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    background: linear-gradient(135deg, #F59E0B, #D97706);
+    color: #ffffff;
+    font-size: 0.7rem;
+    font-weight: 700;
+    padding: 0.25rem 1.2rem 0.25rem 0.8rem;
+    border-radius: 40px;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+}
+
+.live-dot {
+    display: inline-block;
+    width: 8px;
+    height: 8px;
+    background: #ffffff;
+    border-radius: 50%;
+    animation: pulse-dot 1.5s ease-in-out infinite;
+}
+
+@keyframes pulse-dot {
+    0%, 100% { opacity: 1; transform: scale(1); }
+    50% { opacity: 0.3; transform: scale(0.7); }
+}
+
+.live-sub {
+    font-size: 0.85rem;
+    color: #475569;
+    font-weight: 400;
+}
+
+/* ===== CONTENT ===== */
+.daily-content {
+    padding: 0.5rem 0 0.8rem;
+}
+
+.daily-category {
+    display: inline-block;
+    font-family: 'Playfair Display', serif;
+    font-size: 1.6rem;
+    font-weight: 600;
+    color: #0f172a;
+    margin-bottom: 0.2rem;
+}
+
+.daily-excerpt {
+    font-family: 'Noto Serif Devanagari', serif;
+    font-size: 1.15rem;
+    color: #334155;
+    line-height: 1.8;
+    margin: 0.2rem 0;
+    padding-left: 1rem;
+    border-left: 3px solid #D97706;
+}
+
+/* ===== FOOTER ===== */
+.daily-footer {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    gap: 0.8rem;
+    padding-top: 0.8rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.3);  /* ← EXACT same */
+}
+
+.daily-next {
+    font-size: 0.85rem;
+    color: #475569;
+}
+
+.daily-next strong {
+    color: #0f172a;
+    font-weight: 600;
+}
+
+.btn-daily {
+    display: inline-block;
+    background: rgba(255, 255, 255, 0.25);  /* ← EXACT same as .btn-outline */
+    border: 1px solid rgba(255, 255, 255, 0.4);  /* ← EXACT same */
+    color: #0f172a;
+    padding: 0.3rem 1.8rem;
+    border-radius: 50px;
+    font-weight: 400;
+    font-size: 0.85rem;
+    text-decoration: none;
+    transition: all 0.2s;
+}
+
+.btn-daily:hover {
+    background: rgba(255, 255, 255, 0.5);  /* ← EXACT same */
+    border-color: rgba(255, 255, 255, 0.8);  /* ← EXACT same */
+    transform: translateX(4px);  /* ← EXACT same */
+}
+
+.btn-daily::after {
+    content: " →";
+    transition: all 0.3s;
+}
+
+.btn-daily:hover::after {
+    transform: translateX(3px);
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 640px) {
+    .daily-poem-box {
+        padding: 1.5rem 1.2rem;
+        border-radius: 20px;
+    }
+    .daily-category {
+        font-size: 1.3rem;
+    }
+    .daily-excerpt {
+        font-size: 1rem;
+        padding-left: 0.6rem;
+        line-height: 1.7;
+    }
+    .daily-footer {
+        flex-direction: column;
+        align-items: stretch;
+        text-align: center;
+        gap: 0.6rem;
+    }
+    .btn-daily {
+        text-align: center;
+        padding: 0.3rem 1.2rem;
+    }
+    .daily-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.3rem;
+    }
+    .live-badge {
+        font-size: 0.6rem;
+        padding: 0.2rem 1rem 0.2rem 0.6rem;
+    }
+    .live-sub {
+        font-size: 0.75rem;
+    }
+}
+
+        .site-footer {
+            position: relative;
+            z-index: 1;
+            background: rgba(255,255,255,.25);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: 40px 40px 20px 20px;
+            padding: 2.5rem 2rem 2rem;
+            margin: 1.5rem 0 1rem;
+        }
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+            gap: 2rem;
+        }
+        .footer-col h4 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.4rem;
+            color: #0f172a;
+        }
+        .footer-col a {
+            display: block;
+            color: #1e293b;
+            text-decoration: none;
+            margin: 0.3rem 0;
+            font-size: 0.95rem;
+            transition: all 0.2s;
+            padding: 0.1rem 0.4rem;
+            border-radius: 20px;
+        }
+        .footer-col a:hover {
+            background: rgba(255, 255, 255, 0.25);
+            color: #0f172a;
+        }
+        .footer-copy {
+            margin-top: 0.8rem;
+            font-size: 0.8rem;
+            color: #475569;
+            text-align: center;
+        }
+
+        @media (max-width: 640px) {
+            .hero-title { font-size: 2rem; }
+            .hero-sub { font-size: 1.1rem; }
+            .logo-text { font-size: 1.4rem; }
+            .header-flex { flex-direction: column; align-items: flex-start; }
+            .poem-grid { grid-template-columns: 1fr; }
+            .quote-text { font-size: 1.4rem; }
+            .stats-grid { gap: 1.5rem; }
+            .about-box { padding: 1.5rem 1rem; }
+            .site-header { border-radius: 30px; padding: 1rem 1.2rem; }
+            .site-footer { border-radius: 30px; padding: 1.5rem 1rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- ===== HEADER ===== -->
+    <header class="site-header glass">
+        <div class="container header-flex">
+            <div class="logo">
+                <img src="https://deepakchauhanxai.com/images/sabdalock.webp?v=1" alt="शब्दलोक" class="logo-img">
+                <div class="logo-text-group">
+                    <span class="logo-text">शब्दलोक</span>
+                    <span class="logo-sub">दिल की कलम</span>
+                </div>
+            </div>
+            <nav class="nav-links">
+                <a href="#">🏠 Home</a>
+                <a href="all-poems.html">📖 सभी कविताएँ</a>
+                <a href="#categories">❤️ Categories</a>
+                <a href="author.html">✍️ लेखक</a>
+                <a href="contact.html">📞 Contact</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- ===== HERO (Search Box हमेशा दिखेगा) ===== -->
+    <section class="hero glass" id="heroSection">
+        <div class="container hero-content">
+            <div class="hero-icon" id="heroIcon">📖</div>
+            <h1 class="hero-title" id="heroTitle">हर कविता...<br>किसी न किसी की कहानी होती है।</h1>
+            <p class="hero-sub" id="heroSub">कुछ शब्द पढ़े नहीं जाते...<br>महसूस किए जाते हैं।</p>
+            <div class="search-wrap" id="searchWrap">
+                <span class="search-icon">🔍</span>
+                <input type="text" class="search-input" id="searchInput" placeholder="कविता खोजें..." oninput="searchPoems()">
+            </div>
+            <a href="#poemGrid" class="btn-primary">
+            📖 पढ़ना शुरू करें</a>
+        </div>
+    </section>
+    
+    <!-- ============================================================ -->
+<!-- ✨ आज की कविता (Live) – Premium Design -->
+<!-- ============================================================ -->
+<section class="daily-poem-live glass">
+    <div class="container daily-poem-box">
+        <div class="daily-header">
+            <span class="live-badge">✨ आज की कविता <span class="live-dot"></span></span>
+            <span class="live-sub">हर दिन एक नई कविता, दिल से सीधे दिल तक।</span>
+        </div>
+        
+        <div class="daily-content">
+            <span class="daily-category">🌸 माँ की दुआ</span>
+            <p class="daily-excerpt">"जब भी गिरा हूँ ज़िंदगी में... सबसे पहले माँ की दुआ ने उठाया है..."</p>
+        </div>
+        
+        <div class="daily-footer">
+            <span class="daily-next">📅 कल आएगी : <strong>⏳ समय</strong></span>
+            <a href="poem_mother.html?slug=maa" class="btn-daily">📖 पूरी कविता पढ़ें →</a>
+        </div>
+    </div>
+</section>
+
+    <!-- ===== CATEGORIES ===== -->
+    <section class="categories" id="categoriesSection">
+        <div class="container">
+            <h2 class="section-title">📚 सभी श्रेणियाँ</h2>
+            <div class="category-grid">
+                <a href="category.html?cat=love" class="cat-tag">❤️ प्रेम</a>
+                <a href="category.html?cat=mother" class="cat-tag">👩 माँ</a>
+                <a href="category.html?cat=father" class="cat-tag">👨 पिता</a>
+                <a href="category.html?cat=family" class="cat-tag">👨‍👩‍👧 परिवार</a>
+                <a href="category.html?cat=struggle" class="cat-tag">💪 संघर्ष</a>
+                <a href="category.html?cat=inspiration" class="cat-tag">😊 प्रेरणा</a>
+                <a href="category.html?cat=loneliness" class="cat-tag">🌙 अकेलापन</a>
+                <a href="category.html?cat=philosophy" class="cat-tag">🧠 जीवन दर्शन</a>
+                <a href="category.html?cat=nature" class="cat-tag">🌿 प्रकृति</a>
+                <a href="category.html?cat=patriotism" class="cat-tag">🇮🇳 देशभक्ति</a>
+                <a href="category.html?cat=time" class="cat-tag">⏳ समय</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== LATEST POEMS ===== -->
+    <section class="latest-poems">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title" id="latestTitle">🔥 नई कविताएँ</h2>
+                <span class="badge-new">ताज़ा</span>
+            </div>
+            <div class="poem-grid" id="poemGrid">
+                <!-- ===== YOUR POEM CARDS (SAME AS BEFORE) ===== -->
+                <!-- Card 1 -->
+                <article class="poem-card">
+                    <div class="poem-emoji">👨‍👨‍👧</div>
+                    <h3 class="poem-title">परिवार का आँगन</h3>
+                    <p class="poem-excerpt">घर सिर्फ ईंट पत्थर का नाम नहीं होता,<br>जहाँ अपनों का साथ वहाँ आराम होता,<br>चार दीवारों में बसी ये दुनिया सारी,<br>माँ की ममता पर टिकी हमारी सवारी।</p>
+                    <div class="poem-meta"><span class="time-ago" data-date="11-07-2026">📅 11-07-2026</span> · <a href="category.html?cat=family">👨‍👩‍👧 परिवार</a></div>
+                    <a href="poem_family.html?slug=parivar-ka-agan" class="btn-outline">📖 पूरी कविता →</a>
+                </article>
+                <!-- Card 2 -->
+                <article class="poem-card">
+                    <div class="poem-emoji">💪</div>
+                    <h3 class="poem-title">मैं हार नहीं मानूँगा</h3>
+                    <p class="poem-excerpt">रास्ते टूट सकते हैं... हौसले नहीं।</p>
+                    <div class="poem-meta"><span class="time-ago" data-date="09-07-2026">📅 09-07-2026</span> · <a href="category.html?cat=struggle">💪 संघर्ष</a></div>
+                    <a href="poem_struggle.html?slug=main-haar-nahi-manunga" class="btn-outline">📖 पूरी कविता →</a>
+                </article>
+                <!-- Card 3 -->
+                <article class="poem-card">
+                    <div class="poem-emoji">🌙</div>
+                    <h3 class="poem-title">हूँ अकेला, पर हारा नहीं</h3>
+                    <p class="poem-excerpt">अकेलापन कोई कमज़ोरी नहीं, बल्कि खुद को समझने का एक मौका है।</p>
+                    <div class="poem-meta"><span class="time-ago" data-date="11-07-2026">📅 11-07-2026</span> · <a href="category.html?cat=loneliness">🌙 अकेलापन</a></div>
+                    <a href="poem_loneliness.html?slug=hu-akela-par-hara-nahi" class="btn-outline">📖 पूरी कविता →</a>
+                </article>
+                <!-- Card 4 -->
+                <article class="poem-card">
+                    <div class="poem-emoji">🧠</div>
+                    <h3 class="poem-title">जीवन का सार</h3>
+                    <p class="poem-excerpt">जीवन एक यात्रा है, जिसमें हर मोड़ पर कुछ सीखने को मिलता है।</p>
+                    <div class="poem-meta"><span class="time-ago" data-date="12-07-2026">📅 12-07-2026</span> · <a href="category.html?cat=philosophy">🧠 जीवन दर्शन</a></div>
+                    <a href="poem_philosophy.html?slug=jivan-ka-saar" class="btn-outline">📖 पूरी कविता →</a>
+                </article>
+                <!-- Card 5 -->
+                <article class="poem-card">
+                    <div class="poem-emoji">🌿</div>
+                    <h3 class="poem-title">प्रकृति का संदेश</h3>
+                    <p class="poem-excerpt">हर पत्ती, हर फूल, हर बूंद, प्रकृति का एक अनमोल संदेश है।</p>
+                    <div class="poem-meta"><span class="time-ago" data-date="13-07-2026">📅 13-07-2026</span> · <a href="category.html?cat=nature">🌿 प्रकृति</a></div>
+                    <a href="poem_nature.html?slug=prakriti-ka-sandesh" class="btn-outline">📖 पूरी कविता →</a>
+                </article>
+                <!-- Card 6 -->
+                <article class="poem-card">
+                    <div class="poem-emoji">🇮🇳</div>
+                    <h3 class="poem-title">मिट्टी की खुशबू</h3>
+                    <p class="poem-excerpt">इस मिट्टी में बसी है मेरी जान, इस देश के लिए मेरी हर पहचान।</p>
+                    <div class="poem-meta"><span class="time-ago" data-date="14-07-2026">📅 14-07-2026</span> · <a href="category.html?cat=patriotism">🇮🇳 देशभक्ति</a></div>
+                    <a href="poem_patriotism.html?slug=mitti-ki-khushbu" class="btn-outline">📖 पूरी कविता →</a>
+                </article>
+                <!-- Card 7 -->
+                <article class="poem-card">
+                    <div class="poem-emoji">😊</div>
+                    <h3 class="poem-title">प्रेरणा का दीप</h3>
+                    <p class="poem-excerpt">अँधेरे में जलना, दूसरों को राह दिखाना।</p>
+                    <div class="poem-meta"><span class="time-ago" data-date="10-07-2026">📅 10-07-2026</span> · <a href="category.html?cat=inspiration">😊 प्रेरणा</a></div>
+                    <a href="poem_inspiration.html?slug=prerna-ka-dip" class="btn-outline">📖 पूरी कविता →</a>
+                </article>
+                <!-- Card 8 -->
+                <article class="poem-card">
+                    <div class="poem-emoji">⏳</div>
+                    <h3 class="poem-title">समय का सफर</h3>
+                    <p class="poem-excerpt">समय रुकता नहीं, बहता रहता है, हर पल एक नई कहानी कहता है।</p>
+                    <div class="poem-meta"><span class="time-ago" data-date="15-07-2026">📅 15-07-2026</span> · <a href="category.html?cat=time">⏳ समय</a></div>
+                    <a href="poem_time.html?slug=samay-ka-safar" class="btn-outline">📖 पूरी कविता →</a>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== POPULAR POEMS ===== -->
+    <section class="popular-poems" id="popularSection">
+        <div class="container">
+            <h2 class="section-title">⭐ लोकप्रिय कविताएँ</h2>
+            <div class="poem-grid">
+                <!-- Card 1 -->
+                <article class="poem-card">
+                    <div class="poem-emoji">❤️</div>
+                    <h3 class="poem-title">प्रेम का पहला पन्ना</h3>
+                    <p class="poem-excerpt">पहली नज़र में ही, कुछ ऐसा होता है, दिल बिना कहे सुन लेता है।</p>
+                    <div class="poem-meta"><span class="time-ago" data-date="05-07-2026">📅 05-07-2026</span> · <a href="category.html?cat=love">❤️ प्रेम</a></div>
+                    <a href="poem_love.html?slug=prem-ka-pahla-panna" class="btn-outline">📖 पूरी कविता →</a>
+                </article>
+                <!-- Card 2 -->
+                <article class="poem-card">
+                    <div class="poem-emoji">👨</div>
+                    <h3 class="poem-title">पिता के कंधे</h3>
+                    <p class="poem-excerpt">पिता के कंधे पहाड़ जैसे, जिन पर बचपन झूला झूला।</p>
+                    <div class="poem-meta"><span class="time-ago" data-date="07-07-2026">📅 07-07-2026</span> · <a href="category.html?cat=father">👨 पिता</a></div>
+                    <a href="poem_father.html?slug=pita-ke-kandhe" class="btn-outline">📖 पूरी कविता →</a>
+                </article>
+                <!-- Card 3 -->
+                <article class="poem-card">
+                    <div class="poem-emoji">👨‍👩‍👧</div>
+                    <h3 class="poem-title">संस्कारों की बगिया</h3>
+                    <p class="poem-excerpt">परिवार वह पहली पाठशाला है, जहाँ सपनों की होती है शुरुआत।</p>
+                    <div class="poem-meta"><span class="time-ago" data-date="08-07-2026">📅 08-07-2026</span> · <a href="category.html?cat=family">👨‍👩‍👧 परिवार</a></div>
+                    <a href="poem_family.html?slug=sanskaron-ki-bagiya" class="btn-outline">📖 पूरी कविता →</a>
+                </article>
+                <!-- Card 4 -->
+                <article class="poem-card">
+                    <div class="poem-emoji">👩</div>
+                    <h3 class="poem-title">माँ की ममता</h3>
+                    <p class="poem-excerpt">उसकी गोद जन्नत, बातें दुआएँ, हर दर्द में सहारा।</p>
+                    <div class="poem-meta"><span class="time-ago" data-date="06-07-2026">📅 06-07-2026</span> · <a href="category.html?cat=mother">👩 माँ</a></div>
+                    <a href="poem_mother.html?slug=maa" class="btn-outline">📖 पूरी कविता →</a>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== QUOTE ===== -->
+    <section class="quote-section" id="quoteSection">
+        <div class="container quote-block glass">
+            <span class="quote-mark">❝</span>
+            <blockquote class="quote-text">कुछ लोग किताबें पढ़ते हैं।<br>कुछ लोग कविताएँ महसूस करते हैं।</blockquote>
+            <span class="quote-mark end">❞</span>
+        </div>
+    </section>
+
+    <!-- ===== ABOUT ===== -->
+    <section class="about-section" id="aboutSection">
+        <div class="container about-box glass">
+            <h2 class="about-title">शब्दलोक</h2>
+            <p class="about-text">जहाँ शब्द नहीं... एहसास रहते हैं।</p>
+            <a href="about.html" class="btn-outline">Read About →</a>
+        </div>
+    </section>
+
+    <!-- ===== STATS ===== -->
+    <section class="stats-section" id="statsSection">
+        <div class="container stats-grid glass">
+            <div class="stat-item"><span class="stat-number">500+</span><span class="stat-label">Poems</span></div>
+            <div class="stat-item"><span class="stat-number">11</span><span class="stat-label">Categories</span></div>
+            <div class="stat-item"><span class="stat-number">1</span><span class="stat-label">Author</span></div>
+        </div>
+    </section>
+
+    <!-- ===== AUTHOR ===== -->
+    <section class="author-section" id="authorSection">
+        <div class="container author-block glass">
+            <img src="https://deepakchauhanxai.com/images/deepak-chauhan.webp" alt="Deepak Chauhan" class="author-photo">
+            <h2 class="author-name">Deepak Chauhan</h2>
+            <p class="author-desc">मैं कविताएँ नहीं लिखता...<br>मैं एहसासों को शब्द देता हूँ।</p>
+        </div>
+    </section>
+
+    <!-- ===== REPEAT CATEGORIES ===== -->
+    <section class="repeat-categories" id="repeatCategories">
+        <div class="container">
+            <h2 class="section-title">📚 सभी श्रेणियाँ</h2>
+            <div class="category-grid">
+                <a href="category.html?cat=love" class="cat-tag">❤️ प्रेम</a>
+                <a href="category.html?cat=mother" class="cat-tag">👩 माँ</a>
+                <a href="category.html?cat=father" class="cat-tag">👨 पिता</a>
+                <a href="category.html?cat=family" class="cat-tag">👨‍👩‍👧 परिवार</a>
+                <a href="category.html?cat=struggle" class="cat-tag">💪 संघर्ष</a>
+                <a href="category.html?cat=inspiration" class="cat-tag">😊 प्रेरणा</a>
+                <a href="category.html?cat=loneliness" class="cat-tag">🌙 अकेलापन</a>
+                <a href="category.html?cat=philosophy" class="cat-tag">🧠 जीवन दर्शन</a>
+                <a href="category.html?cat=nature" class="cat-tag">🌿 प्रकृति</a>
+                <a href="category.html?cat=patriotism" class="cat-tag">🇮🇳 देशभक्ति</a>
+                <a href="category.html?cat=time" class="cat-tag">⏳ समय</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== FOOTER ===== -->
+    <footer class="site-footer glass" id="footerSection">
+        <div class="container footer-grid">
+            <div class="footer-col">
+                <h4>शब्दलोक</h4>
+                <p>दिल की कलम</p>
+            </div>
+            <div class="footer-col">
+                <a href="about.html">About</a>
+                <a href="privacy.html">Privacy</a>
+                <a href="terms.html">Terms</a>
+                <a href="contact.html">Contact</a>
+                <a href="dmca.html">DMCA</a>
+            </div>
+            <div class="footer-col">
+                <p>❤️ हर कविता किसी दिल से निकलती है...<br>और किसी दिल तक पहुँचती है।</p>
+                <p class="footer-copy">© 2026 · शब्दलोक | Deepak chauhan</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- ===== FLOWER RAIN ===== -->
+    <script src="flower-rain.js? v=2"></script>
+<script src="search.js"></script>
+    <!-- ===== JAVASCRIPT ===== -->
+    <script>
+        // ===== TIME AGO =====
+        function timeAgo(dateStr) {
+            let date = new Date(dateStr);
+            if (!dateStr.includes('T')) {
+                const parts = dateStr.split('-');
+                date = new Date(`${parts[2]}-${parts[1]}-${parts[0]}`);
+            }
+            if (isNaN(date.getTime())) return dateStr;
+            const now = new Date();
+            const diffMs = now - date;
+            const diffSec = Math.floor(diffMs / 1000);
+            const diffMin = Math.floor(diffSec / 60);
+            const diffHour = Math.floor(diffMin / 60);
+            const diffDay = Math.floor(diffHour / 24);
+            const diffWeek = Math.floor(diffDay / 7);
+            const diffMonth = Math.floor(diffDay / 30);
+            const diffYear = Math.floor(diffDay / 365);
+            
+            if (diffYear > 0) return diffYear === 1 ? '1 साल पहले' : diffYear + ' साल पहले';
+            if (diffMonth > 0) return diffMonth === 1 ? '1 महीना पहले' : diffMonth + ' महीने पहले';
+            if (diffWeek > 0) return diffWeek === 1 ? '1 हफ्ता पहले' : diffWeek + ' हफ्ते पहले';
+            if (diffDay > 0) return diffDay === 1 ? '1 दिन पहले' : diffDay + ' दिन पहले';
+            if (diffHour > 0) return diffHour === 1 ? '1 घंटा पहले' : diffHour + ' घंटे पहले';
+            if (diffMin > 5) return diffMin + ' मिनट पहले';
+            return 'अभी-अभी';
+        }
+
+        // ===== TIME AGO UPDATE =====
+        document.addEventListener('DOMContentLoaded', function() {
+            document.querySelectorAll('.time-ago').forEach(function(el) {
+                const dateStr = el.getAttribute('data-date');
+                if (dateStr) {
+                    el.textContent = '📅 ' + timeAgo(dateStr);
+                }
+            });
+        });
+    </script>
+</body>
+</html>
