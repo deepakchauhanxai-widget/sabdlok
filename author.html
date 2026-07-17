@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>लेखक – Deepak Chauhan | शब्दलोक</title>
+    <meta name="description" content="Deepak Chauhan – शब्दलोक के संस्थापक और लेखक। जानें उनकी लेखन शैली, उद्देश्य, और कविताओं के पीछे की कहानी।">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Poppins:wght@300;400;500;600&family=Noto+Serif+Devanagari:wght@400;600&display=swap" rel="stylesheet">
+    <style>
+        * { margin:0; padding:0; box-sizing:border-box; }
+        body {
+            background-color: #FAF7F2;
+            font-family: 'Poppins', sans-serif;
+            color: #2C2C2C;
+            line-height: 1.8;
+            padding: 0 1rem;
+        }
+        .container { max-width: 900px; margin: 0 auto; padding: 2rem 0; }
+
+        /* ===== HEADER ===== */
+        .site-header { padding:1.2rem 0 0.8rem; border-bottom:1px solid #E9E1D8; }
+        .header-flex { display:flex; flex-wrap:wrap; justify-content:space-between; align-items:center; gap:0.5rem; }
+        .logo-text { font-family:'Playfair Display',serif; font-weight:600; font-size:1.8rem; color:#2C2C2C; }
+        .logo-sub { font-family:'Noto Serif Devanagari',serif; font-size:0.85rem; color:#8B5E3C; border-left:2px solid #C49A6C; padding-left:0.6rem; margin-left:0.3rem; }
+        .nav-links { display:flex; flex-wrap:wrap; gap:1.2rem 1.8rem; }
+        .nav-links a { text-decoration:none; color:#555; font-size:0.98rem; transition:color 0.2s; }
+        .nav-links a:hover { color:#8B5E3C; }
+        .nav-links a.active { color:#8B5E3C; font-weight:600; }
+
+        /* ===== HERO ===== */
+        .author-hero {
+            text-align: center;
+            padding: 2.5rem 0 2rem;
+            border-bottom: 1px solid #E9E1D8;
+        }
+        .author-photo {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 5px solid #C49A6C;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.08);
+            margin-bottom: 1rem;
+        }
+        .author-hero h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.8rem;
+            color: #2C2C2C;
+        }
+        .author-hero .tagline {
+            font-family: 'Noto Serif Devanagari', serif;
+            font-size: 1.3rem;
+            color: #8B5E3C;
+            font-style: italic;
+            margin-top: 0.2rem;
+        }
+
+        /* ===== BACK LINK ===== */
+        .back-home {
+            display: inline-block;
+            margin: 1rem 0 0.5rem;
+            color: #8B5E3C;
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 0.95rem;
+        }
+        .back-home:hover { text-decoration: underline; }
+
+        /* ===== SECTIONS ===== */
+        .section {
+            padding: 2.5rem 0;
+            border-bottom: 1px solid #E9E1D8;
+        }
+        .section:last-of-type { border-bottom: none; }
+        .section-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 2rem;
+            color: #2C2C2C;
+            margin-bottom: 0.8rem;
+        }
+        .section-subtitle {
+            font-family: 'Noto Serif Devanagari', serif;
+            font-size: 1.1rem;
+            color: #555;
+            margin-bottom: 1.2rem;
+        }
+        .section p {
+            font-family: 'Noto Serif Devanagari', serif;
+            font-size: 1.1rem;
+            color: #555;
+            line-height: 2;
+            margin-bottom: 1rem;
+        }
+
+        /* ===== CATEGORIES GRID ===== */
+        .category-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+        .cat-item {
+            background: #FFFFFF;
+            border: 1px solid #E9E1D8;
+            border-radius: 16px;
+            padding: 1rem 0.8rem;
+            text-align: center;
+            transition: 0.2s;
+            text-decoration: none;
+            color: #2C2C2C;
+        }
+        .cat-item:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.06);
+            border-color: #C49A6C;
+        }
+        .cat-item .emoji { font-size: 2rem; display: block; }
+        .cat-item .name { font-size: 0.95rem; font-weight: 500; }
+
+        /* ===== WRITING STYLE ===== */
+        .style-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.8rem 1.5rem;
+            margin-top: 0.5rem;
+        }
+        .style-list span {
+            background: #f5f0eb;
+            padding: 0.3rem 1.2rem;
+            border-radius: 40px;
+            font-size: 0.95rem;
+            color: #2C2C2C;
+        }
+
+        /* ===== STATS ===== */
+        .stats-grid {
+            display: flex;
+            justify-content: center;
+            gap: 2.5rem;
+            flex-wrap: wrap;
+            background: #FFFFFF;
+            border: 1px solid #E9E1D8;
+            border-radius: 20px;
+            padding: 1.8rem 1.5rem;
+            margin-top: 1rem;
+        }
+        .stat-item { text-align: center; }
+        .stat-number {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.4rem;
+            font-weight: 700;
+            color: #8B5E3C;
+            display: block;
+        }
+        .stat-label {
+            font-size: 0.9rem;
+            color: #888;
+            letter-spacing: 0.5px;
+        }
+
+        /* ===== CONTACT ===== */
+        .contact-links {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+            margin-top: 0.5rem;
+        }
+        .contact-links a {
+            background: #FFFFFF;
+            border: 1px solid #E9E1D8;
+            padding: 0.5rem 1.5rem;
+            border-radius: 40px;
+            text-decoration: none;
+            color: #2C2C2C;
+            transition: 0.2s;
+            font-size: 0.95rem;
+        }
+        .contact-links a:hover {
+            background: #8B5E3C;
+            color: #FFFFFF;
+            border-color: #8B5E3C;
+        }
+
+        /* ===== READER MESSAGE ===== */
+        .reader-message {
+            background: #f7efe8;
+            border-radius: 20px;
+            padding: 2.5rem 2rem;
+            text-align: center;
+            margin-top: 0.5rem;
+        }
+        .reader-message p {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.5rem;
+            font-style: italic;
+            color: #2C2C2C;
+            margin-bottom: 0.5rem;
+        }
+        .reader-message .heart {
+            color: #b22222;
+            font-size: 1.8rem;
+        }
+
+        /* ===== FOOTER ===== */
+        .site-footer {
+            background:#FAF7F2; padding:2.5rem 0 2rem;
+            border-top:1px solid #E9E1D8; margin-top:2rem;
+        }
+        .footer-grid {
+            display:grid; grid-template-columns:repeat(auto-fit, minmax(180px,1fr)); gap:2rem;
+        }
+        .footer-col h4 { font-family:'Playfair Display',serif; font-size:1.4rem; color:#2C2C2C; }
+        .footer-col a { display:block; color:#555; text-decoration:none; margin:0.3rem 0; font-size:0.95rem; }
+        .footer-col a:hover { color:#8B5E3C; }
+        .footer-copy { margin-top:0.8rem; font-size:0.8rem; color:#aaa; text-align:center; }
+
+        @media (max-width:640px) {
+            .header-flex { flex-direction:column; align-items:flex-start; }
+            .author-hero h1 { font-size:2.2rem; }
+            .category-grid { grid-template-columns:repeat(3, 1fr); }
+            .stats-grid { gap:1.5rem; padding:1.2rem; }
+            .reader-message p { font-size:1.2rem; }
+            .section { padding:1.8rem 0; }
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <!-- ===== HEADER ===== -->
+    <header class="site-header">
+        <div class="header-flex">
+            <div>
+                <span class="logo-text">शब्दलोक</span>
+                <span class="logo-sub">दिल की कलम</span>
+            </div>
+            <nav class="nav-links">
+                <a href="index.html">🏠 होम</a>
+                <a href="all-poems.html">📖 सभी कविताएँ</a>
+                <a href="categories.html">❤️ श्रेणियाँ</a>
+                <a href="about.html">📖 About</a>
+                <a href="author.html" class="active">✍️ लेखक</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- ===== HERO ===== -->
+    <section class="author-hero">
+        <img src="https://deepakchauhanxai.com/images/deepak-chauhan.webp" alt="Deepak Chauhan" class="author-photo" loading="lazy">
+        <h1>Deepak Chauhan</h1>
+        <p class="tagline">"मैं कविताएँ नहीं लिखता...<br>मैं एहसासों को शब्द देता हूँ।"</p>
+        <a href="index.html" class="back-home">← होम पेज पर वापस</a>
+    </section>
+
+    <!-- ===== 2. मेरे बारे में ===== -->
+    <section class="section">
+        <h2 class="section-title">📖 मेरे बारे में</h2>
+        <p>मेरा नाम <strong>Deepak Chauhan</strong> है।</p>
+        <p><strong>शब्दलोक</strong> मेरे लिए सिर्फ एक वेबसाइट नहीं, बल्कि <strong>भावनाओं का संसार</strong> है। यहाँ प्रकाशित हर कविता मेरे अपने शब्दों और विचारों से जन्म लेती है।</p>
+        <p>मेरा उद्देश्य ऐसी कविताएँ लिखना है जो पाठक के दिल तक पहुँचे और <strong>लंबे समय तक याद रहें</strong>। मैं मानता हूँ कि सच्ची कविता वही है जो पढ़ने के बाद भी पाठक के मन में गूँजती रहे।</p>
+        <p>शब्दलोक पर आपको <strong>प्रेम, माँ, पिता, परिवार, संघर्ष, प्रेरणा, अकेलापन, जीवन दर्शन, प्रकृति, देशभक्ति और समय</strong> – हर विषय पर मौलिक कविताएँ मिलेंगी।</p>
+    </section>
+
+    <!-- ===== 3. मैं क्या लिखता हूँ (Categories Grid) ===== -->
+    <section class="section">
+        <h2 class="section-title">✍️ मैं क्या लिखता हूँ</h2>
+        <p class="section-subtitle">हर विषय पर, हर भावना पर – एक अलग नज़र</p>
+        <div class="category-grid">
+            <a href="category.html?cat=love" class="cat-item"><span class="emoji">❤️</span><span class="name">प्रेम</span></a>
+            <a href="category.html?cat=mother" class="cat-item"><span class="emoji">👩</span><span class="name">माँ</span></a>
+            <a href="category.html?cat=father" class="cat-item"><span class="emoji">👨</span><span class="name">पिता</span></a>
+            <a href="category.html?cat=family" class="cat-item"><span class="emoji">👨‍👩‍👧</span><span class="name">परिवार</span></a>
+            <a href="category.html?cat=struggle" class="cat-item"><span class="emoji">💪</span><span class="name">संघर्ष</span></a>
+            <a href="category.html?cat=inspiration" class="cat-item"><span class="emoji">😊</span><span class="name">प्रेरणा</span></a>
+            <a href="category.html?cat=loneliness" class="cat-item"><span class="emoji">🌙</span><span class="name">अकेलापन</span></a>
+            <a href="category.html?cat=philosophy" class="cat-item"><span class="emoji">🧠</span><span class="name">जीवन दर्शन</span></a>
+            <a href="category.html?cat=nature" class="cat-item"><span class="emoji">🌿</span><span class="name">प्रकृति</span></a>
+            <a href="category.html?cat=patriotism" class="cat-item"><span class="emoji">🇮🇳</span><span class="name">देशभक्ति</span></a>
+            <a href="category.html?cat=time" class="cat-item"><span class="emoji">⏳</span><span class="name">समय</span></a>
+        </div>
+    </section>
+
+    <!-- ===== 4. मेरा उद्देश्य ===== -->
+    <section class="section">
+        <h2 class="section-title">🎯 मेरा उद्देश्य</h2>
+        <p>मेरा उद्देश्य <strong>वायरल होना नहीं है</strong>।</p>
+        <p>मेरा उद्देश्य ऐसी कविताएँ लिखना है <strong>जिन्हें लोग वर्षों बाद भी याद रखें</strong>।</p>
+        <p>मैं चाहता हूँ कि जब कोई पाठक मेरी कोई कविता पढ़े, तो उसे लगे कि यह शब्द सिर्फ कागज़ पर नहीं, बल्कि <strong>किसी के दिल से निकले हैं</strong>।</p>
+    </section>
+
+    <!-- ===== 5. लेखन शैली ===== -->
+    <section class="section">
+        <h2 class="section-title">🖋️ मेरी लेखन शैली</h2>
+        <div class="style-list">
+            <span>✅ मौलिक</span>
+            <span>✅ Copy नहीं</span>
+            <span>✅ AI Generated नहीं</span>
+            <span>✅ स्वयं लिखित</span>
+            <span>✅ भावनात्मक</span>
+        </div>
+    </section>
+
+    <!-- ===== 6. Stats ===== -->
+    <section class="section">
+        <h2 class="section-title">📊 एक नज़र में</h2>
+        <div class="stats-grid">
+            <div class="stat-item">
+                <span class="stat-number" id="poemCount">156</span>
+                <span class="stat-label">📚 Published Poems</span>
+            </div>
+            <div class="stat-item">
+                <span class="stat-number">11</span>
+                <span class="stat-label">✍️ Categories</span>
+            </div>
+            <div class="stat-item">
+                <span class="stat-number">2026</span>
+                <span class="stat-label">📅 Since</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== 7. Contact ===== -->
+    <section class="section">
+        <h2 class="section-title">📞 संपर्क</h2>
+        <div class="contact-links">
+            <a href="mailto:shabdalok@gmail.com">📧 Email</a>
+            <a href="#" target="_blank">📌 Pinterest</a>
+            <a href="#" target="_blank">📸 Instagram</a>
+        </div>
+    </section>
+
+    <!-- ===== 8. Reader Message ===== -->
+    <section class="section" style="border-bottom: none;">
+        <div class="reader-message">
+            <p>❤️ अगर मेरी कोई कविता</p>
+            <p>आपके दिल तक पहुँची,</p>
+            <p>तो समझिए</p>
+            <p><strong>शब्दलोक</strong> बनने का उद्देश्य</p>
+            <p><strong>सफल हो गया।</strong></p>
+            <div class="heart">🌸 ❤️ 🌸</div>
+        </div>
+    </section>
+
+    <!-- ===== FOOTER ===== -->
+    <footer class="site-footer">
+        <div class="footer-grid">
+            <div class="footer-col">
+                <h4>शब्दलोक</h4>
+                <p>दिल की कलम</p>
+            </div>
+            <div class="footer-col">
+                <a href="index.html">होम</a>
+                <a href="about.html">About</a>
+                <a href="privacy.html">Privacy</a>
+                <a href="terms.html">Terms</a>
+                <a href="contact.html">Contact</a>
+                <a href="dmca.html">DMCA</a>
+            </div>
+        </div>
+        <div class="footer-copy">© 2026 शब्दलोक | Deepak Chauhan</div>
+    </footer>
+</div>
+
+</body>
+</html>
