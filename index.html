@@ -983,12 +983,12 @@
         </div>
     </section>
 
-   <!-- ===== INSTALL APP BUTTON – हमेशा दिखेगा ===== -->
-<div id="installContainer" style="text-align:center; margin:1rem 0;">
+   <!-- ===== INSTALL APP BUTTON – Footer के ऊपर ===== -->
+<div id="installContainer" style="display:none; text-align:center; margin:1rem 0;">
     <button id="installBtn" class="btn-primary" style="background:linear-gradient(135deg,#8B5E3C,#6f4a2e); color:white; border:none; padding:0.8rem 2.5rem; border-radius:50px; font-size:1rem; cursor:pointer; box-shadow:0 4px 16px rgba(139,94,60,0.3);">
         📲 ऐप इंस्टॉल करें
     </button>
-    <p style="font-size:0.8rem; color:#888; margin-top:0.3rem;">📱 मोबाइल पर "Add to Home Screen" · 🖥️ Desktop पर "Install"</p>
+    <p style="font-size:0.8rem; color:#888; margin-top:0.3rem;">ऑफलाइन पढ़ें · तेज़ · App जैसा अनुभव</p>
 </div>
     
     <!-- ===== FOOTER ===== -->
@@ -1053,64 +1053,62 @@
                 }
             });
         });
-    // ============================================================
-// 📲 INSTALL APP – PWA Install Button (Always Show)
+// ============================================================
+// 📲 INSTALL APP – PWA Install Button
 // ============================================================
 
 let deferredPrompt;
 const installContainer = document.getElementById('installContainer');
 const installBtn = document.getElementById('installBtn');
 
-// अगर Container न मिले तो कोई Error न आए
-if (installContainer) {
-    // ===== 1. हमेशा बटन दिखाएँ (पहले display:block कर दें) =====
-    installContainer.style.display = 'block';
+// ===== 1. जब Browser Install करने की अनुमति दे =====
+window.addEventListener('beforeinstallprompt', (e) => {
+    // Browser ने Install Prompt दिखाने की अनुमति दी
+    e.preventDefault();
+    deferredPrompt = e;
+    installContainer.style.display = 'block'; // बटन दिखाएँ
+    console.log('✅ Install prompt available');
+});
 
-    // ===== 2. Browser Install Prompt =====
-    window.addEventListener('beforeinstallprompt', (e) => {
-        e.preventDefault();
-        deferredPrompt = e;
-        console.log('✅ Install prompt available');
-        // बटन को Install Mode में बदलें
-        installBtn.textContent = '📲 ऐप इंस्टॉल करें';
-        installBtn.onclick = async function() {
-            if (deferredPrompt) {
-                deferredPrompt.prompt();
-                const result = await deferredPrompt.userChoice;
-                console.log('User choice:', result);
-                deferredPrompt = null;
-                if (result.outcome === 'accepted') {
-                    installContainer.style.display = 'none';
-                }
-            }
-        };
-    });
-
-    // ===== 3. Install हो गया – बटन हटाएँ =====
-    window.addEventListener('appinstalled', () => {
-        console.log('✅ App installed!');
-        installContainer.style.display = 'none';
+// ===== 2. Install बटन पर Click =====
+installBtn.addEventListener('click', async () => {
+    if (deferredPrompt) {
+        // Browser का Native Install Prompt दिखाएँ
+        deferredPrompt.prompt();
+        const result = await deferredPrompt.userChoice;
+        console.log('User choice:', result);
         deferredPrompt = null;
-    });
+        installContainer.style.display = 'none'; // बटन छिपाएँ
+    } else {
+        // अगर Browser Install Support न करे – तो मैन्युअल Guide दिखाएँ
+        alert('📲 अपने ब्राउज़र के मेन्यू में "Add to Home Screen" या "Install App" पर क्लिक करें।');
+    }
+});
 
-    // ===== 4. अगर Install Support न हो – Guide दिखाएँ =====
-    // अगर 3 सेकंड बाद भी beforeinstallprompt न आए – तो Guide Mode में बदलें
+// ===== 3. अगर Install हो गया – बटन हटाएँ =====
+window.addEventListener('appinstalled', () => {
+    console.log('✅ App installed successfully!');
+    installContainer.style.display = 'none';
+    deferredPrompt = null;
+});
+
+// ===== 4. अगर Browser Install Support न करे – तो बटन न दिखाएँ =====
+window.addEventListener('load', () => {
+    // अगर 5 सेकंड बाद भी beforeinstallprompt न आए – तो बटन छिपाएँ
     setTimeout(() => {
         if (!deferredPrompt && installContainer.style.display !== 'none') {
+            // Chrome/Edge पर beforeinstallprompt न आए – तो Mobile पर "Add to Home Screen" गाइड दिखाएँ
             if (window.innerWidth < 768) {
+                // Mobile – बटन दिखाएँ लेकिन उसे Guide में बदलें
                 installBtn.textContent = '📲 होम स्क्रीन पर जोड़ें';
+                installContainer.style.display = 'block';
                 installBtn.onclick = function() {
-                    alert('📲 अपने ब्राउज़र के मेन्यू (⋮) में "Add to Home Screen" पर क्लिक करें।');
-                };
-            } else {
-                installBtn.textContent = '📲 ऐप इंस्टॉल करें (Guide)';
-                installBtn.onclick = function() {
-                    alert('📲 अपने ब्राउज़र के मेन्यू (⋮) में "Install App" या "Add to Home Screen" पर क्लिक करें।');
+                    alert('📲 अपने ब्राउज़र के मेन्यू (⋮) में "Add to Home Screen" या "Install App" पर क्लिक करें।');
                 };
             }
         }
-    }, 3000);
-}
+    }, 5000);
+});
     </script>
 </body>
 </html>
