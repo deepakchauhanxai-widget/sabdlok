@@ -1,0 +1,767 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>कैटेगरी – शब्दलोक</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Poppins:wght@300;400;500;600&family=Noto+Serif+Devanagari:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="flower-rain.css">
+    
+    <style>
+        * { margin:0; padding:0; box-sizing:border-box; }
+        body {
+            background: linear-gradient(135deg, #f8d9ee 0%, #d8e7fb 100%);
+            background-attachment: fixed;
+            font-family: 'Poppins', sans-serif;
+            color: #2C2C2C;
+            line-height: 1.6;
+            padding: 0 1rem;
+            position: relative;
+            min-height: 100vh;
+        }
+        
+        /* ===== FLOWER LAYER - BEHIND EVERYTHING ===== */
+        .flower-layer {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 0;
+            overflow: hidden;
+        }
+        
+        /* ===== ALL CONTENT - ABOVE FLOWERS ===== */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 1rem 0;
+            position: relative;
+            z-index: 1;
+        }
+
+        /* ===== HEADER - Glass Effect ===== */
+        .site-header {
+            padding: 1rem 1.6rem;
+            margin: 0.5rem 0 1rem;
+            background: rgba(255, 255, 255, 0.2);
+            border: 1px solid rgba(255, 255, 255, 0.25);
+            border-radius: 35px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.04);
+            position: relative;
+            z-index: 2;
+        }
+        .header-flex {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            align-items: center;
+            gap: 0.8rem;
+        }
+        .logo-text {
+            font-family: 'Playfair Display', serif;
+            font-weight: 600;
+            font-size: 1.8rem;
+            color: #1e293b;
+        }
+        .logo-sub {
+            font-family: 'Noto Serif Devanagari', serif;
+            font-size: 0.85rem;
+            color: #475569;
+            border-left: 2px solid rgba(255, 255, 255, 0.6);
+            padding-left: 0.6rem;
+            margin-left: 0.3rem;
+        }
+        .nav-links {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1.2rem 1.8rem;
+        }
+        .nav-links a {
+            text-decoration: none;
+            color: #1e293b;
+            font-size: 0.98rem;
+            transition: all 0.2s;
+            padding: 0.2rem 0.4rem;
+            border-radius: 30px;
+            position: relative;
+            z-index: 2;
+        }
+        .nav-links a::after {
+            content: "";
+            position: absolute;
+            left: 50%;
+            bottom: -3px;
+            width: 0;
+            height: 2px;
+            background: #D97706;
+            transition: .3s;
+            transform: translateX(-50%);
+        }
+        .nav-links a:hover::after {
+            width: 70%;
+        }
+        .nav-links a:hover {
+            color: #0f172a;
+            background: rgba(255, 255, 255, 0.3);
+        }
+
+        /* ===== CATEGORY TITLE - Glass ===== */
+        .category-hero {
+            padding: 2rem 2.5rem;
+            margin: 1rem 0 1.5rem;
+            background: rgba(255, 255, 255, 0.2);
+            border: 1px solid rgba(255, 255, 255, 0.25);
+            border-radius: 40px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.04);
+            text-align: center;
+            position: relative;
+            z-index: 2;
+        }
+        .category-hero h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.6rem;
+            color: #0f172a;
+        }
+        .category-hero p {
+            color: #334155;
+            font-size: 1.1rem;
+            font-family: 'Noto Serif Devanagari', serif;
+        }
+        .back-home {
+            display: inline-block;
+            margin-top: 0.8rem;
+            color: #0f172a;
+            text-decoration: none;
+            font-weight: 500;
+            background: rgba(255, 255, 255, 0.25);
+            padding: 0.3rem 1.5rem;
+            border-radius: 50px;
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            transition: all 0.2s;
+        }
+        .back-home:hover {
+            background: rgba(255, 255, 255, 0.5);
+            transform: translateY(-2px);
+        }
+
+        /* ===== FILTERS - Glass ===== */
+        .filters {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.8rem;
+            margin: 1.5rem 0;
+            padding: 1rem 1.5rem;
+            background: rgba(255, 255, 255, 0.2);
+            border: 1px solid rgba(255, 255, 255, 0.25);
+            border-radius: 20px;
+            align-items: center;
+            position: relative;
+            z-index: 2;
+            backdrop-filter: blur(2px);
+        }
+        .filters label {
+            font-weight: 500;
+            color: #1e293b;
+        }
+        .filters select, .filters input {
+            padding: 0.4rem 1.2rem;
+            border-radius: 40px;
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            background: rgba(255, 255, 255, 0.3);
+            font-size: 0.95rem;
+            outline: none;
+            color: #0f172a;
+            transition: all 0.2s;
+        }
+        .filters select:focus, .filters input:focus {
+            border-color: #F59E0B;
+            box-shadow: 0 0 20px rgba(245, 158, 11, 0.15);
+            background: rgba(255, 255, 255, 0.5);
+        }
+        .filters select option {
+            background: #f8f0ea;
+            color: #0f172a;
+        }
+        .btn-reset {
+            background: rgba(255, 255, 255, 0.35);
+            border: 1px solid rgba(255, 255, 255, 0.4);
+            color: #0f172a;
+            padding: 0.4rem 1.8rem;
+            border-radius: 40px;
+            cursor: pointer;
+            font-weight: 500;
+            transition: all 0.2s;
+        }
+        .btn-reset:hover {
+            background: rgba(255, 255, 255, 0.55);
+            transform: translateY(-2px);
+        }
+
+        /* ===== POEMS GRID ===== */
+        .poem-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 1.8rem;
+            min-height: 300px;
+            position: relative;
+            z-index: 2;
+        }
+        .poem-card {
+            background: rgba(255, 255, 255, 0.25);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            border-radius: 20px;
+            padding: 1.5rem;
+            display: flex;
+            flex-direction: column;
+            transition: all 0.25s;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.04);
+            position: relative;
+            z-index: 2;
+        }
+        .poem-card:hover {
+            transform: translateY(-3px);
+            background: rgba(255, 255, 255, 0.4);
+            box-shadow: 0 12px 40px rgba(0, 0, 0, 0.08);
+            border-color: rgba(255, 255, 255, 0.6);
+        }
+        .poem-emoji {
+            font-size: 2rem;
+            margin-bottom: 0.2rem;
+        }
+        .poem-title {
+            font-family: 'Playfair Display', serif;
+            font-weight: 600;
+            font-size: 1.4rem;
+            color: #0f172a;
+            margin-bottom: 0.3rem;
+        }
+        .poem-excerpt {
+            font-family: 'Noto Serif Devanagari', serif;
+            color: #334155;
+            font-size: 0.98rem;
+            line-height: 1.6;
+            margin: 0.2rem 0 0.6rem;
+            flex: 1;
+            display: -webkit-box;
+            -webkit-line-clamp: 3;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+        }
+        .poem-meta {
+            font-size: 0.8rem;
+            color: #475569;
+            margin: 0.3rem 0 0.8rem;
+            display: flex;
+            gap: 0.8rem;
+            flex-wrap: wrap;
+            border-top: 1px solid rgba(255, 255, 255, 0.3);
+            padding-top: 0.6rem;
+        }
+        .poem-meta span {
+            background: rgba(255, 255, 255, 0.2);
+            padding: 0.1rem 0.8rem;
+            border-radius: 30px;
+        }
+
+        .card-actions {
+            display: flex;
+            gap: 0.8rem;
+            margin-top: 0.5rem;
+            flex-wrap: wrap;
+        }
+        .btn-outline {
+            background: rgba(255, 255, 255, 0.25);
+            border: 1px solid rgba(255, 255, 255, 0.4);
+            color: #0f172a;
+            padding: 0.3rem 1.4rem;
+            border-radius: 50px;
+            font-weight: 400;
+            font-size: 0.85rem;
+            text-decoration: none;
+            transition: all 0.2s;
+            display: inline-block;
+        }
+        .btn-outline:hover {
+            background: rgba(255, 255, 255, 0.5);
+            border-color: rgba(255, 255, 255, 0.8);
+            transform: translateX(4px);
+        }
+        .btn-share {
+            background: rgba(255, 255, 255, 0.15);
+            border: 1px solid rgba(255, 255, 255, 0.25);
+            padding: 0.3rem 1rem;
+            border-radius: 50px;
+            font-size: 0.85rem;
+            cursor: pointer;
+            transition: all 0.2s;
+            color: #1e293b;
+        }
+        .btn-share:hover {
+            background: #1DA1F2;
+            color: white;
+            border-color: #1DA1F2;
+        }
+
+        /* ===== PAGINATION ===== */
+        .pagination {
+            display: flex;
+            justify-content: center;
+            gap: 0.6rem;
+            margin: 2rem 0 1rem;
+            flex-wrap: wrap;
+            position: relative;
+            z-index: 2;
+        }
+        .pagination button {
+            background: rgba(255, 255, 255, 0.2);
+            border: 1px solid rgba(255, 255, 255, 0.25);
+            padding: 0.5rem 1.2rem;
+            border-radius: 40px;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.2s;
+            color: #0f172a;
+            font-size: 0.95rem;
+        }
+        .pagination button.active {
+            background: rgba(255, 255, 255, 0.5);
+            border-color: rgba(255, 255, 255, 0.6);
+            color: #0f172a;
+        }
+        .pagination button:hover:not(.active):not(:disabled) {
+            background: rgba(255, 255, 255, 0.4);
+            transform: translateY(-2px);
+        }
+        .pagination button:disabled {
+            opacity: 0.4;
+            cursor: not-allowed;
+        }
+
+        /* ===== LOADING & EMPTY ===== */
+        .loader-grid {
+            grid-column: 1/-1;
+            text-align: center;
+            padding: 3rem;
+            color: #475569;
+        }
+        .loader-spinner {
+            width: 40px;
+            height: 40px;
+            border: 4px solid rgba(255, 255, 255, 0.3);
+            border-top: 4px solid #D97706;
+            border-radius: 50%;
+            animation: spin 0.8s linear infinite;
+            margin: 0 auto 1rem;
+        }
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        /* ===== FOOTER - Glass ===== */
+        .site-footer {
+            background: rgba(255, 255, 255, 0.2);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: 40px 40px 20px 20px;
+            padding: 2.5rem 2rem 2rem;
+            margin: 2rem 0 1rem;
+            position: relative;
+            z-index: 2;
+        }
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+            gap: 2rem;
+        }
+        .footer-col h4 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.4rem;
+            color: #0f172a;
+        }
+        .footer-col a {
+            display: block;
+            color: #1e293b;
+            text-decoration: none;
+            margin: 0.3rem 0;
+            font-size: 0.95rem;
+            transition: all 0.2s;
+            padding: 0.1rem 0.4rem;
+            border-radius: 20px;
+        }
+        .footer-col a:hover {
+            background: rgba(255, 255, 255, 0.25);
+            color: #0f172a;
+        }
+        .footer-copy {
+            margin-top: 0.8rem;
+            font-size: 0.8rem;
+            color: #475569;
+            text-align: center;
+        }
+
+        /* ===== RESPONSIVE ===== */
+        @media (max-width: 640px) {
+            .category-hero h1 { font-size: 2rem; }
+            .header-flex { flex-direction: column; align-items: flex-start; }
+            .poem-grid { grid-template-columns: 1fr; }
+            .filters { flex-direction: column; align-items: stretch; }
+            .site-header { border-radius: 30px; padding: 1rem 1.2rem; }
+            .category-hero { padding: 1.5rem 1rem; border-radius: 30px; }
+            .site-footer { border-radius: 30px; padding: 1.5rem 1rem; }
+            .logo-text { font-size: 1.4rem; }
+        }
+    </style>
+</head>
+<body>
+
+<!-- ===== FLOWER LAYER - यह background में रहेगा ===== -->
+<div id="flowerLayer" class="flower-layer"></div>
+
+<div class="container" id="app">
+    <!-- HEADER -->
+    <header class="site-header">
+        <div class="header-flex">
+            <div>
+                <span class="logo-text">शब्दलोक</span>
+                <span class="logo-sub">दिल की कलम</span>
+            </div>
+            <nav class="nav-links">
+                <a href="index.html">🏠 होम</a>
+                <a href="all-poems.html">📖 सभी कविताएँ</a>
+                <a href="author.html">✍️ लेखक</a>
+                <a href="contact.html">📞 संपर्क</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- CATEGORY TITLE -->
+    <section class="category-hero" id="categoryHero">
+        <h1 id="catTitle">❤️ प्रेम कविताएँ</h1>
+        <p id="catDesc">दिल को छू लेने वाली प्रेम रचनाएँ</p>
+        <a href="index.html" class="back-home">← होम पेज पर वापस</a>
+    </section>
+
+    <!-- FILTERS -->
+    <div class="filters">
+        <label for="authorFilter">✍️ लेखक:</label>
+        <select id="authorFilter" onchange="applyFilters()">
+            <option value="all">सभी</option>
+        </select>
+        <label for="dateFilter">📅 तारीख:</label>
+        <input type="date" id="dateFilter" onchange="applyFilters()">
+        <input type="text" id="searchInput" placeholder="🔍 कविता खोजें..." oninput="applyFilters()" style="flex:1; min-width:150px;">
+        <button class="btn-reset" onclick="resetFilters()">🔄 रीसेट</button>
+    </div>
+
+    <!-- POEMS GRID -->
+    <div class="poem-grid" id="poemsGrid">
+        <div class="loader-grid">
+            <div class="loader-spinner"></div>
+            <p>⏳ कविताएँ लोड हो रही हैं...</p>
+        </div>
+    </div>
+
+    <!-- PAGINATION -->
+    <div class="pagination" id="pagination"></div>
+
+    <!-- FOOTER -->
+    <footer class="site-footer">
+        <div class="footer-grid">
+            <div class="footer-col">
+                <h4>शब्दलोक</h4>
+                <p style="color:#334155;">दिल की कलम से लिखी हुई कविताएँ।</p>
+            </div>
+            <div class="footer-col">
+                <h4>🔗 कड़ियाँ</h4>
+                <a href="index.html">🏠 होम</a>
+                <a href="all-poems.html">📖 सभी कविताएँ</a>
+                <a href="author.html">✍️ लेखक</a>
+            </div>
+            <div class="footer-col">
+                <h4>⚖️ कानूनी</h4>
+                <a href="privacy.html">🔒 गोपनीयता</a>
+                <a href="dmca.html">📜 DMCA</a>
+                <a href="contact.html">📞 संपर्क</a>
+            </div>
+        </div>
+        <div class="footer-copy">© 2026 शब्दलोक | Deepak Chauhan</div>
+    </footer>
+</div>
+
+<script src="flower-rain.js"></script>
+<script>
+    // ===== FLOWER RAIN INIT =====
+    document.addEventListener('DOMContentLoaded', function() {
+        const layer = document.getElementById('flowerLayer');
+        if (layer) {
+            layer.style.zIndex = '0';
+        }
+        
+        // Flower rain restart
+        if (typeof window.initFlowerRain === 'function') {
+            window.initFlowerRain();
+        } else if (typeof window.flowerRain !== 'undefined' && window.flowerRain.restart) {
+            window.flowerRain.restart();
+        }
+    });
+
+    // ===== CATEGORY CONFIGURATION =====
+    const CATEGORIES = {
+        love: {
+            api: 'https://script.google.com/macros/s/AKfycbwo_5M-xwoAhhSvCupq5Uz67G6Gx110uDGoaZTKV5-oX6Ga_wZbCaPqwdnZuU0CYAAjSA/exec',
+            cardKey: 'loveCard',
+            title: '❤️ प्रेम कविताएँ',
+            desc: 'दिल को छू लेने वाली प्रेम रचनाएँ',
+            detailPage: 'poem_love.html'
+        },
+        mother: {
+            api: 'https://script.google.com/macros/s/AKfycbxp2rckQaCi66LZ0Rxg9NVUANr-GpWPaH3BV8HtVZ8zVYKNDjauxksOQfuGJabkAqGVLQ/exec',
+            cardKey: 'motherCard',
+            title: '👩 माँ कविताएँ',
+            desc: 'माँ के प्यार और त्याग को समर्पित',
+            detailPage: 'poem_mother.html'
+        },
+        father: {
+            api: 'https://script.google.com/macros/s/AKfycbyw2DOGPkVhQNscemf-oSCq4CUGBzf4rGwB5aDjTkdzw228fb4u1lAJXPLywCrB6XkG/exec',
+            cardKey: 'fatherCard',
+            title: '👨 पिता कविताएँ',
+            desc: 'पिता के कंधों पर टिका संसार',
+            detailPage: 'poem_father.html'
+        },
+        family: {
+            api: 'https://script.google.com/macros/s/AKfycbwmLjhJ-Uz1smv9S4lUkKdyfyAXhKh4sNwveVSZDhbeF55bNXoLsFD-76WqfZ0YmWUWeQ/exec',
+            cardKey: 'familyCard',
+            title: '👨‍👩‍👧 परिवार कविताएँ',
+            desc: 'संस्कारों और प्यार की बगिया',
+            detailPage: 'poem_family.html'
+        },
+        struggle: {
+            api: 'https://script.google.com/macros/s/AKfycbzrG_LPFEjGTQTk6tjyLrDqoyCIXWRv1k5A08tGgDLdbDtvsj7lBS8-xLLvYdRtC9yH/exec',
+            cardKey: 'struggleCard',
+            title: '💪 संघर्ष कविताएँ',
+            desc: 'हार न मानने का जज़्बा',
+            detailPage: 'poem_struggle.html'
+        },
+        inspiration: {
+            api: 'https://script.google.com/macros/s/AKfycbzbihM3U83mFHfNuJvYbzteQugNOWO1NeObyo8v0H0W816rta7uMdD4PqNNIBi5sjuy5Q/exec',
+            cardKey: 'inspirationCard',
+            title: '😊 प्रेरणा कविताएँ',
+            desc: 'जीवन को रोशनी देने वाली कविताएँ',
+            detailPage: 'poem_inspiration.html'
+        },
+        loneliness: {
+            api: 'https://script.google.com/macros/s/AKfycbw6baNNCH2qqoXlheAxBrG82Bw9S7Dk9pHLbEgx9hfA38f8xxp1zN4urQuADggZFgZsTQ/exec',
+            cardKey: 'lonelinessCard',
+            title: '🌙 अकेलापन कविताएँ',
+            desc: 'खुद को ढूँढ़ने का सफर',
+            detailPage: 'poem_loneliness.html'
+        },
+        philosophy: {
+            api: 'https://script.google.com/macros/s/AKfycby66a2-nrsJzkrs7KEYeqXrYOcT_Iho8ITGDgN4PfBMd0iii5WnRLF3lmM9gx0Qm414mg/exec',
+            cardKey: 'philosophyCard',
+            title: '🧠 जीवन दर्शन कविताएँ',
+            desc: 'जीवन के गहरे सत्य को समझना',
+            detailPage: 'poem_philosophy.html'
+        },
+        nature: {
+            api: 'https://script.google.com/macros/s/AKfycbwXLS4f1t4vhH8I3nHg4x53hE9QXukF-YOjIXikmjx2MW9-b8lvNYB21pHrEZIGac5r/exec',
+            cardKey: 'natureCard',
+            title: '🌿 प्रकृति कविताएँ',
+            desc: 'प्रकृति के रंग और उसका संदेश',
+            detailPage: 'poem_nature.html'
+        },
+        patriotism: {
+            api: 'https://script.google.com/macros/s/AKfycbzwiDniVl77g7xpkx-oY7k0G-7F41hesi5TLtxFUHirxFsdbxeRexl6Mi6qqoqRy1Gh/exec',
+            cardKey: 'patriotismCard',
+            title: '🇮🇳 देशभक्ति कविताएँ',
+            desc: 'मिट्टी की खुशबू और देश का गर्व',
+            detailPage: 'poem_patriotism.html'
+        },
+        time: {
+            api: 'https://script.google.com/macros/s/AKfycbyFdwMY-aQ39VY0a-nHDCA7mrw9SUubyqpn5zvVCXK8M2TXIpPTo_tLFAyYZG7j9cQ/exec',
+            cardKey: 'timeCard',
+            title: '⏳ समय कविताएँ',
+            desc: 'समय के हर पल को संजोने की कविता',
+            detailPage: 'poem_time.html'
+        }
+    };
+
+    // ===== CURRENT CATEGORY =====
+    const params = new URLSearchParams(window.location.search);
+    const catName = params.get('cat') || 'love';
+    const cat = CATEGORIES[catName];
+
+    if (!cat) {
+        window.location.href = 'index.html';
+    }
+
+    // ===== DOM REFS =====
+    const grid = document.getElementById('poemsGrid');
+    const paginationDiv = document.getElementById('pagination');
+    const authorFilter = document.getElementById('authorFilter');
+    const dateFilter = document.getElementById('dateFilter');
+    const searchInput = document.getElementById('searchInput');
+
+    let allPoems = [];
+    let filtered = [];
+    let currentPage = 1;
+    const PER_PAGE = 6;
+
+    // ===== SET CATEGORY HEADER =====
+    document.getElementById('catTitle').textContent = cat.title;
+    document.getElementById('catDesc').textContent = cat.desc;
+    document.title = cat.title + ' – शब्दलोक';
+
+    // ===== FETCH DATA =====
+    async function fetchPoems() {
+        try {
+            const res = await fetch(cat.api);
+            if (!res.ok) throw new Error('Network Error');
+            const data = await res.json();
+
+            allPoems = data[cat.cardKey] || [];
+
+            allPoems = allPoems.map(p => {
+                if (p.date && p.date.includes('T')) {
+                    const d = new Date(p.date);
+                    p.date = d.toLocaleDateString('hi-IN', { day:'2-digit', month:'2-digit', year:'numeric' });
+                }
+                return p;
+            });
+
+            populateAuthors();
+            applyFilters();
+
+        } catch (err) {
+            grid.innerHTML = `<div class="loader-grid" style="color:#b22222;">❌ डेटा लोड नहीं हुआ: ${err.message}</div>`;
+        }
+    }
+
+    function populateAuthors() {
+        const authors = [...new Set(allPoems.map(p => p.author).filter(Boolean))];
+        authors.forEach(a => {
+            const opt = document.createElement('option');
+            opt.value = a;
+            opt.textContent = a;
+            authorFilter.appendChild(opt);
+        });
+    }
+
+    function applyFilters() {
+        const author = authorFilter.value;
+        const date = dateFilter.value;
+        const search = searchInput.value.toLowerCase();
+
+        filtered = allPoems.filter(p => {
+            if (author !== 'all' && p.author !== author) return false;
+            if (date && p.date !== date) return false;
+            if (search) {
+                const title = (p.title || '').toLowerCase();
+                const desc = (p.short_desc || '').toLowerCase();
+                if (!title.includes(search) && !desc.includes(search)) return false;
+            }
+            return true;
+        });
+
+        filtered.sort((a, b) => {
+            const da = a.date ? a.date.split('-').reverse().join('-') : '1970-01-01';
+            const db = b.date ? b.date.split('-').reverse().join('-') : '1970-01-01';
+            return db.localeCompare(da);
+        });
+
+        currentPage = 1;
+        render();
+    }
+
+    function resetFilters() {
+        authorFilter.value = 'all';
+        dateFilter.value = '';
+        searchInput.value = '';
+        applyFilters();
+    }
+
+    function render() {
+        const total = filtered.length;
+        const totalPages = Math.ceil(total / PER_PAGE) || 1;
+        if (currentPage > totalPages) currentPage = totalPages;
+
+        const start = (currentPage - 1) * PER_PAGE;
+        const pageItems = filtered.slice(start, start + PER_PAGE);
+
+        if (pageItems.length === 0) {
+            grid.innerHTML = `<div class="loader-grid">😊 इस कैटेगरी में कोई कविता नहीं मिली</div>`;
+        } else {
+            let html = '';
+            pageItems.forEach(p => {
+                const excerpt = (p.short_desc || '').slice(0, 120) + '...';
+                const slug = encodeURIComponent(p.slug || p.title || '');
+                const detailLink = `${cat.detailPage}?slug=${slug}`;
+                html += `
+                    <div class="poem-card">
+                        <div class="poem-emoji">${getEmoji(catName)}</div>
+                        <div class="poem-title">${p.title || 'अनाम'}</div>
+                        <div class="poem-excerpt">${excerpt}</div>
+                        <div class="poem-meta">
+                            <span>✍️ ${p.author || 'अज्ञात'}</span>
+                            <span>📅 ${p.date || '—'}</span>
+                        </div>
+                        <div class="card-actions">
+                            <a href="${detailLink}" class="btn-outline">📖 पूरा पढ़ें</a>
+                            <button class="btn-share" onclick="sharePoem('${p.title}','${detailLink}')">🔗 शेयर</button>
+                        </div>
+                    </div>
+                `;
+            });
+            grid.innerHTML = html;
+        }
+
+        renderPagination(totalPages);
+    }
+
+    function getEmoji(cat) {
+        const map = {
+            love: '❤️', mother: '👩', father: '👨', family: '👨‍👩‍👧',
+            struggle: '💪', inspiration: '😊', loneliness: '🌙',
+            philosophy: '🧠', nature: '🌿', patriotism: '🇮🇳', time: '⏳'
+        };
+        return map[cat] || '📖';
+    }
+
+    function renderPagination(totalPages) {
+        if (totalPages <= 1) { paginationDiv.innerHTML = ''; return; }
+        let html = `<button onclick="goPage('prev')" ${currentPage===1?'disabled':''}>« पिछला</button>`;
+        for (let i=1; i<=totalPages; i++) {
+            html += `<button onclick="goPage(${i})" class="${i===currentPage?'active':''}">${i}</button>`;
+        }
+        html += `<button onclick="goPage('next')" ${currentPage===totalPages?'disabled':''}>अगला »</button>`;
+        paginationDiv.innerHTML = html;
+    }
+
+    function goPage(dir) {
+        const total = filtered.length;
+        const totalPages = Math.ceil(total / PER_PAGE) || 1;
+        if (dir === 'prev' && currentPage > 1) currentPage--;
+        else if (dir === 'next' && currentPage < totalPages) currentPage++;
+        else if (typeof dir === 'number') currentPage = dir;
+        render();
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+
+    function sharePoem(title, url) {
+        const fullUrl = window.location.origin + '/' + url;
+        if (navigator.share) {
+            navigator.share({ title: title, url: fullUrl });
+        } else {
+            navigator.clipboard.writeText(fullUrl).then(() => {
+                alert('✅ लिंक कॉपी हो गया!');
+            });
+        }
+    }
+
+    // ===== START =====
+    fetchPoems();
+</script>
+</body>
+</html>
