@@ -1,0 +1,115 @@
+/* ============================================================
+   flower.css - शब्दलोक Flower Animation Engine
+   All styles are scoped with 'sl-' prefix to avoid conflicts.
+   Only styles required for the flower animation are included.
+   ============================================================ */
+
+/* ---- Flower Layer Container ----
+     z-index: 0 means flowers will be behind all content
+     But if you want them behind specific elements, adjust z-index
+     as needed in your main CSS */
+.sl-flower-layer {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  /* z-index: 0;  <- Flowers behind everything by default */
+  z-index: 0;
+  overflow: hidden;
+  will-change: transform;
+}
+
+/* ---- Individual Flower ---- */
+.sl-flower {
+  position: absolute;
+  top: -15vh;
+  will-change: transform, opacity, filter;
+  backface-visibility: hidden;
+  transform: translate3d(0, 0, 0);
+  pointer-events: none;
+  line-height: 1;
+  text-shadow: 0 0 20px rgba(255, 220, 180, 0.15);
+  transition: filter 0.4s ease;
+  user-select: none;
+  -webkit-user-select: none;
+}
+
+/* ---- Depth Variations ---- */
+.sl-flower--close {
+  filter: blur(1.4px) drop-shadow(0 8px 24px rgba(0, 0, 0, 0.30));
+  opacity: 0.85;
+}
+
+.sl-flower--far {
+  filter: blur(0px) drop-shadow(0 2px 8px rgba(0, 0, 0, 0.10));
+  opacity: 0.70;
+}
+
+/* ---- Glowing Particle ---- */
+.sl-particle {
+  position: absolute;
+  border-radius: 50%;
+  will-change: transform, opacity;
+  pointer-events: none;
+  backface-visibility: hidden;
+  transform: translate3d(0, 0, 0);
+  user-select: none;
+  -webkit-user-select: none;
+}
+
+/* ---- Particle Color Variants ---- */
+.sl-particle--white {
+  background: radial-gradient(
+    circle at 30% 30%,
+    rgba(255, 255, 245, 0.95) 0%,
+    rgba(255, 240, 220, 0.30) 60%,
+    transparent 100%
+  );
+  box-shadow: 0 0 24px rgba(255, 245, 230, 0.35);
+}
+
+.sl-particle--gold {
+  background: radial-gradient(
+    circle at 30% 30%,
+    rgba(255, 215, 150, 0.95) 0%,
+    rgba(210, 170, 100, 0.30) 60%,
+    transparent 100%
+  );
+  box-shadow: 0 0 28px rgba(220, 180, 120, 0.40);
+}
+
+.sl-particle--pink {
+  background: radial-gradient(
+    circle at 30% 30%,
+    rgba(255, 200, 210, 0.95) 0%,
+    rgba(240, 160, 180, 0.30) 60%,
+    transparent 100%
+  );
+  box-shadow: 0 0 28px rgba(240, 170, 190, 0.35);
+}
+
+/* ---- Reduced Motion (accessibility) ---- */
+@media (prefers-reduced-motion: reduce) {
+  .sl-flower-layer {
+    display: none !important;
+  }
+}
+
+/* ---- Mobile performance: reduce layer complexity ---- */
+@media (max-width: 768px) {
+  .sl-flower {
+    will-change: transform, opacity;
+  }
+  .sl-particle {
+    will-change: transform, opacity;
+  }
+}
+
+/* ---- Small screen adjustments ---- */
+@media (max-width: 480px) {
+  .sl-flower-layer {
+    z-index: 0;
+  }
+}
