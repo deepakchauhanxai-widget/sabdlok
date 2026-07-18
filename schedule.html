@@ -16,7 +16,6 @@
         }
         .container { max-width: 820px; margin: 0 auto; padding: 2rem 0; }
 
-        /* HEADER */
         .site-header { padding:1.2rem 0 0.8rem; border-bottom:1px solid #E9E1D8; }
         .header-flex { display:flex; flex-wrap:wrap; justify-content:space-between; align-items:center; gap:0.5rem; }
         .logo-text { font-family:'Playfair Display',serif; font-weight:600; font-size:1.8rem; color:#2C2C2C; }
@@ -26,14 +25,12 @@
         .nav-links a:hover { color:#8B5E3C; }
         .nav-links a.active { color:#8B5E3C; font-weight:600; }
 
-        /* PAGE HERO */
         .page-hero { padding:2rem 0 1.5rem; text-align:center; border-bottom:1px solid #E9E1D8; }
         .page-hero h1 { font-family:'Playfair Display',serif; font-size:2.6rem; color:#2C2C2C; }
         .page-hero p { color:#888; font-size:1.1rem; }
         .back-home { display:inline-block; margin-top:0.5rem; color:#8B5E3C; text-decoration:none; font-weight:500; }
         .back-home:hover { text-decoration:underline; }
 
-        /* SCHEDULE GRID */
         .schedule-grid {
             display: flex;
             flex-direction: column;
@@ -51,7 +48,6 @@
             padding: 0.8rem 1.5rem;
             transition: all 0.3s ease;
             box-shadow: 0 2px 10px rgba(0,0,0,0.03);
-            order: 10; /* default order */
         }
         .schedule-item:hover {
             transform: translateX(4px);
@@ -63,6 +59,7 @@
             align-items: center;
             gap: 0.8rem;
             font-size: 1.1rem;
+            min-width: 160px;
         }
         .schedule-cat .emoji { font-size: 1.6rem; }
         .schedule-cat .name { font-weight: 500; color: #2C2C2C; }
@@ -72,6 +69,8 @@
             background: #f5f0eb;
             padding: 0.2rem 1rem;
             border-radius: 40px;
+            min-width: 100px;
+            text-align: center;
         }
         .schedule-day strong {
             color: #8B5E3C;
@@ -81,6 +80,8 @@
             font-size: 0.8rem;
             color: #22c55e;
             font-weight: 500;
+            min-width: 130px;
+            text-align: right;
         }
         .schedule-status.today {
             color: #D97706;
@@ -92,13 +93,28 @@
         .schedule-status.passed {
             color: #94a3b8;
         }
+        .schedule-status.upcoming {
+            color: #22c55e;
+        }
 
-        /* ORDER CLASSES - ये CSS ऑटो-सॉर्ट के लिए */
-        .order-today { order: 0; }
-        .order-upcoming { order: 1; }
-        .order-passed { order: 2; }
+        @media (max-width:640px) {
+            .header-flex { flex-direction:column; align-items:flex-start; }
+            .page-hero h1 { font-size:2rem; }
+            .schedule-item {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 0.3rem;
+                padding: 1rem;
+            }
+            .schedule-status {
+                text-align: left;
+                min-width: auto;
+            }
+            .schedule-day {
+                min-width: auto;
+            }
+        }
 
-        /* FOOTER */
         .site-footer {
             background:#FAF7F2; padding:2.5rem 0 2rem;
             border-top:1px solid #E9E1D8; margin-top:2rem;
@@ -110,23 +126,11 @@
         .footer-col a { display:block; color:#555; text-decoration:none; margin:0.3rem 0; font-size:0.95rem; }
         .footer-col a:hover { color:#8B5E3C; }
         .footer-copy { margin-top:0.8rem; font-size:0.8rem; color:#aaa; text-align:center; }
-
-        @media (max-width:640px) {
-            .header-flex { flex-direction:column; align-items:flex-start; }
-            .page-hero h1 { font-size:2rem; }
-            .schedule-item {
-                flex-direction: column;
-                align-items: flex-start;
-                gap: 0.3rem;
-                padding: 1rem;
-            }
-        }
     </style>
 </head>
 <body>
 
 <div class="container">
-    <!-- HEADER -->
     <header class="site-header">
         <div class="header-flex">
             <div>
@@ -144,127 +148,124 @@
         </div>
     </header>
 
-    <!-- PAGE HERO -->
     <section class="page-hero">
         <h1>📅 कब आएगी कविता?</h1>
         <p>हर कैटेगरी की नई कविता का शेड्यूल – तय दिन पर आना, नई कविता पढ़ना।</p>
         <a href="index.html" class="back-home">← होम पेज पर वापस</a>
     </section>
 
-    <!-- SCHEDULE LIST -->
     <div class="schedule-grid" id="scheduleGrid">
-        <!-- ❤️ प्रेम – हर सोमवार -->
-        <div class="schedule-item" data-day="1" data-name="प्रेम">
-            <div class="schedule-cat">
-                <span class="emoji">❤️</span>
-                <span class="name">प्रेम</span>
-            </div>
-            <span class="schedule-day">📅 हर <strong>सोमवार</strong></span>
-            <span class="schedule-status">✅ अगला : 21 जुलाई</span>
-        </div>
-
-        <!-- 👩 माँ – हर मंगलवार -->
-        <div class="schedule-item" data-day="2" data-name="माँ">
-            <div class="schedule-cat">
-                <span class="emoji">👩</span>
-                <span class="name">माँ</span>
-            </div>
-            <span class="schedule-day">📅 हर <strong>मंगलवार</strong></span>
-            <span class="schedule-status">✅ अगला : 22 जुलाई</span>
-        </div>
-
-        <!-- 👨 पिता – हर बुधवार -->
-        <div class="schedule-item" data-day="3" data-name="पिता">
-            <div class="schedule-cat">
-                <span class="emoji">👨</span>
-                <span class="name">पिता</span>
-            </div>
-            <span class="schedule-day">📅 हर <strong>बुधवार</strong></span>
-            <span class="schedule-status">✅ अगला : 23 जुलाई</span>
-        </div>
-
-        <!-- 👨‍👩‍👧 परिवार – हर गुरुवार -->
-        <div class="schedule-item" data-day="4" data-name="परिवार">
-            <div class="schedule-cat">
-                <span class="emoji">👨‍👩‍👧</span>
-                <span class="name">परिवार</span>
-            </div>
-            <span class="schedule-day">📅 हर <strong>गुरुवार</strong></span>
-            <span class="schedule-status">✅ अगला : 24 जुलाई</span>
-        </div>
-
-        <!-- 💪 संघर्ष – हर शुक्रवार -->
-        <div class="schedule-item" data-day="5" data-name="संघर्ष">
-            <div class="schedule-cat">
-                <span class="emoji">💪</span>
-                <span class="name">संघर्ष</span>
-            </div>
-            <span class="schedule-day">📅 हर <strong>शुक्रवार</strong></span>
-            <span class="schedule-status">✅ अगला : 25 जुलाई</span>
-        </div>
-
-        <!-- 😊 प्रेरणा – हर शनिवार -->
-        <div class="schedule-item" data-day="6" data-name="प्रेरणा">
-            <div class="schedule-cat">
-                <span class="emoji">😊</span>
-                <span class="name">प्रेरणा</span>
-            </div>
-            <span class="schedule-day">📅 हर <strong>शनिवार</strong></span>
-            <span class="schedule-status">✅ अगला : 26 जुलाई</span>
-        </div>
-
-        <!-- 🌙 अकेलापन – हर रविवार -->
-        <div class="schedule-item" data-day="0" data-name="अकेलापन">
+        <!-- 🌙 अकेलापन – 19 -->
+        <div class="schedule-item" data-date="19" data-name="अकेलापन">
             <div class="schedule-cat">
                 <span class="emoji">🌙</span>
                 <span class="name">अकेलापन</span>
             </div>
-            <span class="schedule-day">📅 हर <strong>रविवार</strong></span>
+            <span class="schedule-day">📅 <strong>19</strong> जुलाई</span>
+            <span class="schedule-status">✅ अगला : 19 जुलाई</span>
+        </div>
+
+        <!-- ❤️ प्रेम – 20 -->
+        <div class="schedule-item" data-date="20" data-name="प्रेम">
+            <div class="schedule-cat">
+                <span class="emoji">❤️</span>
+                <span class="name">प्रेम</span>
+            </div>
+            <span class="schedule-day">📅 <strong>20</strong> जुलाई</span>
             <span class="schedule-status">✅ अगला : 20 जुलाई</span>
         </div>
 
-        <!-- 🧠 जीवन दर्शन – हर सोमवार (Alternate) -->
-        <div class="schedule-item" data-day="1" data-name="जीवन दर्शन" data-alternate="true">
+        <!-- 👩 माँ – 21 -->
+        <div class="schedule-item" data-date="21" data-name="माँ">
+            <div class="schedule-cat">
+                <span class="emoji">👩</span>
+                <span class="name">माँ</span>
+            </div>
+            <span class="schedule-day">📅 <strong>21</strong> जुलाई</span>
+            <span class="schedule-status">✅ अगला : 21 जुलाई</span>
+        </div>
+
+        <!-- 👨 पिता – 22 -->
+        <div class="schedule-item" data-date="22" data-name="पिता">
+            <div class="schedule-cat">
+                <span class="emoji">👨</span>
+                <span class="name">पिता</span>
+            </div>
+            <span class="schedule-day">📅 <strong>22</strong> जुलाई</span>
+            <span class="schedule-status">✅ अगला : 22 जुलाई</span>
+        </div>
+
+        <!-- 👨‍👩‍👧 परिवार – 23 -->
+        <div class="schedule-item" data-date="23" data-name="परिवार">
+            <div class="schedule-cat">
+                <span class="emoji">👨‍👩‍👧</span>
+                <span class="name">परिवार</span>
+            </div>
+            <span class="schedule-day">📅 <strong>23</strong> जुलाई</span>
+            <span class="schedule-status">✅ अगला : 23 जुलाई</span>
+        </div>
+
+        <!-- 💪 संघर्ष – 24 -->
+        <div class="schedule-item" data-date="24" data-name="संघर्ष">
+            <div class="schedule-cat">
+                <span class="emoji">💪</span>
+                <span class="name">संघर्ष</span>
+            </div>
+            <span class="schedule-day">📅 <strong>24</strong> जुलाई</span>
+            <span class="schedule-status">✅ अगला : 24 जुलाई</span>
+        </div>
+
+        <!-- 😊 प्रेरणा – 25 -->
+        <div class="schedule-item" data-date="25" data-name="प्रेरणा">
+            <div class="schedule-cat">
+                <span class="emoji">😊</span>
+                <span class="name">प्रेरणा</span>
+            </div>
+            <span class="schedule-day">📅 <strong>25</strong> जुलाई</span>
+            <span class="schedule-status">✅ अगला : 25 जुलाई</span>
+        </div>
+
+        <!-- 🧠 जीवन दर्शन – 26 -->
+        <div class="schedule-item" data-date="26" data-name="जीवन दर्शन">
             <div class="schedule-cat">
                 <span class="emoji">🧠</span>
                 <span class="name">जीवन दर्शन</span>
             </div>
-            <span class="schedule-day">📅 हर <strong>सोमवार</strong> (Alternate)</span>
-            <span class="schedule-status">✅ अगला : 28 जुलाई</span>
+            <span class="schedule-day">📅 <strong>26</strong> जुलाई</span>
+            <span class="schedule-status">✅ अगला : 26 जुलाई</span>
         </div>
 
-        <!-- 🌿 प्रकृति – हर मंगलवार (Alternate) -->
-        <div class="schedule-item" data-day="2" data-name="प्रकृति" data-alternate="true">
+        <!-- 🌿 प्रकृति – 27 -->
+        <div class="schedule-item" data-date="27" data-name="प्रकृति">
             <div class="schedule-cat">
                 <span class="emoji">🌿</span>
                 <span class="name">प्रकृति</span>
             </div>
-            <span class="schedule-day">📅 हर <strong>मंगलवार</strong> (Alternate)</span>
-            <span class="schedule-status">✅ अगला : 29 जुलाई</span>
+            <span class="schedule-day">📅 <strong>27</strong> जुलाई</span>
+            <span class="schedule-status">✅ अगला : 27 जुलाई</span>
         </div>
 
-        <!-- 🇮🇳 देशभक्ति – हर बुधवार (Alternate) -->
-        <div class="schedule-item" data-day="3" data-name="देशभक्ति" data-alternate="true">
+        <!-- 🇮🇳 देशभक्ति – 28 -->
+        <div class="schedule-item" data-date="28" data-name="देशभक्ति">
             <div class="schedule-cat">
                 <span class="emoji">🇮🇳</span>
                 <span class="name">देशभक्ति</span>
             </div>
-            <span class="schedule-day">📅 हर <strong>बुधवार</strong> (Alternate)</span>
-            <span class="schedule-status">✅ अगला : 30 जुलाई</span>
+            <span class="schedule-day">📅 <strong>28</strong> जुलाई</span>
+            <span class="schedule-status">✅ अगला : 28 जुलाई</span>
         </div>
 
-        <!-- ⏳ समय – हर गुरुवार (Alternate) -->
-        <div class="schedule-item" data-day="4" data-name="समय" data-alternate="true">
+        <!-- ⏳ समय – 29 -->
+        <div class="schedule-item" data-date="29" data-name="समय">
             <div class="schedule-cat">
                 <span class="emoji">⏳</span>
                 <span class="name">समय</span>
             </div>
-            <span class="schedule-day">📅 हर <strong>गुरुवार</strong> (Alternate)</span>
-            <span class="schedule-status">✅ अगला : 31 जुलाई</span>
+            <span class="schedule-day">📅 <strong>29</strong> जुलाई</span>
+            <span class="schedule-status">✅ अगला : 29 जुलाई</span>
         </div>
     </div>
 
-    <!-- FOOTER -->
     <footer class="site-footer">
         <div class="footer-grid">
             <div class="footer-col">
@@ -285,142 +286,62 @@
 </div>
 
 <script>
-// ===== SCHEDULE AUTO UPDATE + AUTO SORT =====
 function updateSchedule() {
     const today = new Date();
-    const currentDay = today.getDay(); // 0=Sunday, 1=Monday...
     const currentDate = today.getDate();
     const currentMonth = today.getMonth();
     const currentYear = today.getFullYear();
+    const currentFullDate = new Date(currentYear, currentMonth, currentDate);
     
-    // हफ्ते की शुरुआत रविवार (0) से मानें
-    const weekStart = new Date(today);
-    weekStart.setDate(today.getDate() - currentDay);
-    
-    // हर दिन के लिए तारीख निकालें
-    const dates = {};
-    const nextDates = {};
-    
-    for (let i = 0; i < 7; i++) {
-        const d = new Date(weekStart);
-        d.setDate(weekStart.getDate() + i);
-        dates[i] = {
-            date: d.getDate(),
-            month: d.getMonth(),
-            year: d.getFullYear(),
-            fullDate: d
-        };
-    }
-    
-    // अगले हफ्ते की तारीखें
-    const nextWeekStart = new Date(weekStart);
-    nextWeekStart.setDate(weekStart.getDate() + 7);
-    for (let i = 0; i < 7; i++) {
-        const d = new Date(nextWeekStart);
-        d.setDate(nextWeekStart.getDate() + i);
-        nextDates[i] = {
-            date: d.getDate(),
-            month: d.getMonth(),
-            year: d.getFullYear(),
-            fullDate: d
-        };
-    }
-    
-    // सभी items को स्टोर करने के लिए array
-    const items = [];
+    const monthNames = ['जनवरी', 'फरवरी', 'मार्च', 'अप्रैल', 'मई', 'जून', 'जुलाई', 'अगस्त', 'सितम्बर', 'अक्टूबर', 'नवम्बर', 'दिसम्बर'];
     
     document.querySelectorAll('.schedule-item').forEach(item => {
-        const dayIndex = parseInt(item.dataset.day);
+        const targetDate = parseInt(item.dataset.date);
         const statusEl = item.querySelector('.schedule-status');
-        const isAlternate = item.dataset.alternate === 'true';
-        const dayName = item.dataset.name;
+        const dayEl = item.querySelector('.schedule-day');
         
-        if (statusEl && !isNaN(dayIndex)) {
-            let statusText = '';
-            let statusClass = '';
-            let orderClass = '';
+        if (statusEl && !isNaN(targetDate)) {
+            let targetFullDate = new Date(currentYear, currentMonth, targetDate);
             
-            // अगर आज का दिन है
-            if (dayIndex === currentDay) {
-                statusText = '🌟 आज!';
-                statusClass = 'today';
-                orderClass = 'order-today';
-            } else {
-                // अगली तारीख निकालें
-                let dateInfo;
-                if (isAlternate) {
-                    dateInfo = nextDates[dayIndex];
-                } else {
-                    if (dayIndex < currentDay) {
-                        dateInfo = nextDates[dayIndex];
-                    } else {
-                        dateInfo = dates[dayIndex];
-                    }
-                }
-                
-                const nextDate = dateInfo.fullDate;
-                const monthName = nextDate.toLocaleString('hi-IN', { month: 'long' });
-                const day = nextDate.getDate();
-                
-                // चेक करें कि तारीख बीत चुकी है या नहीं
-                const todayMidnight = new Date(currentYear, currentMonth, currentDate);
-                const nextDateMidnight = new Date(nextDate.getFullYear(), nextDate.getMonth(), nextDate.getDate());
-                
-                if (nextDateMidnight < todayMidnight) {
-                    // बीत चुकी है → अगले हफ्ते की तारीख
-                    const nextNextWeekStart = new Date(nextWeekStart);
-                    nextNextWeekStart.setDate(nextWeekStart.getDate() + 7);
-                    const nextNextDate = new Date(nextNextWeekStart);
-                    nextNextDate.setDate(nextNextWeekStart.getDate() + dayIndex);
-                    
-                    const newMonthName = nextNextDate.toLocaleString('hi-IN', { month: 'long' });
-                    const newDay = nextNextDate.getDate();
-                    statusText = `✅ अगला : ${newDay} ${newMonthName}`;
-                    statusClass = 'passed';
-                    orderClass = 'order-passed';
-                } else {
-                    statusText = `✅ अगला : ${day} ${monthName}`;
-                    statusClass = '';
-                    orderClass = 'order-upcoming';
-                }
+            if (targetFullDate < currentFullDate) {
+                targetFullDate = new Date(currentYear, currentMonth + 1, targetDate);
             }
             
-            // Apply status and order
-            statusEl.textContent = statusText;
-            statusEl.className = `schedule-status ${statusClass}`;
-            item.className = `schedule-item ${orderClass}`;
+            const day = targetFullDate.getDate();
+            const month = monthNames[targetFullDate.getMonth()];
             
-            // Store for sorting
-            items.push({
-                element: item,
-                order: orderClass,
-                day: dayIndex,
-                isToday: dayIndex === currentDay
-            });
+            if (targetFullDate.getTime() === currentFullDate.getTime()) {
+                statusEl.textContent = '🌟 आज!';
+                statusEl.className = 'schedule-status today';
+            } else {
+                statusEl.textContent = `✅ अगला : ${day} ${month}`;
+                statusEl.className = 'schedule-status upcoming';
+            }
+            
+            dayEl.innerHTML = `📅 <strong>${day}</strong> ${month}`;
         }
     });
     
-    // Sort items: Today first, then upcoming, then passed
-    items.sort((a, b) => {
-        const orderMap = {
-            'order-today': 0,
-            'order-upcoming': 1,
-            'order-passed': 2
-        };
-        return orderMap[a.order] - orderMap[b.order];
+    const items = [];
+    document.querySelectorAll('.schedule-item').forEach(item => {
+        const targetDate = parseInt(item.dataset.date);
+        const isToday = item.querySelector('.schedule-status.today') !== null;
+        items.push({ element: item, date: targetDate, isToday: isToday });
     });
     
-    // Re-append items in sorted order
+    items.sort((a, b) => {
+        if (a.isToday && !b.isToday) return -1;
+        if (!a.isToday && b.isToday) return 1;
+        return a.date - b.date;
+    });
+    
     const grid = document.getElementById('scheduleGrid');
     items.forEach(item => {
         grid.appendChild(item.element);
     });
 }
 
-// पेज लोड होने पर अपडेट करें
 document.addEventListener('DOMContentLoaded', updateSchedule);
-
-// हर 60 सेकंड में अपडेट करें
 setInterval(updateSchedule, 60000);
 </script>
 
