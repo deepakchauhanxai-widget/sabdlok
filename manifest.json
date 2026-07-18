@@ -7,7 +7,7 @@
   "background_color": "#FAF7F2",
   "theme_color": "#8B5E3C",
   "orientation": "portrait-primary",
-  "scope": "/sabdalock/",
+  "scope": "/",   👈 यहाँ बदलाव
   "icons": [
     {
       "src": "/images/icon-72x72.png",
