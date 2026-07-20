@@ -17,7 +17,7 @@
     <!-- ===== CANONICAL ===== -->
     <link rel="canonical" href="https://shabdalok.com/schedule.html">
     
-    <!-- ===== OPEN GRAPH / FACEBOOK ===== -->
+    <!-- ===== OPEN GRAPH ===== -->
     <meta property="og:type" content="website">
     <meta property="og:site_name" content="शब्दलोक">
     <meta property="og:title" content="अपडेट शेड्यूल – कब आएगी नई कविता? | शब्दलोक">
@@ -30,7 +30,7 @@
     <meta property="og:image:height" content="630">
     <meta property="og:image:alt" content="शब्दलोक - कविता अपडेट शेड्यूल">
     
-    <!-- ===== TWITTER / X ===== -->
+    <!-- ===== TWITTER ===== -->
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="अपडेट शेड्यूल – कब आएगी नई कविता? | शब्दलोक">
     <meta name="twitter:description" content="जानें शब्दलोक पर हर कैटेगरी की नई कविता कब आती है।">
@@ -59,7 +59,6 @@
             min-height: 100vh;
         }
         
-        /* ===== FLOWER LAYER ===== */
         .flower-layer {
             position: fixed;
             top: 0;
@@ -79,7 +78,7 @@
             z-index: 1;
         }
 
-        /* ===== HEADER - GLASS ===== */
+        /* HEADER - GLASS */
         .site-header {
             padding: 1rem 1.6rem;
             margin: 0.5rem 0 1rem;
@@ -152,7 +151,7 @@
             width: 70%;
         }
 
-        /* ===== PAGE HERO - GLASS ===== */
+        /* PAGE HERO - GLASS */
         .page-hero {
             padding: 2rem 2.5rem;
             margin: 1rem 0 1.5rem;
@@ -191,7 +190,7 @@
             transform: translateY(-2px);
         }
 
-        /* ===== SCHEDULE GRID ===== */
+        /* SCHEDULE GRID */
         .schedule-grid {
             display: flex;
             flex-direction: column;
@@ -270,7 +269,7 @@
             background: rgba(34, 197, 94, 0.1);
         }
 
-        /* ===== FOOTER - GLASS ===== */
+        /* FOOTER - GLASS */
         .site-footer {
             background: rgba(255, 255, 255, 0.2);
             border: 1px solid rgba(255, 255, 255, 0.2);
@@ -336,7 +335,7 @@
 </head>
 <body>
 
-<!-- ===== FLOWER LAYER - Background में ===== -->
+<!-- ===== FLOWER LAYER ===== -->
 <div id="flowerLayer" class="flower-layer"></div>
 
 <div class="container">
@@ -366,9 +365,7 @@
     </section>
 
     <!-- SCHEDULE GRID -->
-    <div class="schedule-grid" id="scheduleGrid">
-        <!-- सभी कार्ड JS से बनेंगे, ये सिर्फ container है -->
-    </div>
+    <div class="schedule-grid" id="scheduleGrid"></div>
 
     <!-- FOOTER -->
     <footer class="site-footer">
@@ -409,13 +406,13 @@
     });
 
     // ============================================================
-    // 📅 शब्दलोक - शेड्यूल सिस्टम (पूरी तरह JavaScript में)
+    // 📅 शब्दलोक - शेड्यूल सिस्टम (FIXED)
     // ============================================================
 
     (function() {
         console.log('📅 शेड्यूल सिस्टम शुरू...');
 
-        // ===== 1. FIXED DATE CONFIG =====
+        // ===== 1. ALL 11 CATEGORIES WITH FIXED DATES =====
         const SCHEDULE = [
             { date: 19, emoji: '🌙', name: 'अकेलापन', slug: 'loneliness' },
             { date: 20, emoji: '❤️', name: 'प्रेम', slug: 'love' },
@@ -433,26 +430,33 @@
         // ===== 2. MONTH NAMES =====
         const MONTHS = ['जनवरी', 'फरवरी', 'मार्च', 'अप्रैल', 'मई', 'जून', 'जुलाई', 'अगस्त', 'सितम्बर', 'अक्टूबर', 'नवम्बर', 'दिसम्बर'];
 
-        // ===== 3. GET DATE INFO =====
+        // ===== 3. GET DATE INFO (FIXED: समाप्त हो चुकी तारीखों को आगे बढ़ाएं) =====
         function getDateInfo(targetDate) {
             const today = new Date();
             const currentDate = today.getDate();
             const currentMonth = today.getMonth();
             const currentYear = today.getFullYear();
             const currentFullDate = new Date(currentYear, currentMonth, currentDate);
-
+            
+            // पहले current month का target date बनाएं
             let targetFullDate = new Date(currentYear, currentMonth, targetDate);
             
-            // अगर target date बीत चुकी है तो अगले महीने
+            // अगर target date आज से कम (बीत चुकी) है तो अगले महीने
+            // ⚠️ FIX: यहाँ <= use किया ताकि आज की तारीख भी अगर हो तो वो today रहे
             if (targetFullDate < currentFullDate) {
                 targetFullDate = new Date(currentYear, currentMonth + 1, targetDate);
             }
+            
+            // अगर target date आज की है तो today flag true
+            const isToday = targetFullDate.getTime() === currentFullDate.getTime();
 
             return {
                 day: targetFullDate.getDate(),
                 month: MONTHS[targetFullDate.getMonth()],
                 fullDate: targetFullDate,
-                isToday: targetFullDate.getTime() === currentFullDate.getTime()
+                isToday: isToday,
+                // यह बताएगा कि यह कविता अपलोड हो चुकी है या नहीं
+                isPassed: targetFullDate < currentFullDate
             };
         }
 
@@ -468,25 +472,34 @@
             SCHEDULE.forEach(item => {
                 const info = getDateInfo(item.date);
                 
-                // Card HTML
                 const card = document.createElement('div');
                 card.className = 'schedule-item';
                 card.dataset.date = item.date;
                 
-                let statusText = `✅ अगला : ${info.day} ${info.month}`;
-                let statusClass = 'upcoming';
+                let statusText = '';
+                let statusClass = '';
                 
                 if (info.isToday) {
                     statusText = '🌟 आज!';
                     statusClass = 'today';
+                } else if (info.isPassed) {
+                    // ✅ FIX: बीत चुकी कविताएँ
+                    statusText = '✅ अपलोड हो चुकी';
+                    statusClass = 'passed';
+                } else {
+                    statusText = `✅ अगला : ${info.day} ${info.month}`;
+                    statusClass = 'upcoming';
                 }
+                
+                // डेट डिस्प्ले के लिए
+                let dayDisplay = `${info.day} ${info.month}`;
                 
                 card.innerHTML = `
                     <div class="schedule-cat">
                         <span class="emoji">${item.emoji}</span>
                         <span class="name">${item.name}</span>
                     </div>
-                    <span class="schedule-day">📅 <strong>${info.day}</strong> ${info.month}</span>
+                    <span class="schedule-day">📅 <strong>${dayDisplay}</strong></span>
                     <span class="schedule-status ${statusClass}">${statusText}</span>
                 `;
                 
@@ -494,14 +507,20 @@
                     element: card,
                     date: item.date,
                     isToday: info.isToday,
-                    fullDate: info.fullDate
+                    isPassed: info.isPassed,
+                    fullDate: info.fullDate,
+                    // सॉर्टिंग के लिए priority: today first, then upcoming, then passed
+                    priority: info.isToday ? 0 : (info.isPassed ? 2 : 1)
                 });
             });
             
-            // ===== 5. SORT: Today first, then by date =====
+            // ===== 5. SORT: Today first, then Upcoming, then Passed (नीचे) =====
             cards.sort((a, b) => {
-                if (a.isToday && !b.isToday) return -1;
-                if (!a.isToday && b.isToday) return 1;
+                // पहले priority के हिसाब से
+                if (a.priority !== b.priority) {
+                    return a.priority - b.priority;
+                }
+                // फिर date के हिसाब से
                 return a.date - b.date;
             });
             
@@ -521,7 +540,7 @@
         // ===== 8. START =====
         document.addEventListener('DOMContentLoaded', function() {
             createSchedule();
-            // हर 30 सेकंड में चेक करेगा (पेज खुला रहने पर)
+            // हर 30 सेकंड में चेक करेगा
             setInterval(autoUpdate, 30000);
         });
 
