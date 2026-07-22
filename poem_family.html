@@ -213,6 +213,31 @@
         }
         .bottom-extra .heart { color:#b22222; }
 
+        /* Error State */
+        .error-box {
+            text-align:center;
+            padding:3rem 1rem;
+        }
+        .error-box .emoji { font-size:4rem; margin-bottom:0.5rem; }
+        .error-box h3 { color:#b22222; margin-bottom:0.5rem; }
+        .error-box p { color:#1e293b; }
+        .error-box .btn-retry {
+            display:inline-block;
+            margin-top:1.5rem;
+            background: rgba(255,255,255,0.3);
+            padding:0.5rem 2rem;
+            border-radius:40px;
+            color:#0f172a;
+            text-decoration:none;
+            font-weight:600;
+            border:1px solid rgba(255,255,255,0.3);
+            transition:0.2s;
+        }
+        .error-box .btn-retry:hover {
+            background: rgba(255,255,255,0.6);
+            transform: translateY(-2px);
+        }
+
         @media (max-width:640px) {
             .container { padding:1.5rem; margin:1rem auto; border-radius:24px; }
             .poem-full-title { font-size:1.8rem; }
@@ -229,11 +254,13 @@
 <div id="flowerLayer" class="flower-layer"></div>
 
 <div class="container" id="detailApp">
+    <!-- LOADING STATE -->
     <div id="loadingState" class="loader">
         <div class="loader-spinner"></div>
         <p>📖 कविता लोड हो रही है...</p>
     </div>
 
+    <!-- MAIN CONTENT -->
     <div id="mainContent" style="display:none;">
         <a href="#" class="category-top-link" id="categoryLink">🔙 CATEGORY_NAME पर जाएँ</a>
         <a href="index.html" class="back-link">← होम</a>
@@ -265,7 +292,7 @@
             <p>🌸 <span class="heart">🙏</span> शब्दलोक – हर शब्द में है एक कहानी <span class="heart">🙏</span></p>
             <p style="margin-top:0.4rem; font-size:0.85rem;">
                 <a href="index.html">🏠 होम</a> · 
-                 <a href="category.html?cat=family">❤️ परिवार कविताएँ</a> · 
+                <a href="#" id="categoryBottomLink">❤️ परिवार कविताएँ</a> · 
                 <a href="author.html">✍️ लेखक</a> · 
                 <a href="contact.html">📞 संपर्क</a>
             </p>
@@ -278,7 +305,264 @@
 
 <script src="flower-rain.js"></script>
 <script>
-    // ===== FLOWER RAIN RESTART =====
+    // ============================================================
+    // 🔥 CONFIGURATION - बस यहाँ CHANGE करो
+    // ============================================================
+    const CONFIG = {
+        // 🔴 अपनी API URL डालो
+        API_URL: 'https://script.google.com/macros/s/AKfycbwmLjhJ-Uz1smv9S4lUkKdyfyAXhKh4sNwveVSZDhbeF55bNXoLsFD-76WqfZ0YmWUWeQ/exec',
+        
+        // 🔴 Category Details
+        CATEGORY_NAME: 'परिवार कविताएँ',
+        CATEGORY_LINK: 'category_family.html?cat=family',
+        CATEGORY_EMOJI: '👨‍👩‍👧',
+        
+        // 🔴 API से किस key में poems हैं
+        // अगर नहीं पता तो 'auto' करो - खुद detect करेगा
+        POEMS_KEY: 'auto' // 'familyPoems' या 'familyCard' या 'auto'
+    };
+    // ============================================================
+
+    // DOM Elements
+    const loading = document.getElementById('loadingState');
+    const main = document.getElementById('mainContent');
+
+    // Set category links
+    document.getElementById('categoryLink').textContent = '🔙 ' + CONFIG.CATEGORY_NAME;
+    document.getElementById('categoryLink').href = CONFIG.CATEGORY_LINK;
+    document.getElementById('categoryBottomLink').textContent = CONFIG.CATEGORY_EMOJI + ' ' + CONFIG.CATEGORY_NAME;
+    document.getElementById('categoryBottomLink').href = CONFIG.CATEGORY_LINK;
+
+    // ============================================================
+    // 🔥 MAIN FUNCTION - Load Poem
+    // ============================================================
+    async function loadPoem() {
+        const params = new URLSearchParams(window.location.search);
+        const slug = params.get('slug');
+
+        // Validate slug
+        if (!slug) {
+            showError('❌ कविता नहीं मिली। कृपया सही लिंक से आएँ।');
+            return;
+        }
+
+        try {
+            // Show loading
+            loading.style.display = 'block';
+            loading.innerHTML = `
+                <div class="loader-spinner"></div>
+                <p>📖 कविता लोड हो रही है...</p>
+            `;
+
+            // 🔥 Fetch API
+            console.log('📡 Fetching:', CONFIG.API_URL);
+            const response = await fetch(CONFIG.API_URL);
+            
+            if (!response.ok) {
+                throw new Error(`Network error: ${response.status} ${response.statusText}`);
+            }
+
+            const data = await response.json();
+            console.log('📦 API Response:', data);
+
+            // 🔥 Auto-detect poems array
+            let poems = [];
+            
+            if (CONFIG.POEMS_KEY === 'auto') {
+                // Try all possible keys
+                const possibleKeys = ['familyPoems', 'familyCard', 'poems', 'data', 'items', 'poetry'];
+                for (let key of possibleKeys) {
+                    if (data[key] && Array.isArray(data[key]) && data[key].length > 0) {
+                        poems = data[key];
+                        console.log('✅ Found poems in key:', key);
+                        break;
+                    }
+                }
+                // अगर कोई key न मिले तो पूरा data ही poems हो सकता है
+                if (poems.length === 0 && Array.isArray(data)) {
+                    poems = data;
+                    console.log('✅ Data is directly an array');
+                }
+            } else {
+                // Use specific key
+                poems = data[CONFIG.POEMS_KEY] || [];
+                console.log('📚 Using key:', CONFIG.POEMS_KEY, 'Found:', poems.length);
+            }
+
+            if (poems.length === 0) {
+                throw new Error('❌ डेटाबेस में कोई कविता नहीं मिली।');
+            }
+
+            console.log('📚 Total poems found:', poems.length);
+
+            // 🔥 Find poem by slug
+            let poem = poems.find(p => p.slug === slug);
+            
+            // अगर slug से न मिले तो title से ढूँढो
+            if (!poem) {
+                const decodedSlug = decodeURIComponent(slug);
+                poem = poems.find(p => p.title === decodedSlug);
+                console.log('🔍 Searching by title:', decodedSlug);
+            }
+
+            // अगर फिर भी न मिले तो partial match करो
+            if (!poem) {
+                poem = poems.find(p => 
+                    p.slug && p.slug.includes(slug) || 
+                    p.title && p.title.includes(decodeURIComponent(slug))
+                );
+                console.log('🔍 Partial match search');
+            }
+
+            if (!poem) {
+                showError('❌ यह कविता हमारे डेटाबेस में नहीं मिली।');
+                return;
+            }
+
+            console.log('✅ Found poem:', poem.title);
+
+            // ============================================================
+            // 📝 Display Poem
+            // ============================================================
+            
+            // Date format
+            let date = poem.date || '';
+            if (date.includes('T')) {
+                const d = new Date(date);
+                date = d.toLocaleDateString('hi-IN', { 
+                    day: '2-digit', 
+                    month: '2-digit', 
+                    year: 'numeric' 
+                });
+            }
+
+            // Extract content and moral
+            let content = poem.description || poem.content || poem.poem || '';
+            let moral = 'जीवन की हर राह में एक सीख छिपी है।';
+            
+            // Try to extract moral
+            const moralPatterns = [
+                '<b>📖 इस कविता से सीख:</b>',
+                '<b>📖 इस कविता से सीख</b>',
+                '📖 इस कविता से सीख:',
+                'सीख:',
+                'Moral:'
+            ];
+            
+            for (let pattern of moralPatterns) {
+                if (content.includes(pattern)) {
+                    const parts = content.split(pattern);
+                    content = parts[0].trim();
+                    if (parts[1]) {
+                        moral = parts[1].trim();
+                        // Remove HTML tags if any
+                        moral = moral.replace(/<\/?[^>]+(>|$)/g, "").trim();
+                        break;
+                    }
+                }
+            }
+
+            // Image
+            const imageEl = document.getElementById('poemImage');
+            const imageUrl = poem.image || poem.img || poem.image_url || '';
+            if (imageUrl && imageUrl.trim() !== '') {
+                imageEl.src = imageUrl;
+                imageEl.style.display = 'block';
+                imageEl.alt = poem.title || 'कविता का चित्र';
+                // Image load error handling
+                imageEl.onerror = function() {
+                    this.style.display = 'none';
+                };
+            } else {
+                imageEl.style.display = 'none';
+            }
+
+            // Set content
+            document.getElementById('poemTitle').textContent = poem.title || 'अनाम कविता';
+            document.getElementById('poemBody').innerHTML = content;
+            document.getElementById('moralText').textContent = moral;
+            document.getElementById('authorName').textContent = poem.author || 'Deepak Chauhan';
+            document.getElementById('poemDate').textContent = date || '—';
+
+            // Update page title
+            document.title = `${poem.title || 'कविता'} – शब्दलोक`;
+
+            // Show content, hide loader
+            loading.style.display = 'none';
+            main.style.display = 'block';
+            
+            // Scroll to top
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+
+        } catch (error) {
+            console.error('❌ Error:', error);
+            showError('❌ ' + error.message);
+        }
+    }
+
+    // ============================================================
+    // 🔥 Error Display
+    // ============================================================
+    function showError(message) {
+        loading.innerHTML = `
+            <div class="error-box">
+                <div class="emoji">😔</div>
+                <h3>कविता नहीं मिली</h3>
+                <p>${message}</p>
+                <div style="margin-top:1.5rem; display:flex; gap:1rem; justify-content:center; flex-wrap:wrap;">
+                    <a href="index.html" class="btn-retry">🏠 होम पेज</a>
+                    <a href="${CONFIG.CATEGORY_LINK}" class="btn-retry">🔙 ${CONFIG.CATEGORY_NAME}</a>
+                    <button onclick="location.reload()" class="btn-retry">🔄 पुनः प्रयास करें</button>
+                </div>
+            </div>
+        `;
+        main.style.display = 'none';
+    }
+
+    // ============================================================
+    // 🔥 Share Functions
+    // ============================================================
+    function getFullUrl() { 
+        return window.location.href; 
+    }
+    
+    function getTitle() { 
+        return document.getElementById('poemTitle').textContent; 
+    }
+
+    function shareLink() {
+        const url = getFullUrl();
+        if (navigator.share) {
+            navigator.share({ 
+                title: getTitle(), 
+                text: '📖 ' + getTitle() + ' - शब्दलोक पर पढ़ें', 
+                url: url 
+            }).catch(() => {});
+        } else {
+            navigator.clipboard.writeText(url).then(() => {
+                alert('✅ लिंक कॉपी हो गया!');
+            }).catch(() => {
+                prompt('लिंक कॉपी करें:', url);
+            });
+        }
+    }
+
+    function shareWhatsApp() {
+        const text = `📖 ${getTitle()} - शब्दलोक पर पढ़ें:\n${getFullUrl()}`;
+        window.open(`https://wa.me/?text=${encodeURIComponent(text)}`, '_blank');
+    }
+
+    function shareTwitter() {
+        const text = `📖 ${getTitle()} - शब्दलोक`;
+        window.open(
+            `https://twitter.com/intent/tweet?text=${encodeURIComponent(text)}&url=${encodeURIComponent(getFullUrl())}`,
+            '_blank'
+        );
+    }
+
+    // ============================================================
+    // 🌸 Flower Rain - Restart
+    // ============================================================
     document.addEventListener('DOMContentLoaded', function() {
         const layer = document.getElementById('flowerLayer');
         if (layer) {
@@ -291,126 +575,9 @@
         }
     });
 
-    // =============================================
-    // 🟢 CHANGE THIS FOR EACH DETAIL PAGE
-    // =============================================
-    const DETAIL_CONFIG = {
-        categoryKey: 'family',  // 🔴 CHANGE: love, mother, father, family, struggle, inspiration, loneliness, philosophy, nature, patriotism, time
-        emoji: '👨‍👩‍👧',        // 🔴 CHANGE: category emoji
-        categoryName: 'परिवार कविताएँ', // 🔴 CHANGE: category name
-        categoryLink: 'category_family.html?cat=family', // 🔴 CHANGE: category page link
-        api: 'https://script.google.com/macros/s/AKfycbwmLjhJ-Uz1smv9S4lUkKdyfyAXhKh4sNwveVSZDhbeF55bNXoLsFD-76WqfZ0YmWUWeQ/exec', // 🔴 CHANGE: API URL
-        poemsKey: 'familyPoems' // 🔴 CHANGE: poems key from sheet
-    };
-    // =============================================
-
-    const loading = document.getElementById('loadingState');
-    const main = document.getElementById('mainContent');
-
-    // Set category links
-    document.getElementById('categoryLink').textContent = '🔙 ' + DETAIL_CONFIG.categoryName;
-    document.getElementById('categoryLink').href = DETAIL_CONFIG.categoryLink;
-    document.getElementById('categoryBottomLink').textContent = DETAIL_CONFIG.categoryName;
-    document.getElementById('categoryBottomLink').href = DETAIL_CONFIG.categoryLink;
-
-    async function loadPoem() {
-        const params = new URLSearchParams(window.location.search);
-        const slug = params.get('slug');
-
-        if (!slug) {
-            showError('❌ कविता नहीं मिली। कृपया सही लिंक से आएँ।');
-            return;
-        }
-
-        try {
-            const res = await fetch(DETAIL_CONFIG.api);
-            if (!res.ok) throw new Error('Network error');
-            const data = await res.json();
-
-            const poems = data[DETAIL_CONFIG.poemsKey] || [];
-            let poem = poems.find(p => p.slug === slug);
-            if (!poem) {
-                poem = poems.find(p => p.title === decodeURIComponent(slug));
-            }
-            if (!poem) {
-                showError('❌ यह कविता हमारे डेटाबेस में नहीं मिली।');
-                return;
-            }
-
-            let date = poem.date || '';
-            if (date.includes('T')) {
-                const d = new Date(date);
-                date = d.toLocaleDateString('hi-IN', { day: '2-digit', month: '2-digit', year: 'numeric' });
-            }
-
-            let content = poem.description || '';
-            let moral = '';
-            if (content.includes('<b>📖 इस कविता से सीख')) {
-                const parts = content.split('<b>📖 इस कविता से सीख');
-                content = parts[0].trim();
-                moral = parts[1] ? parts[1].replace('</b>', '').trim() : '';
-            }
-
-            const imageEl = document.getElementById('poemImage');
-            if (poem.image && poem.image.trim() !== '') {
-                imageEl.src = poem.image;
-                imageEl.style.display = 'block';
-                imageEl.alt = poem.title || 'कविता का चित्र';
-            } else {
-                imageEl.style.display = 'none';
-            }
-
-            document.getElementById('poemTitle').textContent = poem.title || 'अनाम कविता';
-            document.getElementById('poemBody').innerHTML = content;
-            document.getElementById('moralText').textContent = moral || 'जीवन की हर राह में एक सीख छिपी है।';
-            document.getElementById('authorName').textContent = poem.author || 'Deepak Chauhan';
-            document.getElementById('poemDate').textContent = date || '—';
-
-            document.title = `${poem.title || 'कविता'} – शब्दलोक`;
-
-            loading.style.display = 'none';
-            main.style.display = 'block';
-            window.scrollTo({ top: 0, behavior: 'smooth' });
-
-        } catch (err) {
-            showError('❌ डेटा लोड नहीं हुआ। कृपया इंटरनेट कनेक्शन चेक करें।');
-            console.error(err);
-        }
-    }
-
-    function showError(msg) {
-        loading.innerHTML = `
-            <div style="color:#b22222; padding:2rem;">
-                <div style="font-size:3rem; margin-bottom:0.5rem;">😔</div>
-                <p style="font-weight:600;">${msg}</p>
-                <p style="margin-top:1.5rem; font-size:0.9rem;">
-                    <a href="index.html" style="color:#0f172a; font-weight:600; background:rgba(255,255,255,0.2); padding:0.3rem 1.5rem; border-radius:40px; text-decoration:none; border:1px solid rgba(255,255,255,0.3);">← होम पेज पर वापस</a>
-                </p>
-            </div>
-        `;
-    }
-
-    function getFullUrl() { return window.location.href; }
-    function getTitle() { return document.getElementById('poemTitle').textContent; }
-
-    function shareLink() {
-        const url = getFullUrl();
-        if (navigator.share) {
-            navigator.share({ title: getTitle(), url: url });
-        } else {
-            navigator.clipboard.writeText(url).then(() => alert('✅ लिंक कॉपी हो गया!'))
-                .catch(() => prompt('लिंक कॉपी करें:', url));
-        }
-    }
-    function shareWhatsApp() {
-        const text = `📖 ${getTitle()} - शब्दलोक पर पढ़ें:\n${getFullUrl()}`;
-        window.open(`https://wa.me/?text=${encodeURIComponent(text)}`, '_blank');
-    }
-    function shareTwitter() {
-        const text = `📖 ${getTitle()} - शब्दलोक`;
-        window.open(`https://twitter.com/intent/tweet?text=${encodeURIComponent(text)}&url=${encodeURIComponent(getFullUrl())}`, '_blank');
-    }
-
+    // ============================================================
+    // 🚀 Start the App
+    // ============================================================
     loadPoem();
 </script>
 </body>
