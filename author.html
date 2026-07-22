@@ -3,96 +3,242 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>लेखक – Deepak Chauhan | शब्दलोक</title>
-    <meta name="description" content="Deepak Chauhan – शब्दलोक के संस्थापक और लेखक। जानें उनकी लेखन शैली, उद्देश्य, और कविताओं के पीछे की कहानी।">
+    
+    <!-- ===== TITLE ===== -->
+    <title>हमारे लेखक – शब्दलोक परिवार | Deepak Chauhan & Team</title>
+    
+    <!-- ===== META ===== -->
+    <meta name="description" content="शब्दलोक के सभी लेखक – Deepak Chauhan, Sabra, Radhamani, Rinki, Anshika। जानें हमारी लेखन शैली, उद्देश्य, और क्यों हम Avatar का उपयोग करते हैं।">
+    <meta name="keywords" content="शब्दलोक लेखक, Deepak Chauhan, Sabra, Radhamani, Rinki, Anshika, हिंदी कविता लेखक, शब्दलोक टीम, कविता लेखक">
+    <meta name="robots" content="index, follow">
+    <meta name="theme-color" content="#FAF7F2">
+    <meta name="author" content="Deepak Chauhan">
+    
+    <!-- ===== CANONICAL ===== -->
+    <link rel="canonical" href="https://shabdalok.com/author.html">
+    
+    <!-- ===== OPEN GRAPH ===== -->
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="शब्दलोक">
+    <meta property="og:title" content="हमारे लेखक – शब्दलोक परिवार | Deepak Chauhan & Team">
+    <meta property="og:description" content="शब्दलोक के सभी लेखक – Deepak Chauhan, Sabra, Radhamani, Rinki, Anshika।">
+    <meta property="og:url" content="https://shabdalok.com/author.html">
+    <meta property="og:locale" content="hi_IN">
+    <meta property="og:image" content="https://shabdalok.com/images/sabdalock.webp">
+    <meta property="og:image:secure_url" content="https://shabdalok.com/images/sabdalock.webp">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:image:alt" content="शब्दलोक - लेखक परिवार">
+    
+    <!-- ===== TWITTER ===== -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="हमारे लेखक – शब्दलोक परिवार">
+    <meta name="twitter:description" content="शब्दलोक के सभी लेखक – Deepak Chauhan, Sabra, Radhamani, Rinki, Anshika।">
+    <meta name="twitter:image" content="https://shabdalok.com/images/sabdalock.webp">
+    
+    <!-- ===== FAVICON ===== -->
+    <link rel="icon" href="/favicon.ico">
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+    
+    <!-- ===== GOOGLE FONTS ===== -->
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Poppins:wght@300;400;500;600&family=Noto+Serif+Devanagari:wght@400;600&display=swap" rel="stylesheet">
+    
+    <!-- ===== FLOWER CSS ===== -->
+    <link rel="stylesheet" href="flower-rain.css">
+    
     <style>
         * { margin:0; padding:0; box-sizing:border-box; }
         body {
-            background-color: #FAF7F2;
+            background: linear-gradient(135deg, #f8d9ee 0%, #d8e7fb 100%);
+            background-attachment: fixed;
             font-family: 'Poppins', sans-serif;
-            color: #2C2C2C;
+            color: #0f172a;
             line-height: 1.8;
             padding: 0 1rem;
+            position: relative;
+            min-height: 100vh;
         }
-        .container { max-width: 900px; margin: 0 auto; padding: 2rem 0; }
+        
+        /* ===== FLOWER LAYER ===== */
+        .flower-layer {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 0;
+            overflow: hidden;
+        }
+        
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 1rem 0;
+            position: relative;
+            z-index: 1;
+        }
 
-        /* ===== HEADER ===== */
-        .site-header { padding:1.2rem 0 0.8rem; border-bottom:1px solid #E9E1D8; }
-        .header-flex { display:flex; flex-wrap:wrap; justify-content:space-between; align-items:center; gap:0.5rem; }
-        .logo-text { font-family:'Playfair Display',serif; font-weight:600; font-size:1.8rem; color:#2C2C2C; }
-        .logo-sub { font-family:'Noto Serif Devanagari',serif; font-size:0.85rem; color:#8B5E3C; border-left:2px solid #C49A6C; padding-left:0.6rem; margin-left:0.3rem; }
-        .nav-links { display:flex; flex-wrap:wrap; gap:1.2rem 1.8rem; }
-        .nav-links a { text-decoration:none; color:#555; font-size:0.98rem; transition:color 0.2s; }
-        .nav-links a:hover { color:#8B5E3C; }
-        .nav-links a.active { color:#8B5E3C; font-weight:600; }
+        /* ===== HEADER - GLASS ===== */
+        .site-header {
+            padding: 1rem 1.6rem;
+            margin: 0.5rem 0 1rem;
+            background: rgba(255, 255, 255, 0.2);
+            border: 1px solid rgba(255, 255, 255, 0.25);
+            border-radius: 35px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.04);
+            position: relative;
+            z-index: 2;
+        }
+        .header-flex {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            align-items: center;
+            gap: 0.8rem;
+        }
+        .logo-text {
+            font-family: 'Playfair Display', serif;
+            font-weight: 600;
+            font-size: 1.8rem;
+            color: #1e293b;
+        }
+        .logo-sub {
+            font-family: 'Noto Serif Devanagari', serif;
+            font-size: 0.85rem;
+            color: #475569;
+            border-left: 2px solid rgba(255, 255, 255, 0.6);
+            padding-left: 0.6rem;
+            margin-left: 0.3rem;
+        }
+        .nav-links {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1.2rem 1.8rem;
+        }
+        .nav-links a {
+            text-decoration: none;
+            color: #1e293b;
+            font-size: 0.98rem;
+            transition: all 0.2s;
+            padding: 0.2rem 0.4rem;
+            border-radius: 30px;
+            position: relative;
+            z-index: 2;
+        }
+        .nav-links a::after {
+            content: "";
+            position: absolute;
+            left: 50%;
+            bottom: -3px;
+            width: 0;
+            height: 2px;
+            background: #D97706;
+            transition: .3s;
+            transform: translateX(-50%);
+        }
+        .nav-links a:hover::after {
+            width: 70%;
+        }
+        .nav-links a:hover {
+            color: #0f172a;
+            background: rgba(255, 255, 255, 0.3);
+        }
+        .nav-links a.active {
+            color: #0f172a;
+            font-weight: 600;
+        }
+        .nav-links a.active::after {
+            width: 70%;
+        }
 
-        /* ===== HERO ===== */
+        /* ===== AUTHOR HERO - GLASS ===== */
         .author-hero {
+            padding: 2.5rem 2.5rem;
+            margin: 1rem 0 1.5rem;
+            background: rgba(255, 255, 255, 0.2);
+            border: 1px solid rgba(255, 255, 255, 0.25);
+            border-radius: 40px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.04);
             text-align: center;
-            padding: 2.5rem 0 2rem;
-            border-bottom: 1px solid #E9E1D8;
+            position: relative;
+            z-index: 2;
         }
         .author-photo {
             width: 150px;
             height: 150px;
             border-radius: 50%;
             object-fit: cover;
-            border: 5px solid #C49A6C;
-            box-shadow: 0 8px 25px rgba(0,0,0,0.08);
+            border: 4px solid rgba(255, 255, 255, 0.5);
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
             margin-bottom: 1rem;
+            background: rgba(255,255,255,0.2);
         }
         .author-hero h1 {
             font-family: 'Playfair Display', serif;
             font-size: 2.8rem;
-            color: #2C2C2C;
+            color: #0f172a;
         }
         .author-hero .tagline {
             font-family: 'Noto Serif Devanagari', serif;
             font-size: 1.3rem;
-            color: #8B5E3C;
+            color: #0f172a;
             font-style: italic;
             margin-top: 0.2rem;
         }
-
-        /* ===== BACK LINK ===== */
+        .author-hero p {
+            color: #334155;
+        }
         .back-home {
             display: inline-block;
-            margin: 1rem 0 0.5rem;
-            color: #8B5E3C;
+            margin-top: 0.8rem;
+            color: #0f172a;
             text-decoration: none;
             font-weight: 500;
-            font-size: 0.95rem;
+            background: rgba(255, 255, 255, 0.25);
+            padding: 0.3rem 1.5rem;
+            border-radius: 50px;
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            transition: all 0.2s;
         }
-        .back-home:hover { text-decoration: underline; }
+        .back-home:hover {
+            background: rgba(255, 255, 255, 0.5);
+            transform: translateY(-2px);
+        }
 
-        /* ===== SECTIONS ===== */
+        /* ===== SECTIONS - GLASS ===== */
         .section {
-            padding: 2.5rem 0;
-            border-bottom: 1px solid #E9E1D8;
+            padding: 2rem 2.5rem;
+            margin: 1.5rem 0;
+            background: rgba(255, 255, 255, 0.2);
+            border: 1px solid rgba(255, 255, 255, 0.25);
+            border-radius: 30px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.04);
+            position: relative;
+            z-index: 2;
         }
         .section:last-of-type { border-bottom: none; }
         .section-title {
             font-family: 'Playfair Display', serif;
             font-size: 2rem;
-            color: #2C2C2C;
+            color: #0f172a;
             margin-bottom: 0.8rem;
         }
         .section-subtitle {
             font-family: 'Noto Serif Devanagari', serif;
             font-size: 1.1rem;
-            color: #555;
+            color: #334155;
             margin-bottom: 1.2rem;
         }
         .section p {
             font-family: 'Noto Serif Devanagari', serif;
             font-size: 1.1rem;
-            color: #555;
+            color: #1e293b;
             line-height: 2;
             margin-bottom: 1rem;
         }
 
-        /* ===== CATEGORIES GRID ===== */
+        /* ===== CATEGORY GRID ===== */
         .category-grid {
             display: grid;
             grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
@@ -100,24 +246,27 @@
             margin-top: 1rem;
         }
         .cat-item {
-            background: #FFFFFF;
-            border: 1px solid #E9E1D8;
+            background: rgba(255, 255, 255, 0.25);
+            border: 1px solid rgba(255, 255, 255, 0.3);
             border-radius: 16px;
             padding: 1rem 0.8rem;
             text-align: center;
-            transition: 0.2s;
+            transition: all 0.25s;
             text-decoration: none;
-            color: #2C2C2C;
+            color: #0f172a;
+            position: relative;
+            z-index: 2;
         }
         .cat-item:hover {
             transform: translateY(-3px);
-            box-shadow: 0 8px 20px rgba(0,0,0,0.06);
-            border-color: #C49A6C;
+            background: rgba(255, 255, 255, 0.4);
+            box-shadow: 0 8px 28px rgba(0, 0, 0, 0.06);
+            border-color: rgba(255, 255, 255, 0.6);
         }
         .cat-item .emoji { font-size: 2rem; display: block; }
         .cat-item .name { font-size: 0.95rem; font-weight: 500; }
 
-        /* ===== WRITING STYLE ===== */
+        /* ===== STYLE LIST ===== */
         .style-list {
             display: flex;
             flex-wrap: wrap;
@@ -125,11 +274,13 @@
             margin-top: 0.5rem;
         }
         .style-list span {
-            background: #f5f0eb;
+            background: rgba(255, 255, 255, 0.2);
+            border: 1px solid rgba(255, 255, 255, 0.2);
             padding: 0.3rem 1.2rem;
             border-radius: 40px;
             font-size: 0.95rem;
-            color: #2C2C2C;
+            color: #0f172a;
+            font-weight: 500;
         }
 
         /* ===== STATS ===== */
@@ -138,8 +289,8 @@
             justify-content: center;
             gap: 2.5rem;
             flex-wrap: wrap;
-            background: #FFFFFF;
-            border: 1px solid #E9E1D8;
+            background: rgba(255, 255, 255, 0.2);
+            border: 1px solid rgba(255, 255, 255, 0.25);
             border-radius: 20px;
             padding: 1.8rem 1.5rem;
             margin-top: 1rem;
@@ -149,16 +300,82 @@
             font-family: 'Playfair Display', serif;
             font-size: 2.4rem;
             font-weight: 700;
-            color: #8B5E3C;
+            color: #D97706;
             display: block;
         }
         .stat-label {
             font-size: 0.9rem;
-            color: #888;
+            color: #475569;
             letter-spacing: 0.5px;
         }
 
-        /* ===== CONTACT ===== */
+        /* ===== TEAM GRID ===== */
+        .team-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1.5rem;
+            margin-top: 1.5rem;
+        }
+        .team-card {
+            background: rgba(255, 255, 255, 0.25);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            border-radius: 20px;
+            padding: 1.8rem 1.2rem;
+            text-align: center;
+            transition: all 0.25s;
+            position: relative;
+            z-index: 2;
+        }
+        .team-card:hover {
+            transform: translateY(-4px);
+            background: rgba(255, 255, 255, 0.4);
+            box-shadow: 0 12px 40px rgba(0, 0, 0, 0.06);
+            border-color: rgba(255, 255, 255, 0.6);
+        }
+        .team-card img {
+            width: 90px;
+            height: 90px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 3px solid rgba(255, 255, 255, 0.5);
+            margin-bottom: 0.8rem;
+            background: rgba(255,255,255,0.2);
+        }
+        .team-card h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.25rem;
+            color: #0f172a;
+            margin-bottom: 0.2rem;
+        }
+        .team-card .role {
+            font-size: 0.85rem;
+            color: #D97706;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+            display: block;
+        }
+        .team-card p {
+            font-size: 0.92rem !important;
+            line-height: 1.7 !important;
+            color: #334155 !important;
+            margin-bottom: 0 !important;
+        }
+
+        /* ===== TRUST BOX ===== */
+        .trust-box {
+            background: rgba(255, 255, 255, 0.25);
+            border: 1px dashed rgba(217, 119, 6, 0.4);
+            border-radius: 16px;
+            padding: 1.5rem;
+            margin-top: 1.5rem;
+        }
+        .trust-box h4 {
+            font-family: 'Noto Serif Devanagari', serif;
+            color: #D97706;
+            margin-bottom: 0.5rem;
+        }
+
+        /* ===== CONTACT LINKS ===== */
         .contact-links {
             display: flex;
             flex-wrap: wrap;
@@ -166,24 +383,25 @@
             margin-top: 0.5rem;
         }
         .contact-links a {
-            background: #FFFFFF;
-            border: 1px solid #E9E1D8;
+            background: rgba(255, 255, 255, 0.2);
+            border: 1px solid rgba(255, 255, 255, 0.25);
             padding: 0.5rem 1.5rem;
             border-radius: 40px;
             text-decoration: none;
-            color: #2C2C2C;
-            transition: 0.2s;
+            color: #0f172a;
+            transition: all 0.2s;
             font-size: 0.95rem;
+            font-weight: 500;
         }
         .contact-links a:hover {
-            background: #8B5E3C;
-            color: #FFFFFF;
-            border-color: #8B5E3C;
+            background: rgba(255, 255, 255, 0.5);
+            border-color: #D97706;
+            transform: translateY(-2px);
         }
 
         /* ===== READER MESSAGE ===== */
         .reader-message {
-            background: #f7efe8;
+            background: rgba(255, 255, 255, 0.2);
             border-radius: 20px;
             padding: 2.5rem 2rem;
             text-align: center;
@@ -193,7 +411,7 @@
             font-family: 'Playfair Display', serif;
             font-size: 1.5rem;
             font-style: italic;
-            color: #2C2C2C;
+            color: #0f172a;
             margin-bottom: 0.5rem;
         }
         .reader-message .heart {
@@ -201,33 +419,68 @@
             font-size: 1.8rem;
         }
 
-        /* ===== FOOTER ===== */
+        /* ===== FOOTER - GLASS ===== */
         .site-footer {
-            background:#FAF7F2; padding:2.5rem 0 2rem;
-            border-top:1px solid #E9E1D8; margin-top:2rem;
+            background: rgba(255, 255, 255, 0.2);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: 40px 40px 20px 20px;
+            padding: 2.5rem 2rem 2rem;
+            margin: 2rem 0 1rem;
+            position: relative;
+            z-index: 2;
         }
         .footer-grid {
-            display:grid; grid-template-columns:repeat(auto-fit, minmax(180px,1fr)); gap:2rem;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+            gap: 2rem;
         }
-        .footer-col h4 { font-family:'Playfair Display',serif; font-size:1.4rem; color:#2C2C2C; }
-        .footer-col a { display:block; color:#555; text-decoration:none; margin:0.3rem 0; font-size:0.95rem; }
-        .footer-col a:hover { color:#8B5E3C; }
-        .footer-copy { margin-top:0.8rem; font-size:0.8rem; color:#aaa; text-align:center; }
+        .footer-col h4 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.4rem;
+            color: #0f172a;
+        }
+        .footer-col a {
+            display: block;
+            color: #1e293b;
+            text-decoration: none;
+            margin: 0.3rem 0;
+            font-size: 0.95rem;
+            transition: all 0.2s;
+            padding: 0.1rem 0.4rem;
+            border-radius: 20px;
+        }
+        .footer-col a:hover {
+            background: rgba(255, 255, 255, 0.25);
+            color: #0f172a;
+        }
+        .footer-copy {
+            margin-top: 0.8rem;
+            font-size: 0.8rem;
+            color: #475569;
+            text-align: center;
+        }
 
         @media (max-width:640px) {
-            .header-flex { flex-direction:column; align-items:flex-start; }
-            .author-hero h1 { font-size:2.2rem; }
-            .category-grid { grid-template-columns:repeat(3, 1fr); }
-            .stats-grid { gap:1.5rem; padding:1.2rem; }
-            .reader-message p { font-size:1.2rem; }
-            .section { padding:1.8rem 0; }
+            .header-flex { flex-direction: column; align-items: flex-start; }
+            .author-hero h1 { font-size: 2.2rem; }
+            .author-hero { padding: 1.5rem 1rem; border-radius: 30px; }
+            .section { padding: 1.5rem 1rem; border-radius: 24px; }
+            .category-grid { grid-template-columns: repeat(3, 1fr); }
+            .site-header { border-radius: 30px; padding: 1rem 1.2rem; }
+            .site-footer { border-radius: 30px; padding: 1.5rem 1rem; }
+            .logo-text { font-size: 1.4rem; }
+            .reader-message p { font-size: 1.2rem; }
+            .stats-grid { gap: 1.5rem; padding: 1.2rem; }
         }
     </style>
 </head>
 <body>
 
+<!-- ===== FLOWER LAYER ===== -->
+<div id="flowerLayer" class="flower-layer"></div>
+
 <div class="container">
-    <!-- ===== HEADER ===== -->
+    <!-- HEADER -->
     <header class="site-header">
         <div class="header-flex">
             <div>
@@ -240,99 +493,122 @@
                 <a href="categories.html">❤️ श्रेणियाँ</a>
                 <a href="about.html">📖 About</a>
                 <a href="author.html" class="active">✍️ लेखक</a>
+                <a href="contact.html">📞 संपर्क</a>
             </nav>
         </div>
     </header>
 
-    <!-- ===== HERO ===== -->
+    <!-- HERO - Deepak -->
     <section class="author-hero">
         <img src="/images/deepak-chauhan.webp" alt="Deepak Chauhan" class="author-photo" loading="lazy">
         <h1>Deepak Chauhan</h1>
         <p class="tagline">"मैं कविताएँ नहीं लिखता...<br>मैं एहसासों को शब्द देता हूँ।"</p>
+        <p style="font-family:'Noto Serif Devanagari',serif; color:#D97706; font-weight:600; margin-top:0.5rem;">संस्थापक – शब्दलोक | लेखक – प्रेम ❤️ & संघर्ष 💪</p>
         <a href="index.html" class="back-home">← होम पेज पर वापस</a>
     </section>
 
-    <!-- ===== 2. मेरे बारे में ===== -->
+    <!-- ABOUT -->
     <section class="section">
         <h2 class="section-title">📖 मेरे बारे में</h2>
         <p>मेरा नाम <strong>Deepak Chauhan</strong> है।</p>
-        <p><strong>शब्दलोक</strong> मेरे लिए सिर्फ एक वेबसाइट नहीं, बल्कि <strong>भावनाओं का संसार</strong> है। यहाँ प्रकाशित हर कविता मेरे अपने शब्दों और विचारों से जन्म लेती है।</p>
-        <p>मेरा उद्देश्य ऐसी कविताएँ लिखना है जो पाठक के दिल तक पहुँचे और <strong>लंबे समय तक याद रहें</strong>। मैं मानता हूँ कि सच्ची कविता वही है जो पढ़ने के बाद भी पाठक के मन में गूँजती रहे।</p>
-        <p>शब्दलोक पर आपको <strong>प्रेम, माँ, पिता, परिवार, संघर्ष, प्रेरणा, अकेलापन, जीवन दर्शन, प्रकृति, देशभक्ति और समय</strong> – हर विषय पर मौलिक कविताएँ मिलेंगी।</p>
+        <p><strong>शब्दलोक</strong> मेरे लिए सिर्फ एक वेबसाइट नहीं, बल्कि <strong>भावनाओं का संसार</strong> है।</p>
+        <p>मैं <strong>प्रेम ❤️ और संघर्ष 💪</strong> श्रेणी खुद लिखता हूँ। बाकी श्रेणियों के लिए मेरी टीम की 4 लेखिकाएं मेरे साथ हैं, जो अपने-अपने विषय की एक्सपर्ट हैं।</p>
     </section>
 
-    <!-- ===== 3. मैं क्या लिखता हूँ (Categories Grid) ===== -->
+    <!-- OUR TEAM -->
     <section class="section">
-        <h2 class="section-title">✍️ मैं क्या लिखता हूँ</h2>
-        <p class="section-subtitle">हर विषय पर, हर भावना पर – एक अलग नज़र</p>
+        <h2 class="section-title">👩‍💻 हमारी लेखक टीम – शब्दलोक परिवार</h2>
+        <p class="section-subtitle">हर भावना के लिए एक अलग दिल, एक अलग कलम</p>
+        
+        <div class="team-grid">
+            <div class="team-card">
+                <img src="/images/sabra.png" alt="Sabra">
+                <h3>Sabra</h3>
+                <span class="role">👩 माँ | 👨 पिता | 👨‍👩‍👧 परिवार</span>
+                <p>रिश्तों को लफ्ज़ों में पिरोती हूँ। माँ, पिता और परिवार पर लिखना मेरी पहचान है।</p>
+            </div>
+            <div class="team-card">
+                <img src="/images/radhamani.png" alt="Radhamani">
+                <h3>Radhamani</h3>
+                <span class="role">😊 प्रेरणा | 🌙 अकेलापन</span>
+                <p>तन्हाई में भी रोशनी लिखती हूँ। अकेलेपन में उम्मीद ढूंढना सिखाती हूँ।</p>
+            </div>
+            <div class="team-card">
+                <img src="/images/rinki.png" alt="Rinki">
+                <h3>Rinki</h3>
+                <span class="role">🧠 जीवन दर्शन | 🌿 प्रकृति | 🇮🇳 देशभक्ति</span>
+                <p>प्रकृति, जीवन और देश – मेरी तीन दुनिया। मिट्टी से तिरंगे तक लिखती हूँ।</p>
+            </div>
+            <div class="team-card">
+                <img src="/images/anshika.png" alt="Anshika">
+                <h3>Anshika</h3>
+                <span class="role">⏳ समय</span>
+                <p>वक्त की हर टिक-टिक में एक कहानी है। समय की कीमत शब्दों में बताती हूँ।</p>
+            </div>
+        </div>
+
+        <div class="trust-box">
+            <h4>🔒 हमारी प्राइवेसी और मौलिकता का वादा</h4>
+            <p style="margin-bottom:0.5rem;"><strong>1. AI के जमाने में मौलिकता:</strong> आज के AI के जमाने में हर तरफ कॉपी-पेस्ट कंटेंट है। पर शब्दलोक पर प्रकाशित हर कविता हमारे टीम मेंबर्स द्वारा <strong>अपने हिसाब से, अपने दिल से लिखी गई मौलिक रचना</strong> है। हम AI Generated कविताएं नहीं लिखते। हम एहसास लिखते हैं।</p>
+            <p style="margin-bottom:0;"><strong>2. फोटो की सुरक्षा – मेरा पहला फर्ज:</strong> हमारी टीम में सभी महिला लेखिकाएं हैं। इस AI के दौर में लड़कियों की फोटो का गलत इस्तेमाल बहुत होता है। इसलिए उनकी सुरक्षा मेरा पहला फर्ज है। इसी वजह से हम उनकी रियल फोटो की जगह <strong>Illustrated Avatar</strong> का उपयोग कर रहे हैं। ये उनकी प्राइवेसी और सम्मान के लिए है। कृपया इसका सम्मान करें।</p>
+        </div>
+    </section>
+
+    <!-- CATEGORIES -->
+    <section class="section">
+        <h2 class="section-title">✍️ हम क्या लिखते हैं</h2>
         <div class="category-grid">
-            <a href="category.html?cat=love" class="cat-item"><span class="emoji">❤️</span><span class="name">प्रेम</span></a>
-            <a href="category.html?cat=mother" class="cat-item"><span class="emoji">👩</span><span class="name">माँ</span></a>
-            <a href="category.html?cat=father" class="cat-item"><span class="emoji">👨</span><span class="name">पिता</span></a>
-            <a href="category.html?cat=family" class="cat-item"><span class="emoji">👨‍👩‍👧</span><span class="name">परिवार</span></a>
-            <a href="category.html?cat=struggle" class="cat-item"><span class="emoji">💪</span><span class="name">संघर्ष</span></a>
-            <a href="category.html?cat=inspiration" class="cat-item"><span class="emoji">😊</span><span class="name">प्रेरणा</span></a>
-            <a href="category.html?cat=loneliness" class="cat-item"><span class="emoji">🌙</span><span class="name">अकेलापन</span></a>
-            <a href="category.html?cat=philosophy" class="cat-item"><span class="emoji">🧠</span><span class="name">जीवन दर्शन</span></a>
-            <a href="category.html?cat=nature" class="cat-item"><span class="emoji">🌿</span><span class="name">प्रकृति</span></a>
-            <a href="category.html?cat=patriotism" class="cat-item"><span class="emoji">🇮🇳</span><span class="name">देशभक्ति</span></a>
-            <a href="category.html?cat=time" class="cat-item"><span class="emoji">⏳</span><span class="name">समय</span></a>
+            <a href="category.html?cat=love" class="cat-item"><span class="emoji">❤️</span><span class="name">प्रेम – Deepak</span></a>
+            <a href="category.html?cat=mother" class="cat-item"><span class="emoji">👩</span><span class="name">माँ – Sabra</span></a>
+            <a href="category.html?cat=father" class="cat-item"><span class="emoji">👨</span><span class="name">पिता – Sabra</span></a>
+            <a href="category.html?cat=family" class="cat-item"><span class="emoji">👨‍👩‍👧</span><span class="name">परिवार – Sabra</span></a>
+            <a href="category.html?cat=struggle" class="cat-item"><span class="emoji">💪</span><span class="name">संघर्ष – Deepak</span></a>
+            <a href="category.html?cat=inspiration" class="cat-item"><span class="emoji">😊</span><span class="name">प्रेरणा – Radhamani</span></a>
+            <a href="category.html?cat=loneliness" class="cat-item"><span class="emoji">🌙</span><span class="name">अकेलापन – Radhamani</span></a>
+            <a href="category.html?cat=philosophy" class="cat-item"><span class="emoji">🧠</span><span class="name">जीवन दर्शन – Rinki</span></a>
+            <a href="category.html?cat=nature" class="cat-item"><span class="emoji">🌿</span><span class="name">प्रकृति – Rinki</span></a>
+            <a href="category.html?cat=patriotism" class="cat-item"><span class="emoji">🇮🇳</span><span class="name">देशभक्ति – Rinki</span></a>
+            <a href="category.html?cat=time" class="cat-item"><span class="emoji">⏳</span><span class="name">समय – Anshika</span></a>
         </div>
     </section>
 
-    <!-- ===== 4. मेरा उद्देश्य ===== -->
+    <!-- STYLE -->
     <section class="section">
-        <h2 class="section-title">🎯 मेरा उद्देश्य</h2>
-        <p>मेरा उद्देश्य <strong>वायरल होना नहीं है</strong>।</p>
-        <p>मेरा उद्देश्य ऐसी कविताएँ लिखना है <strong>जिन्हें लोग वर्षों बाद भी याद रखें</strong>।</p>
-        <p>मैं चाहता हूँ कि जब कोई पाठक मेरी कोई कविता पढ़े, तो उसे लगे कि यह शब्द सिर्फ कागज़ पर नहीं, बल्कि <strong>किसी के दिल से निकले हैं</strong>।</p>
-    </section>
-
-    <!-- ===== 5. लेखन शैली ===== -->
-    <section class="section">
-        <h2 class="section-title">🖋️ मेरी लेखन शैली</h2>
+        <h2 class="section-title">🖋️ हमारी लेखन शैली</h2>
         <div class="style-list">
-            <span>✅ मौलिक</span>
-            <span>✅ Copy नहीं</span>
-            <span>✅ AI Generated नहीं</span>
+            <span>✅ 100% मौलिक</span>
             <span>✅ स्वयं लिखित</span>
-            <span>✅ भावनात्मक</span>
+            <span>✅ AI Generated नहीं</span>
+            <span>✅ Copy नहीं</span>
+            <span>✅ भावनात्मक और दिल से</span>
         </div>
     </section>
 
-    <!-- ===== 6. Stats ===== -->
+    <!-- STATS -->
     <section class="section">
         <h2 class="section-title">📊 एक नज़र में</h2>
         <div class="stats-grid">
-            <div class="stat-item">
-                <span class="stat-number" id="poemCount">156</span>
-                <span class="stat-label">📚 Published Poems</span>
-            </div>
-            <div class="stat-item">
-                <span class="stat-number">11</span>
-                <span class="stat-label">✍️ Categories</span>
-            </div>
-            <div class="stat-item">
-                <span class="stat-number">2026</span>
-                <span class="stat-label">📅 Since</span>
-            </div>
+            <div class="stat-item"><span class="stat-number">156+</span><span class="stat-label">📚 Published Poems</span></div>
+            <div class="stat-item"><span class="stat-number">5</span><span class="stat-label">✍️ लेखक</span></div>
+            <div class="stat-item"><span class="stat-number">11</span><span class="stat-label">❤️ श्रेणियाँ</span></div>
+            <div class="stat-item"><span class="stat-number">2026</span><span class="stat-label">📅 Since</span></div>
         </div>
     </section>
 
-    <!-- ===== 7. Contact ===== -->
+    <!-- CONTACT -->
     <section class="section">
         <h2 class="section-title">📞 संपर्क</h2>
         <div class="contact-links">
             <a href="mailto:shabdalok@gmail.com">📧 Email</a>
-            <a href="#" target="_blank">📌 Pinterest</a>
-            <a href="#" target="_blank">📸 Instagram</a>
+            <a href="#">📌 Pinterest</a>
+            <a href="#">📸 Instagram</a>
         </div>
     </section>
 
-    <!-- ===== 8. Reader Message ===== -->
+    <!-- READER MESSAGE -->
     <section class="section" style="border-bottom: none;">
         <div class="reader-message">
-            <p>❤️ अगर मेरी कोई कविता</p>
+            <p>❤️ अगर हमारी कोई कविता</p>
             <p>आपके दिल तक पहुँची,</p>
             <p>तो समझिए</p>
             <p><strong>शब्दलोक</strong> बनने का उद्देश्य</p>
@@ -341,25 +617,44 @@
         </div>
     </section>
 
-    <!-- ===== FOOTER ===== -->
+    <!-- FOOTER -->
     <footer class="site-footer">
         <div class="footer-grid">
             <div class="footer-col">
                 <h4>शब्दलोक</h4>
-                <p>दिल की कलम</p>
+                <p style="color:#334155;">दिल की कलम</p>
             </div>
             <div class="footer-col">
-                <a href="index.html">होम</a>
-                <a href="about.html">About</a>
-                <a href="privacy.html">Privacy</a>
-                <a href="terms.html">Terms</a>
-                <a href="contact.html">Contact</a>
-                <a href="dmca.html">DMCA</a>
+                <a href="index.html">🏠 होम</a>
+                <a href="about.html">📖 About</a>
+                <a href="privacy.html">🔒 Privacy</a>
+                <a href="terms.html">📜 Terms</a>
+                <a href="contact.html">📞 Contact</a>
+                <a href="dmca.html">⚖️ DMCA</a>
             </div>
         </div>
-        <div class="footer-copy">© 2026 शब्दलोक | Deepak Chauhan</div>
+        <div class="footer-copy">© 2026 शब्दलोक | Deepak Chauhan & Team</div>
     </footer>
 </div>
+
+<!-- ===== FLOWER JS ===== -->
+<script src="flower-rain.js"></script>
+
+<script>
+    // ===== FLOWER RAIN RESTART =====
+    document.addEventListener('DOMContentLoaded', function() {
+        const layer = document.getElementById('flowerLayer');
+        if (layer) {
+            layer.style.zIndex = '0';
+        }
+        
+        if (typeof window.initFlowerRain === 'function') {
+            window.initFlowerRain();
+        } else if (typeof window.flowerRain !== 'undefined' && window.flowerRain.restart) {
+            window.flowerRain.restart();
+        }
+    });
+</script>
 
 </body>
 </html>
