@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://shabdalok.in/sitemap.xml
+Sitemap: https://script.google.com/macros/s/AKfycbypSktDnxe4mEc4nMUrA_6_k-Rt72vFfhi7ry80T_paFl5YlBYCsnCAtz_cAEabge5bUQ/exec
