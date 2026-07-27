@@ -29,10 +29,12 @@ const urlsToCache = [
     '/poem_time.html',
     '/flower-rain.js',
     '/style.css',
-    '/manifest.json'
+    '/manifest.json',
+    '/images/sabdalock.webp',
+    '/images/deepak-chauhan.webp'
 ];
 
-// ===== 1. INSTALL – Cache में Files Save करें =====
+// ===== INSTALL – Cache में Files Save करें =====
 self.addEventListener('install', event => {
     event.waitUntil(
         caches.open(CACHE_NAME)
@@ -44,7 +46,7 @@ self.addEventListener('install', event => {
     );
 });
 
-// ===== 2. ACTIVATE – पुराना Cache हटाएँ =====
+// ===== ACTIVATE – पुराना Cache हटाएँ =====
 self.addEventListener('activate', event => {
     event.waitUntil(
         caches.keys().then(cacheNames => {
@@ -60,7 +62,7 @@ self.addEventListener('activate', event => {
     );
 });
 
-// ===== 3. FETCH – पहले Cache से दिखाएँ, फिर Network से अपडेट करें =====
+// ===== FETCH – पहले Cache से दिखाएँ =====
 self.addEventListener('fetch', event => {
     event.respondWith(
         caches.match(event.request)
@@ -79,13 +81,13 @@ self.addEventListener('fetch', event => {
                         return networkResponse;
                     }
                 ).catch(() => {
-                    return caches.match('/offline.html');
+                    return caches.match('/index.html');
                 });
             })
     );
 });
 
-// ===== 4. SKIP WAITING =====
+// ===== SKIP WAITING =====
 self.addEventListener('message', event => {
     if (event.data === 'skipWaiting') {
         self.skipWaiting();
