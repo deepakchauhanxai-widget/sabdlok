@@ -1036,13 +1036,12 @@
         </div>
     </section>
 
-   <!-- ===== INSTALL APP BUTTON – Footer के ऊपर ===== -->
-<div id="installContainer" style="display:none; text-align:center; margin:1rem 0;">
+   <div id="installContainer" style="display:none; text-align:center; margin:1rem 0;">
     <button id="installBtn" class="btn-primary" style="background:linear-gradient(135deg,#8B5E3C,#6f4a2e); color:white; border:none; padding:0.8rem 2.5rem; border-radius:50px; font-size:1rem; cursor:pointer; box-shadow:0 4px 16px rgba(139,94,60,0.3);">
         📲 ऐप इंस्टॉल करें
     </button>
     <p style="font-size:0.8rem; color:#888; margin-top:0.3rem;">ऑफलाइन पढ़ें · तेज़ · App जैसा अनुभव</p>
-</div>
+   </div>
     
     <!-- ===== FOOTER ===== -->
     <footer class="site-footer glass" id="footerSection">
@@ -1108,61 +1107,92 @@
                 }
             });
         });
-// ============================================================
-// 📲 INSTALL APP – PWA Install Button
+      // ============================================================
+// 📲 Install App – PWA Install Button
 // ============================================================
 
 let deferredPrompt;
 const installContainer = document.getElementById('installContainer');
 const installBtn = document.getElementById('installBtn');
 
-// ===== 1. जब Browser Install करने की अनुमति दे =====
+// ===== 1. Service Worker Register (पहले ये करें) =====
+if ('serviceWorker' in navigator) {
+    window.addEventListener('load', function() {
+        navigator.serviceWorker.register('/service-worker.js')
+            .then(function(reg) {
+                console.log('✅ Service Worker Registered:', reg);
+                // Service Worker Register होने के बाद Install Button चेक करें
+                checkInstallSupport();
+            })
+            .catch(function(err) {
+                console.log('❌ Service Worker Error:', err);
+                // अगर SW Register न हो तो भी Install Button दिखाएँ
+                showManualInstall();
+            });
+    });
+} else {
+    // अगर Browser SW Support न करे
+    showManualInstall();
+}
+
+// ===== 2. Install Support Check =====
+function checkInstallSupport() {
+    // अगर 3 सेकंड में beforeinstallprompt न आए – तो Manual Install दिखाएँ
+    setTimeout(() => {
+        if (!deferredPrompt) {
+            showManualInstall();
+        }
+    }, 3000);
+}
+
+// ===== 3. Browser Install Prompt =====
 window.addEventListener('beforeinstallprompt', (e) => {
-    // Browser ने Install Prompt दिखाने की अनुमति दी
     e.preventDefault();
     deferredPrompt = e;
-    installContainer.style.display = 'block'; // बटन दिखाएँ
+    installContainer.style.display = 'block';
+    installBtn.textContent = '📲 ऐप इंस्टॉल करें';
     console.log('✅ Install prompt available');
 });
 
-// ===== 2. Install बटन पर Click =====
+// ===== 4. Install Button Click =====
 installBtn.addEventListener('click', async () => {
     if (deferredPrompt) {
-        // Browser का Native Install Prompt दिखाएँ
+        // Browser का Native Install Prompt
         deferredPrompt.prompt();
         const result = await deferredPrompt.userChoice;
         console.log('User choice:', result);
         deferredPrompt = null;
-        installContainer.style.display = 'none'; // बटन छिपाएँ
+        installContainer.style.display = 'none';
     } else {
-        // अगर Browser Install Support न करे – तो मैन्युअल Guide दिखाएँ
-        alert('📲 अपने ब्राउज़र के मेन्यू में "Add to Home Screen" या "Install App" पर क्लिक करें।');
+        // Manual Install Guide
+        showManualInstallGuide();
     }
 });
 
-// ===== 3. अगर Install हो गया – बटन हटाएँ =====
+// ===== 5. Manual Install Guide =====
+function showManualInstall() {
+    installContainer.style.display = 'block';
+    installBtn.textContent = '📲 होम स्क्रीन पर जोड़ें';
+    installBtn.onclick = showManualInstallGuide;
+}
+
+function showManualInstallGuide() {
+    alert('📲 होम स्क्रीन पर जोड़ने के लिए:\n\n' +
+          '🔹 Chrome/Edge Browser:\n' +
+          '   1. ऊपर दाएँ ⋮ मेन्यू पर क्लिक करें\n' +
+          '   2. "Add to Home Screen" या "Install App" चुनें\n' +
+          '   3. "Add" या "Install" पर क्लिक करें\n\n' +
+          '🔹 Samsung Internet:\n' +
+          '   1. नीचे ⋮ मेन्यू पर क्लिक करें\n' +
+          '   2. "Add page to Home screen" चुनें\n\n' +
+          '✅ Install होने के बाद App की तरह चलेगा');
+}
+
+// ===== 6. Install Success =====
 window.addEventListener('appinstalled', () => {
     console.log('✅ App installed successfully!');
     installContainer.style.display = 'none';
     deferredPrompt = null;
-});
-
-// ===== 4. अगर Browser Install Support न करे – तो बटन न दिखाएँ =====
-window.addEventListener('load', () => {
-    // अगर 5 सेकंड बाद भी beforeinstallprompt न आए – तो बटन छिपाएँ
-    setTimeout(() => {
-        if (!deferredPrompt && installContainer.style.display !== 'none') {
-            // Chrome/Edge पर beforeinstallprompt न आए – तो Mobile पर "Add to Home Screen" गाइड दिखाएँ
-            if (window.innerWidth < 768) {
-                // Mobile – बटन दिखाएँ लेकिन उसे Guide में बदलें
-                installBtn.textContent = '📲 होम स्क्रीन पर जोड़ें';
-                installContainer.style.display = 'block';
-                installBtn.onclick = function() {
-                    alert('📲 अपने ब्राउज़र के मेन्यू (⋮) में "Add to Home Screen" या "Install App" पर क्लिक करें।');
-                };
-            }
-        }
-    }, 5000);
 });
     </script>
 </body>
