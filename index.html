@@ -44,6 +44,23 @@
     <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+Devanagari:wght@400;600;700&family=Playfair+Display:ital,wght@0,400;0,600;1,400&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
     <link rel="manifest" href="manifest.json">
     <link rel="stylesheet" href="flower-rain.css?v=3">
+    <script>
+    // ===== FORCE SERVICE WORKER UPDATE =====
+    if ('serviceWorker' in navigator) {
+        navigator.serviceWorker.getRegistrations().then(function(registrations) {
+            for(let registration of registrations) {
+                // Update check
+                registration.update();
+                console.log('✅ Service Worker Update Checked');
+            }
+        });
+        
+        // New Service Worker को Force Activate करें
+        navigator.serviceWorker.addEventListener('controllerchange', function() {
+            window.location.reload();
+        });
+    }
+    </script>
     
     <style>
         /* ===== YOUR EXISTING CSS (SAME AS BEFORE) ===== */
