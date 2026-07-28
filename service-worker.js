@@ -2,7 +2,7 @@
 // 🔥 Service Worker – शब्दलोक (Offline + Speed)
 // ============================================================
 
-const CACHE_NAME = 'shabdalok-v2';
+const CACHE_NAME = 'shabdalok-v3';
 const urlsToCache = [
     '/',
     '/index.html',
