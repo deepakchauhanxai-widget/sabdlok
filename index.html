@@ -4,7 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>शब्दलोक - हिंदी कविताएँ</title>
-    <!-- ===== META TAGS (पहले जैसे ही) ===== -->
+    
+    <!-- ===== META TAGS ===== -->
     <meta name="description" content="शब्दलोक पर पढ़ें मौलिक हिंदी कविताएँ। प्रेम, माँ, पिता, संघर्ष, जीवन, प्रकृति, अकेलापन और प्रेरणा पर दिल को छू लेने वाली कविताएँ।">
     <meta name="keywords" content="हिंदी कविता, कविता, poem, hindi poem, प्रेम कविता, माँ पर कविता, प्रेरणा कविता, शब्दलोक">
     <meta name="robots" content="index, follow">
@@ -26,25 +27,26 @@
     <meta name="twitter:description" content="दिल से निकली हिंदी कविताएँ।">
     <meta name="twitter:image" content="https://shabdalok.in/images/sabdalock.webp">
     <meta name="theme-color" content="#8B5E3C">
-    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
-    <meta http-equiv="Pragma" content="no-cache">
-    <meta http-equiv="Expires" content="0">
     <link rel="icon" href="/favicon.ico">
-    <!-- इसे बदलें -->
     <link rel="apple-touch-icon" href="/images/sabdalock.webp">
-
-<!-- और ये भी जोड़ें -->
     <link rel="apple-touch-icon" sizes="180x180" href="/images/sabdalock.webp">
     <link rel="apple-touch-icon" sizes="152x152" href="/images/sabdalock.webp">
     <link rel="apple-touch-icon" sizes="120x120" href="/images/sabdalock.webp">
     <link rel="apple-touch-icon" sizes="76x76" href="/images/sabdalock.webp">
+    
+    <!-- ===== CACHE BUSTING ===== -->
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta http-equiv="Expires" content="0">
+    
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+Devanagari:wght@400;600;700&family=Playfair+Display:ital,wght@0,400;0,600;1,400&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
     <link rel="manifest" href="manifest.json">
-    <link rel="stylesheet" href="flower-rain.css">
+    <link rel="stylesheet" href="flower-rain.css?v=3">
+    
     <style>
-        /* ===== YOUR EXISTING CSS (SAME) ===== */
+        /* ===== YOUR EXISTING CSS (SAME AS BEFORE) ===== */
         * { margin: 0; padding: 0; box-sizing: border-box; }
         body {
             position: relative;
@@ -322,7 +324,6 @@
             color: #0f172a;
             margin-bottom: 0.3rem;
         }
-        /* अपने CSS में ये जोड़ें या replace करें */
         .poem-excerpt {
             font-family: 'Noto Serif Devanagari', serif;
             color: #334155;
@@ -330,12 +331,11 @@
             line-height: 1.6;
             margin: 0.2rem 0 0.6rem;
             flex: 1;
-        /* पूरी कविता दिखाने के लिए */
-           display: block;
-           overflow: visible;
-           -webkit-line-clamp: unset;
-           -webkit-box-orient: unset;
-           max-height: none;
+            display: block;
+            overflow: visible;
+            -webkit-line-clamp: unset;
+            -webkit-box-orient: unset;
+            max-height: none;
         }
         .poem-meta {
             font-size: 0.8rem;
@@ -487,202 +487,140 @@
         }
         .repeat-categories { padding: 1.5rem 0 1.8rem; }
         
-        /* ============================================================
-   ✨ आज की कविता (Live) – EXACT MATCH WITH WEBSITE
-   ============================================================ */
-
-.daily-poem-live {
-    margin: 1.5rem 0 2rem;
-    position: relative;
-    z-index: 1;
-}
-
-.daily-poem-box {
-    background: rgba(255, 255, 255, 0.25);  /* ← EXACT same as .glass */
-    border: 1px solid rgba(255, 255, 255, 0.3);  /* ← EXACT same */
-    border-radius: 24px;  /* ← EXACT same */
-    padding: 2rem 2.5rem;
-    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.06);  /* ← EXACT same */
-    transition: all 0.3s ease;
-    position: relative;
-    z-index: 2;
-}
-
-.daily-poem-box:hover {
-    transform: translateY(-3px);
-    background: rgba(255, 255, 255, 0.4);  /* ← EXACT same as poem-card hover */
-    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.08);  /* ← EXACT same */
-    border-color: rgba(255, 255, 255, 0.6);  /* ← EXACT same */
-}
-
-/* ===== HEADER ===== */
-.daily-header {
-    display: flex;
-    flex-wrap: wrap;
-    align-items: center;
-    gap: 0.8rem 1.2rem;
-    margin-bottom: 0.8rem;
-}
-
-.live-badge {
-    display: inline-flex;
-    align-items: center;
-    gap: 0.5rem;
-    background: linear-gradient(135deg, #F59E0B, #D97706);
-    color: #ffffff;
-    font-size: 0.7rem;
-    font-weight: 700;
-    padding: 0.25rem 1.2rem 0.25rem 0.8rem;
-    border-radius: 40px;
-    letter-spacing: 0.5px;
-    text-transform: uppercase;
-}
-
-.live-dot {
-    display: inline-block;
-    width: 8px;
-    height: 8px;
-    background: #ffffff;
-    border-radius: 50%;
-    animation: pulse-dot 1.5s ease-in-out infinite;
-}
-
-@keyframes pulse-dot {
-    0%, 100% { opacity: 1; transform: scale(1); }
-    50% { opacity: 0.3; transform: scale(0.7); }
-}
-
-.live-sub {
-    font-size: 0.85rem;
-    color: #475569;
-    font-weight: 400;
-}
-
-/* ===== CONTENT ===== */
-.daily-content {
-    padding: 0.5rem 0 0.8rem;
-}
-
-.daily-category {
-    display: inline-block;
-    font-family: 'Playfair Display', serif;
-    font-size: 1.6rem;
-    font-weight: 600;
-    color: #0f172a;
-    margin-bottom: 0.2rem;
-}
-
-.daily-excerpt {
-    font-family: 'Noto Serif Devanagari', serif;
-    font-size: 1.15rem;
-    color: #334155;
-    line-height: 1.8;
-    margin: 0.2rem 0;
-    padding-left: 1rem;
-    border-left: 3px solid #D97706;
-}
-
-/* ===== FOOTER ===== */
-.daily-footer {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    align-items: center;
-    gap: 0.8rem;
-    padding-top: 0.8rem;
-    border-top: 1px solid rgba(255, 255, 255, 0.3);  /* ← EXACT same */
-}
-
-.daily-next {
-    font-size: 0.85rem;
-    color: #475569;
-}
-
-.daily-next strong {
-    color: #0f172a;
-    font-weight: 600;
-}
-
-.btn-daily {
-    display: inline-block;
-    background: rgba(255, 255, 255, 0.25);  /* ← EXACT same as .btn-outline */
-    border: 1px solid rgba(255, 255, 255, 0.4);  /* ← EXACT same */
-    color: #0f172a;
-    padding: 0.3rem 1.8rem;
-    border-radius: 50px;
-    font-weight: 400;
-    font-size: 0.85rem;
-    text-decoration: none;
-    transition: all 0.2s;
-}
-
-.btn-daily:hover {
-    background: rgba(255, 255, 255, 0.5);  /* ← EXACT same */
-    border-color: rgba(255, 255, 255, 0.8);  /* ← EXACT same */
-    transform: translateX(4px);  /* ← EXACT same */
-}
-
-.btn-daily::after {
-    content: " →";
-    transition: all 0.3s;
-}
-
-.btn-daily:hover::after {
-    transform: translateX(3px);
-}
-
-/* ===== RESPONSIVE ===== */
-@media (max-width: 640px) {
-    .daily-poem-box {
-        padding: 1.5rem 1.2rem;
-        border-radius: 20px;
-    }
-    .daily-category {
-        font-size: 1.3rem;
-    }
-    .daily-excerpt {
-        font-size: 1rem;
-        padding-left: 0.6rem;
-        line-height: 1.7;
-    }
-    .daily-footer {
-        flex-direction: column;
-        align-items: stretch;
-        text-align: center;
-        gap: 0.6rem;
-    }
-    .btn-daily {
-        text-align: center;
-        padding: 0.3rem 1.2rem;
-    }
-    .daily-header {
-        flex-direction: column;
-        align-items: flex-start;
-        gap: 0.3rem;
-    }
-    .live-badge {
-        font-size: 0.6rem;
-        padding: 0.2rem 1rem 0.2rem 0.6rem;
-    }
-    .live-sub {
-        font-size: 0.75rem;
-    }
-}
-
-    .highlight {
-    background: #f5f0eb;
-    padding: 6px 14px;
-    border-radius: 8px;
-    border-left: 3px solid #5d4037;
-    margin: 6px 0 10px;
-    display: inline-block;
-    }
-
-    .highlight span {
-    font-size: 0.85rem;
-    color: #5d4037;
-    font-weight: 600;
-    }
+        /* ===== LIVE BOX (UPDATED) ===== */
+        .daily-poem-live {
+            margin: 1.5rem 0 2rem;
+            position: relative;
+            z-index: 1;
+        }
+        .daily-poem-box {
+            background: rgba(255, 255, 255, 0.25);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            border-radius: 24px;
+            padding: 2rem 2.5rem;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.06);
+            transition: all 0.3s ease;
+            position: relative;
+            z-index: 2;
+        }
+        .daily-poem-box:hover {
+            transform: translateY(-3px);
+            background: rgba(255, 255, 255, 0.4);
+            box-shadow: 0 12px 40px rgba(0, 0, 0, 0.08);
+            border-color: rgba(255, 255, 255, 0.6);
+        }
+        .daily-header {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            gap: 0.8rem 1.2rem;
+            margin-bottom: 0.8rem;
+        }
+        .live-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            background: linear-gradient(135deg, #F59E0B, #D97706);
+            color: #ffffff;
+            font-size: 0.7rem;
+            font-weight: 700;
+            padding: 0.25rem 1.2rem 0.25rem 0.8rem;
+            border-radius: 40px;
+            letter-spacing: 0.5px;
+            text-transform: uppercase;
+        }
+        .live-dot {
+            display: inline-block;
+            width: 8px;
+            height: 8px;
+            background: #ffffff;
+            border-radius: 50%;
+            animation: pulse-dot 1.5s ease-in-out infinite;
+        }
+        @keyframes pulse-dot {
+            0%, 100% { opacity: 1; transform: scale(1); }
+            50% { opacity: 0.3; transform: scale(0.7); }
+        }
+        .live-sub {
+            font-size: 0.85rem;
+            color: #475569;
+            font-weight: 400;
+        }
+        .daily-content {
+            padding: 0.5rem 0 0.8rem;
+        }
+        .daily-category {
+            display: inline-block;
+            font-family: 'Playfair Display', serif;
+            font-size: 1.6rem;
+            font-weight: 600;
+            color: #0f172a;
+            margin-bottom: 0.2rem;
+        }
+        .daily-excerpt {
+            font-family: 'Noto Serif Devanagari', serif;
+            font-size: 1.15rem;
+            color: #334155;
+            line-height: 1.8;
+            margin: 0.2rem 0;
+            padding-left: 1rem;
+            border-left: 3px solid #D97706;
+        }
+        .daily-footer {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            align-items: center;
+            gap: 0.8rem;
+            padding-top: 0.8rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.3);
+        }
+        .daily-next {
+            font-size: 0.85rem;
+            color: #475569;
+        }
+        .daily-next strong {
+            color: #0f172a;
+            font-weight: 600;
+        }
+        .btn-daily {
+            display: inline-block;
+            background: rgba(255, 255, 255, 0.25);
+            border: 1px solid rgba(255, 255, 255, 0.4);
+            color: #0f172a;
+            padding: 0.3rem 1.8rem;
+            border-radius: 50px;
+            font-weight: 400;
+            font-size: 0.85rem;
+            text-decoration: none;
+            transition: all 0.2s;
+        }
+        .btn-daily:hover {
+            background: rgba(255, 255, 255, 0.5);
+            border-color: rgba(255, 255, 255, 0.8);
+            transform: translateX(4px);
+        }
+        .btn-daily::after {
+            content: " →";
+            transition: all 0.3s;
+        }
+        .btn-daily:hover::after {
+            transform: translateX(3px);
+        }
+        .highlight {
+            background: #f5f0eb;
+            padding: 6px 14px;
+            border-radius: 8px;
+            border-left: 3px solid #5d4037;
+            margin: 6px 0 10px;
+            display: inline-block;
+        }
+        .highlight span {
+            font-size: 0.85rem;
+            color: #5d4037;
+            font-weight: 600;
+        }
+        
         .site-footer {
             position: relative;
             z-index: 1;
@@ -734,6 +672,40 @@
             .about-box { padding: 1.5rem 1rem; }
             .site-header { border-radius: 30px; padding: 1rem 1.2rem; }
             .site-footer { border-radius: 30px; padding: 1.5rem 1rem; }
+            .daily-poem-box {
+                padding: 1.5rem 1.2rem;
+                border-radius: 20px;
+            }
+            .daily-category {
+                font-size: 1.3rem;
+            }
+            .daily-excerpt {
+                font-size: 1rem;
+                padding-left: 0.6rem;
+                line-height: 1.7;
+            }
+            .daily-footer {
+                flex-direction: column;
+                align-items: stretch;
+                text-align: center;
+                gap: 0.6rem;
+            }
+            .btn-daily {
+                text-align: center;
+                padding: 0.3rem 1.2rem;
+            }
+            .daily-header {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 0.3rem;
+            }
+            .live-badge {
+                font-size: 0.6rem;
+                padding: 0.2rem 1rem 0.2rem 0.6rem;
+            }
+            .live-sub {
+                font-size: 0.75rem;
+            }
         }
     </style>
 </head>
@@ -760,7 +732,7 @@
         </div>
     </header>
 
-    <!-- ===== HERO (Search Box हमेशा दिखेगा) ===== -->
+    <!-- ===== HERO ===== -->
     <section class="hero glass" id="heroSection">
         <div class="container hero-content">
             <div class="hero-icon" id="heroIcon">📖</div>
@@ -776,38 +748,38 @@
     </section>
     
     <!-- ============================================================ -->
-<!-- ✨ आज की कविता (Live) – Premium Design -->
-<!-- ============================================================ -->
-<!-- ✨ आज की कविता – Updated Content -->
-<section class="daily-poem-live glass">
-    <div class="container daily-poem-box">
-        <div class="daily-header">
-            <span class="live-badge">✨ आज की कविता <span class="live-dot"></span></span>
-            <span class="live-sub">हर दिन एक नई कविता, दिल से सीधे दिल तक।</span>
-        </div>
-        
-        <div class="daily-content">
-            <!-- 👇 यहाँ अपना NEW Text डालें -->
-            <span class="daily-category">🇮🇳 देशभक्ति की पुकार</span>
-            <p class="daily-excerpt"> 
-                देशभक्ति अपने देश के प्रति<br> 
-                प्रेम, सम्मान और समर्पण की भावना है।<br> 
-                एक सच्चा नागरिक देश के नियमों का पालन करता है।<br> 
-                देश की एकता और अखंडता की रक्षा करता है।<br> 
-                ईमानदारी से काम अपने कर्तव्यों का पालन करता है।<br> 
-                देश की रक्षा और प्रगति में योगदान देना ही सच्ची देशभक्ति है।
-            </p>
-            <div class="highlight">
-                <span>सीमा पर सैनिक देश बचाते हैं, और ईमानदार नागरिक देश बनाते हैं।</span>
+    <!-- ✨ आज की कविता (Live) – UPDATED CONTENT                        -->
+    <!-- ============================================================ -->
+    <section class="daily-poem-live glass">
+        <div class="container daily-poem-box">
+            <div class="daily-header">
+                <span class="live-badge">✨ आज की कविता <span class="live-dot"></span></span>
+                <span class="live-sub">हर दिन एक नई कविता, दिल से सीधे दिल तक।</span>
+            </div>
+            
+            <div class="daily-content">
+                <!-- 👇 NEW CONTENT – DESHBHAKTI -->
+                <span class="daily-category">🇮🇳 देशभक्ति की पुकार</span>
+                <p class="daily-excerpt">
+                    देशभक्ति अपने देश के प्रति<br> 
+                    प्रेम, सम्मान और समर्पण की भावना है।<br> 
+                    एक सच्चा नागरिक देश के नियमों का पालन करता है।<br> 
+                    देश की एकता और अखंडता की रक्षा करता है।<br> 
+                    ईमानदारी से काम अपने कर्तव्यों का पालन करता है।<br> 
+                    देश की रक्षा और प्रगति में योगदान देना ही सच्ची देशभक्ति है।
+                </p>
+                <div class="highlight">
+                    <span>सीमा पर सैनिक देश बचाते हैं, और ईमानदार नागरिक देश बनाते हैं।</span>
+                </div>
+            </div>
+            
+            <div class="daily-footer">
+                <span class="daily-next">📅 कल आएगी : <strong>❤️ प्रेम</strong></span>
+                <a href="poem_patriotism.html?slug=deshbhakti-ki-pukar" class="btn-daily">📖 पूरी कविता पढ़ें →</a>
             </div>
         </div>
-        
-        <div class="daily-footer">
-            <span class="daily-next">📅 कल आएगी : <strong>⏳ समय</strong></span>
-            <a href="poem_patriotism.html?slug=deshbhakti-ki-pukar" class="btn-daily">📖 पूरी कविता पढ़ें →</a>
-        </div>
-    </div>
-</section>
+    </section>
+
     <!-- ===== CATEGORIES ===== -->
     <section class="categories" id="categoriesSection">
         <div class="container">
@@ -836,7 +808,6 @@
                 <span class="badge-new">ताज़ा</span>
             </div>
             <div class="poem-grid" id="poemGrid">
-                <!-- ===== YOUR POEM CARDS (SAME AS BEFORE) ===== -->
                 <!-- Card 1 -->
                 <article class="poem-card">
                     <div class="poem-emoji">🌿</div>
@@ -1003,29 +974,24 @@
     </section>
 
     <!-- ===== AUTHOR ===== -->
-<section class="author-section" id="authorSection">
-    <div class="container author-block glass">
-        <img src="/images/deepak-chauhan.webp" alt="Deepak Chauhan" class="author-photo">
-
-        <h2 class="author-name">Deepak Chauhan</h2>
-
-        <p class="author-desc">
-            मैं कविताएँ नहीं लिखता...<br>
-            मैं एहसासों को शब्द देता हूँ।<br><br>
-
-            हर कविता किसी न किसी की कहानी होती है।
-            कुछ शब्द सिर्फ पढ़े नहीं जाते,
-            वे दिल में उतरकर महसूस किए जाते हैं।
-            <br><br>
-
-            अगर मेरी कोई कविता आपके चेहरे पर मुस्कान,
-            आँखों में आँसू या दिल में उम्मीद जगा दे,
-            तो वही मेरी सबसे बड़ी सफलता है।
-        </p>
-
-        <a href="author.html" class="btn-outline">Author About →</a>
-    </div>
-</section>
+    <section class="author-section" id="authorSection">
+        <div class="container author-block glass">
+            <img src="/images/deepak-chauhan.webp" alt="Deepak Chauhan" class="author-photo">
+            <h2 class="author-name">Deepak Chauhan</h2>
+            <p class="author-desc">
+                मैं कविताएँ नहीं लिखता...<br>
+                मैं एहसासों को शब्द देता हूँ।<br><br>
+                हर कविता किसी न किसी की कहानी होती है।
+                कुछ शब्द सिर्फ पढ़े नहीं जाते,
+                वे दिल में उतरकर महसूस किए जाते हैं।
+                <br><br>
+                अगर मेरी कोई कविता आपके चेहरे पर मुस्कान,
+                आँखों में आँसू या दिल में उम्मीद जगा दे,
+                तो वही मेरी सबसे बड़ी सफलता है।
+            </p>
+            <a href="author.html" class="btn-outline">Author About →</a>
+        </div>
+    </section>
 
     <!-- ===== REPEAT CATEGORIES ===== -->
     <section class="repeat-categories" id="repeatCategories">
@@ -1047,12 +1013,13 @@
         </div>
     </section>
 
-   <div id="installContainer" style="display:none; text-align:center; margin:1rem 0;">
-    <button id="installBtn" class="btn-primary" style="background:linear-gradient(135deg,#8B5E3C,#6f4a2e); color:white; border:none; padding:0.8rem 2.5rem; border-radius:50px; font-size:1rem; cursor:pointer; box-shadow:0 4px 16px rgba(139,94,60,0.3);">
-        📲 ऐप इंस्टॉल करें
-    </button>
-    <p style="font-size:0.8rem; color:#888; margin-top:0.3rem;">ऑफलाइन पढ़ें · तेज़ · App जैसा अनुभव</p>
-   </div>
+    <!-- ===== INSTALL APP BUTTON ===== -->
+    <div id="installContainer" style="display:none; text-align:center; margin:1rem 0;">
+        <button id="installBtn" class="btn-primary" style="background:linear-gradient(135deg,#8B5E3C,#6f4a2e); color:white; border:none; padding:0.8rem 2.5rem; border-radius:50px; font-size:1rem; cursor:pointer; box-shadow:0 4px 16px rgba(139,94,60,0.3);">
+            📲 ऐप इंस्टॉल करें
+        </button>
+        <p style="font-size:0.8rem; color:#888; margin-top:0.3rem;">ऑफलाइन पढ़ें · तेज़ · App जैसा अनुभव</p>
+    </div>
     
     <!-- ===== FOOTER ===== -->
     <footer class="site-footer glass" id="footerSection">
@@ -1075,12 +1042,12 @@
         </div>
     </footer>
 
-    <!-- ===== FLOWER RAIN ===== -->
-    <script src="flower-rain.js"></script>  
-    <script src="https://deepakchauhanxai.com/dk-ads/dk.ads.js?v=1"></script>
-    <script src="https://deepakchauhanxai.com/sabdalock.js?v=2"></script>
-    <script src="search.js"></script>
-    <!-- ===== JAVASCRIPT ===== -->
+    <!-- ===== SCRIPTS WITH VERSIONING ===== -->
+    <script src="flower-rain.js?v=3"></script>  
+    <script src="https://deepakchauhanxai.com/dk-ads/dk.ads.js?v=3"></script>
+    <script src="https://deepakchauhanxai.com/sabdalock.js?v=3"></script>
+    <script src="search.js?v=3"></script>
+    
     <script>
         // ===== TIME AGO =====
         function timeAgo(dateStr) {
@@ -1109,7 +1076,6 @@
             return 'अभी-अभी';
         }
 
-        // ===== TIME AGO UPDATE =====
         document.addEventListener('DOMContentLoaded', function() {
             document.querySelectorAll('.time-ago').forEach(function(el) {
                 const dateStr = el.getAttribute('data-date');
@@ -1118,93 +1084,95 @@
                 }
             });
         });
-      // ============================================================
-// 📲 Install App – PWA Install Button
-// ============================================================
 
-let deferredPrompt;
-const installContainer = document.getElementById('installContainer');
-const installBtn = document.getElementById('installBtn');
+        // ============================================================
+        // 📲 INSTALL APP – PWA
+        // ============================================================
+        let deferredPrompt;
+        const installContainer = document.getElementById('installContainer');
+        const installBtn = document.getElementById('installBtn');
 
-// ===== 1. Service Worker Register (पहले ये करें) =====
-if ('serviceWorker' in navigator) {
-    window.addEventListener('load', function() {
-        navigator.serviceWorker.register('/service-worker.js')
-            .then(function(reg) {
-                console.log('✅ Service Worker Registered:', reg);
-                // Service Worker Register होने के बाद Install Button चेक करें
-                checkInstallSupport();
-            })
-            .catch(function(err) {
-                console.log('❌ Service Worker Error:', err);
-                // अगर SW Register न हो तो भी Install Button दिखाएँ
-                showManualInstall();
+        if ('serviceWorker' in navigator) {
+            window.addEventListener('load', function() {
+                navigator.serviceWorker.register('/service-worker.js')
+                    .then(function(reg) {
+                        console.log('✅ Service Worker Registered:', reg);
+                        checkInstallSupport();
+                    })
+                    .catch(function(err) {
+                        console.log('❌ Service Worker Error:', err);
+                        showManualInstall();
+                    });
             });
-    });
-} else {
-    // अगर Browser SW Support न करे
-    showManualInstall();
-}
-
-// ===== 2. Install Support Check =====
-function checkInstallSupport() {
-    // अगर 3 सेकंड में beforeinstallprompt न आए – तो Manual Install दिखाएँ
-    setTimeout(() => {
-        if (!deferredPrompt) {
+        } else {
             showManualInstall();
         }
-    }, 3000);
-}
 
-// ===== 3. Browser Install Prompt =====
-window.addEventListener('beforeinstallprompt', (e) => {
-    e.preventDefault();
-    deferredPrompt = e;
-    installContainer.style.display = 'block';
-    installBtn.textContent = '📲 ऐप इंस्टॉल करें';
-    console.log('✅ Install prompt available');
-});
+        function checkInstallSupport() {
+            setTimeout(() => {
+                if (!deferredPrompt) {
+                    showManualInstall();
+                }
+            }, 3000);
+        }
 
-// ===== 4. Install Button Click =====
-installBtn.addEventListener('click', async () => {
-    if (deferredPrompt) {
-        // Browser का Native Install Prompt
-        deferredPrompt.prompt();
-        const result = await deferredPrompt.userChoice;
-        console.log('User choice:', result);
-        deferredPrompt = null;
-        installContainer.style.display = 'none';
-    } else {
-        // Manual Install Guide
-        showManualInstallGuide();
-    }
-});
+        window.addEventListener('beforeinstallprompt', (e) => {
+            e.preventDefault();
+            deferredPrompt = e;
+            installContainer.style.display = 'block';
+            installBtn.textContent = '📲 ऐप इंस्टॉल करें';
+            console.log('✅ Install prompt available');
+        });
 
-// ===== 5. Manual Install Guide =====
-function showManualInstall() {
-    installContainer.style.display = 'block';
-    installBtn.textContent = '📲 होम स्क्रीन पर जोड़ें';
-    installBtn.onclick = showManualInstallGuide;
-}
+        installBtn.addEventListener('click', async () => {
+            if (deferredPrompt) {
+                deferredPrompt.prompt();
+                const result = await deferredPrompt.userChoice;
+                console.log('User choice:', result);
+                deferredPrompt = null;
+                installContainer.style.display = 'none';
+            } else {
+                showManualInstallGuide();
+            }
+        });
 
-function showManualInstallGuide() {
-    alert('📲 होम स्क्रीन पर जोड़ने के लिए:\n\n' +
-          '🔹 Chrome/Edge Browser:\n' +
-          '   1. ऊपर दाएँ ⋮ मेन्यू पर क्लिक करें\n' +
-          '   2. "Add to Home Screen" या "Install App" चुनें\n' +
-          '   3. "Add" या "Install" पर क्लिक करें\n\n' +
-          '🔹 Samsung Internet:\n' +
-          '   1. नीचे ⋮ मेन्यू पर क्लिक करें\n' +
-          '   2. "Add page to Home screen" चुनें\n\n' +
-          '✅ Install होने के बाद App की तरह चलेगा');
-}
+        function showManualInstall() {
+            installContainer.style.display = 'block';
+            installBtn.textContent = '📲 होम स्क्रीन पर जोड़ें';
+            installBtn.onclick = showManualInstallGuide;
+        }
 
-// ===== 6. Install Success =====
-window.addEventListener('appinstalled', () => {
-    console.log('✅ App installed successfully!');
-    installContainer.style.display = 'none';
-    deferredPrompt = null;
-});
+        function showManualInstallGuide() {
+            alert('📲 होम स्क्रीन पर जोड़ने के लिए:\n\n' +
+                  '🔹 Chrome/Edge Browser:\n' +
+                  '   1. ऊपर दाएँ ⋮ मेन्यू पर क्लिक करें\n' +
+                  '   2. "Add to Home Screen" या "Install App" चुनें\n' +
+                  '   3. "Add" या "Install" पर क्लिक करें\n\n' +
+                  '🔹 Samsung Internet:\n' +
+                  '   1. नीचे ⋮ मेन्यू पर क्लिक करें\n' +
+                  '   2. "Add page to Home screen" चुनें\n\n' +
+                  '✅ Install होने के बाद App की तरह चलेगा');
+        }
+
+        window.addEventListener('appinstalled', () => {
+            console.log('✅ App installed successfully!');
+            installContainer.style.display = 'none';
+            deferredPrompt = null;
+        });
+        
+        // ===== CACHE BUSTING – Auto Reload if old version =====
+        (function() {
+            // अगर URL में ?v= नहीं है और Cache Busting Meta Tags हैं तो Auto Reload
+            if (!window.location.search.includes('v=')) {
+                // Check if page is coming from cache
+                if (performance.navigation.type === 2) {
+                    // Page came from cache (back/forward)
+                    const url = new URL(window.location.href);
+                    url.searchParams.set('v', Date.now());
+                    window.location.replace(url.href);
+                }
+            }
+        })();
     </script>
 </body>
 </html>
