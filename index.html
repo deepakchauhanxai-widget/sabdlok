@@ -487,13 +487,13 @@
         }
         .repeat-categories { padding: 1.5rem 0 1.8rem; }
         
-        /* ===== LIVE BOX (UPDATED) ===== */
-        .daily-poem-live {
+        /* ===== LIVE POEM - NEW CLASSES (Cache-Free) ===== */
+        .live-poem-card {
             margin: 1.5rem 0 2rem;
             position: relative;
             z-index: 1;
         }
-        .daily-poem-box {
+        .live-poem-inner {
             background: rgba(255, 255, 255, 0.25);
             border: 1px solid rgba(255, 255, 255, 0.3);
             border-radius: 24px;
@@ -503,20 +503,20 @@
             position: relative;
             z-index: 2;
         }
-        .daily-poem-box:hover {
+        .live-poem-inner:hover {
             transform: translateY(-3px);
             background: rgba(255, 255, 255, 0.4);
             box-shadow: 0 12px 40px rgba(0, 0, 0, 0.08);
             border-color: rgba(255, 255, 255, 0.6);
         }
-        .daily-header {
+        .live-poem-header {
             display: flex;
             flex-wrap: wrap;
             align-items: center;
             gap: 0.8rem 1.2rem;
             margin-bottom: 0.8rem;
         }
-        .live-badge {
+        .live-poem-badge {
             display: inline-flex;
             align-items: center;
             gap: 0.5rem;
@@ -541,15 +541,15 @@
             0%, 100% { opacity: 1; transform: scale(1); }
             50% { opacity: 0.3; transform: scale(0.7); }
         }
-        .live-sub {
+        .live-poem-sub {
             font-size: 0.85rem;
             color: #475569;
             font-weight: 400;
         }
-        .daily-content {
+        .live-poem-body {
             padding: 0.5rem 0 0.8rem;
         }
-        .daily-category {
+        .live-poem-category {
             display: inline-block;
             font-family: 'Playfair Display', serif;
             font-size: 1.6rem;
@@ -557,7 +557,7 @@
             color: #0f172a;
             margin-bottom: 0.2rem;
         }
-        .daily-excerpt {
+        .live-poem-excerpt {
             font-family: 'Noto Serif Devanagari', serif;
             font-size: 1.15rem;
             color: #334155;
@@ -566,7 +566,7 @@
             padding-left: 1rem;
             border-left: 3px solid #D97706;
         }
-        .daily-footer {
+        .live-poem-footer {
             display: flex;
             flex-wrap: wrap;
             justify-content: space-between;
@@ -575,15 +575,15 @@
             padding-top: 0.8rem;
             border-top: 1px solid rgba(255, 255, 255, 0.3);
         }
-        .daily-next {
+        .live-poem-next {
             font-size: 0.85rem;
             color: #475569;
         }
-        .daily-next strong {
+        .live-poem-next strong {
             color: #0f172a;
             font-weight: 600;
         }
-        .btn-daily {
+        .btn-live {
             display: inline-block;
             background: rgba(255, 255, 255, 0.25);
             border: 1px solid rgba(255, 255, 255, 0.4);
@@ -595,19 +595,19 @@
             text-decoration: none;
             transition: all 0.2s;
         }
-        .btn-daily:hover {
+        .btn-live:hover {
             background: rgba(255, 255, 255, 0.5);
             border-color: rgba(255, 255, 255, 0.8);
             transform: translateX(4px);
         }
-        .btn-daily::after {
+        .btn-live::after {
             content: " →";
             transition: all 0.3s;
         }
-        .btn-daily:hover::after {
+        .btn-live:hover::after {
             transform: translateX(3px);
         }
-        .highlight {
+        .live-highlight {
             background: #f5f0eb;
             padding: 6px 14px;
             border-radius: 8px;
@@ -615,7 +615,7 @@
             margin: 6px 0 10px;
             display: inline-block;
         }
-        .highlight span {
+        .live-highlight span {
             font-size: 0.85rem;
             color: #5d4037;
             font-weight: 600;
@@ -672,38 +672,38 @@
             .about-box { padding: 1.5rem 1rem; }
             .site-header { border-radius: 30px; padding: 1rem 1.2rem; }
             .site-footer { border-radius: 30px; padding: 1.5rem 1rem; }
-            .daily-poem-box {
+            .live-poem-inner {
                 padding: 1.5rem 1.2rem;
                 border-radius: 20px;
             }
-            .daily-category {
+            .live-poem-category {
                 font-size: 1.3rem;
             }
-            .daily-excerpt {
+            .live-poem-excerpt {
                 font-size: 1rem;
                 padding-left: 0.6rem;
                 line-height: 1.7;
             }
-            .daily-footer {
+            .live-poem-footer {
                 flex-direction: column;
                 align-items: stretch;
                 text-align: center;
                 gap: 0.6rem;
             }
-            .btn-daily {
+            .btn-live {
                 text-align: center;
                 padding: 0.3rem 1.2rem;
             }
-            .daily-header {
+            .live-poem-header {
                 flex-direction: column;
                 align-items: flex-start;
                 gap: 0.3rem;
             }
-            .live-badge {
+            .live-poem-badge {
                 font-size: 0.6rem;
                 padding: 0.2rem 1rem 0.2rem 0.6rem;
             }
-            .live-sub {
+            .live-poem-sub {
                 font-size: 0.75rem;
             }
         }
@@ -748,34 +748,25 @@
     </section>
     
     <!-- ============================================================ -->
-<!-- ✨ आज की कविता (Live) – UPDATED CONTENT                        -->
-<!-- ============================================================ -->
-<section class="daily-poem-live glass" id="liveBox-v2">
-    <div class="container daily-poem-box">
-        <div class="daily-header">
-            <span class="live-badge">✨ आज की कविता <span class="live-dot"></span></span>
-            <span class="live-sub">हर दिन एक नई कविता, दिल से सीधे दिल तक।</span>
-        </div>
-        
-        <div class="daily-content">
-            <!-- 👇 NEW CONTENT -->
-            <span class="daily-category">⏳ समय अनमोल धरोहर</span>
-            <p class="daily-excerpt">
-                समय अनमोल है, बीतता है तो लौटता नहीं।<br> 
-                हर पल एक सबक है, हर घड़ी एक राह है।<br> 
-                समझो, सीखो, जियो — क्योंकि ये पल फिर मिलेगा नहीं।
-            </p>
-            <div class="highlight">
-                <span>आज समय का सही उपयोग करोगे, तभी कल समय तुम्हें सफलता का इनाम देगा। 💯</span>
+    <!-- ✨ आज की कविता (Live) – Cache-Free System                   -->
+    <!-- ============================================================ -->
+    <section class="live-poem-card glass" id="livePoemSection">
+        <div class="container live-poem-inner">
+            <div class="live-poem-header">
+                <span class="live-poem-badge">✨ आज की कविता <span class="live-dot"></span></span>
+                <span class="live-poem-sub">हर दिन एक नई कविता, दिल से सीधे दिल तक।</span>
+            </div>
+            
+            <div class="live-poem-body" id="livePoemBody">
+                <!-- JS से Load होगा -->
+            </div>
+            
+            <div class="live-poem-footer" id="livePoemFooter">
+                <!-- JS से Load होगा -->
             </div>
         </div>
-        
-        <div class="daily-footer">
-            <span class="daily-next">📅 कल आएगी : <strong>🌙 अकेलापन</strong></span>
-            <a href="poem_time.html?slug=samay-anmol-dharohar" class="btn-daily">📖 पूरी कविता पढ़ें →</a>
-        </div>
-    </div>
-</section>
+    </section>
+    
     <!-- ===== CATEGORIES ===== -->
     <section class="categories" id="categoriesSection">
         <div class="container">
@@ -1075,10 +1066,50 @@
     });
 
     // ============================================================
-    // 🔄 CACHE BUSTING – Force New Version
+    // 🔥 LIVE POEM – JS से Load होगा (Cache-Free)
+    // ============================================================
+
+    // 👇 यहाँ बदलाव करो – Box में तुरंत दिखेगा
+    const livePoemData = {
+        category: "⏳ समय अनमोल धरोहर",
+        excerpt: `समय अनमोल है, बीतता है तो लौटता नहीं।<br> 
+                 हर पल एक सबक है, हर घड़ी एक राह है।<br> 
+                 समझो, सीखो, जियो — क्योंकि ये पल फिर मिलेगा नहीं।`,
+        highlight: "आज समय का सही उपयोग करोगे, तभी कल समय तुम्हें सफलता का इनाम देगा। 💯",
+        next: "🌙 अकेलापन",
+        link: "poem_time.html?slug=samay-anmol-dharohar"
+    };
+
+    // ===== LIVE POEM LOAD करें =====
+    document.addEventListener('DOMContentLoaded', function() {
+        const bodyEl = document.getElementById('livePoemBody');
+        const footerEl = document.getElementById('livePoemFooter');
+        
+        if (bodyEl) {
+            bodyEl.innerHTML = `
+                <span class="live-poem-category">${livePoemData.category}</span>
+                <p class="live-poem-excerpt">${livePoemData.excerpt}</p>
+                <div class="live-highlight">
+                    <span>${livePoemData.highlight}</span>
+                </div>
+            `;
+        }
+        
+        if (footerEl) {
+            footerEl.innerHTML = `
+                <span class="live-poem-next">📅 कल आएगी : <strong>${livePoemData.next}</strong></span>
+                <a href="${livePoemData.link}" class="btn-live">📖 पूरी कविता पढ़ें →</a>
+            `;
+        }
+        
+        console.log('✅ Live Poem Loaded:', livePoemData.category);
+    });
+
+    // ============================================================
+    // 🔄 CACHE BUSTING – हर बार New Version Load हो
     // ============================================================
     (function() {
-        const VERSION = 'v2';
+        const VERSION = 'v3';  // 👈 बदलो जब भी नया डालो
         
         if (!window.location.search.includes('v=')) {
             const url = new URL(window.location.href);
