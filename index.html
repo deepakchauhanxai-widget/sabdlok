@@ -1060,8 +1060,7 @@
     <script src="https://deepakchauhanxai.com/dk-ads/dk.ads.js?v=3"></script>
     <script src="https://deepakchauhanxai.com/sabdalock.js?v=3"></script>
     <script src="search.js?v=3"></script>
-    
-  <script>
+    <script>
     // ============================================================
     // 🕐 TIME AGO - हर कविता का समय दिखाने के लिए
     // ============================================================
@@ -1176,38 +1175,62 @@
     });
 
     // ============================================================
-    // 🔄 LIVE BOX VERSION CONTROL – आपका Smart Solution
+    // 🔥 LIVE BOX – सारा Content यहाँ से Load होगा
+    // 👇 बस यहाँ Text Change करो – बाकी सब Auto
+    // ============================================================
+    
+    // ===== LIVE BOX DATA – यहाँ Change करें =====
+    const liveData = {
+        category: "⏳ समय अनमोल धरोहर",
+        excerpt: `समय अनमोल है, बीतता है तो लौटता नहीं।<br> 
+                 हर पल एक सबक है, हर घड़ी एक राह है।<br> 
+                 समझो, सीखो, जियो — क्योंकि ये पल फिर मिलेगा नहीं।`,
+        highlight: "आज समय का सही उपयोग करोगे, तभी कल समय तुम्हें सफलता का इनाम देगा। 💯",
+        next: "🌙 अकेलापन",
+        link: "poem_time.html?slug=samay-anmol-dharohar"
+    };
+    // =============================================
+
+    // ===== Live Box Load करें =====
+    document.addEventListener('DOMContentLoaded', function() {
+        const contentDiv = document.getElementById('liveContent');
+        const footerDiv = document.getElementById('liveFooter');
+        
+        if (contentDiv) {
+            contentDiv.innerHTML = `
+                <span class="daily-category">${liveData.category}</span>
+                <p class="daily-excerpt">${liveData.excerpt}</p>
+                <div class="highlight">
+                    <span>${liveData.highlight}</span>
+                </div>
+            `;
+        }
+        
+        if (footerDiv) {
+            footerDiv.innerHTML = `
+                <span class="daily-next">📅 कल आएगी : <strong>${liveData.next}</strong></span>
+                <a href="${liveData.link}" class="btn-daily">📖 पूरी कविता पढ़ें →</a>
+            `;
+        }
+        
+        console.log('✅ Live Box Loaded:', liveData.category);
+    });
+
+    // ============================================================
+    // 🔄 CACHE BUSTING – Force New Version
     // ============================================================
     (function() {
-        // ===== 👇 हर बार Update करते समय ये Number बदलें =====
-        const LIVE_VERSION = 'v1';  // v1 → v2 → v3 → ...
-        // =====================================================
+        const VERSION = 'v2';  // 👈 हर बार बदलें – v1, v2, v3...
         
-        // 1. URL में Version Add करें (बिना Page Reload के)
         if (!window.location.search.includes('v=')) {
             const url = new URL(window.location.href);
-            url.searchParams.set('v', LIVE_VERSION);
+            url.searchParams.set('v', VERSION);
             window.history.replaceState({}, '', url);
         }
         
-        // 2. Console में Version Show करें (Debugging के लिए)
-        console.log('📦 Live Box Version:', LIVE_VERSION);
-        console.log('✅ Cache Busting Active – URL:', window.location.href);
+        console.log('📦 Cache Version:', VERSION);
     })();
-
-    // ============================================================
-    // 🚀 OLD CACHE CLEAN – Auto Reload अगर पुराना Version हो
-    // ============================================================
-    (function() {
-        // अगर Page Cache से Load हुआ है तो Force Reload
-        if (performance.navigation.type === 2) {
-            const url = new URL(window.location.href);
-            if (!url.searchParams.has('v')) {
-                url.searchParams.set('v', Date.now());
-                window.location.replace(url.href);
-            }
-        }
-    })();
-            </script>
+</script>
+  
 </body>
 </html>
