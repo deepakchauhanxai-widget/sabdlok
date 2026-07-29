@@ -765,35 +765,34 @@
     </section>
     
     <!-- ============================================================ -->
-    <!-- ✨ आज की कविता (Live) – UPDATED CONTENT                        -->
-    <!-- ============================================================ -->
-    <section class="daily-poem-live glass">
-        <div class="container daily-poem-box">
-            <div class="daily-header">
-                <span class="live-badge">✨ आज की कविता <span class="live-dot"></span></span>
-                <span class="live-sub">हर दिन एक नई कविता, दिल से सीधे दिल तक।</span>
-            </div>
-            
-            <div class="daily-content">
-                <!-- 👇 NEW CONTENT -->
-                <span class="daily-category">⏳ समय अनमोल धरोहर</span>
-                <p class="daily-excerpt">
-                    समय अनमोल है, बीतता है तो लौटता नहीं।<br> 
-                    हर पल एक सबक है, हर घड़ी एक राह है।<br> 
-                    समझो, सीखो, जियो — क्योंकि ये पल फिर मिलेगा नहीं।
-                </p>
-                <div class="highlight">
-                    <span>आज समय का सही उपयोग करोगे, तभी कल समय तुम्हें सफलता का इनाम देगा। 💯</span>
-                </div>
-            </div>
-            
-            <div class="daily-footer">
-                <span class="daily-next">📅 कल आएगी : <strong>🌙 अकेलापन</strong></span>
-                <a href="poem_time.html?slug=samay-anmol-dharohar" class="btn-daily">📖 पूरी कविता पढ़ें →</a>
+<!-- ✨ आज की कविता (Live) – UPDATED CONTENT                        -->
+<!-- ============================================================ -->
+<section class="daily-poem-live glass" id="liveBox-v1">
+    <div class="container daily-poem-box">
+        <div class="daily-header">
+            <span class="live-badge">✨ आज की कविता <span class="live-dot"></span></span>
+            <span class="live-sub">हर दिन एक नई कविता, दिल से सीधे दिल तक।</span>
+        </div>
+        
+        <div class="daily-content">
+            <!-- 👇 NEW CONTENT -->
+            <span class="daily-category">⏳ समय अनमोल धरोहर</span>
+            <p class="daily-excerpt">
+                समय अनमोल है, बीतता है तो लौटता नहीं।<br> 
+                हर पल एक सबक है, हर घड़ी एक राह है।<br> 
+                समझो, सीखो, जियो — क्योंकि ये पल फिर मिलेगा नहीं।
+            </p>
+            <div class="highlight">
+                <span>आज समय का सही उपयोग करोगे, तभी कल समय तुम्हें सफलता का इनाम देगा। 💯</span>
             </div>
         </div>
-    </section>
-
+        
+        <div class="daily-footer">
+            <span class="daily-next">📅 कल आएगी : <strong>🌙 अकेलापन</strong></span>
+            <a href="poem_time.html?slug=samay-anmol-dharohar" class="btn-daily">📖 पूरी कविता पढ़ें →</a>
+        </div>
+    </div>
+</section>
     <!-- ===== CATEGORIES ===== -->
     <section class="categories" id="categoriesSection">
         <div class="container">
@@ -1062,131 +1061,153 @@
     <script src="https://deepakchauhanxai.com/sabdalock.js?v=3"></script>
     <script src="search.js?v=3"></script>
     
-    <script>
-        // ===== TIME AGO =====
-        function timeAgo(dateStr) {
-            let date = new Date(dateStr);
-            if (!dateStr.includes('T')) {
-                const parts = dateStr.split('-');
-                date = new Date(`${parts[2]}-${parts[1]}-${parts[0]}`);
-            }
-            if (isNaN(date.getTime())) return dateStr;
-            const now = new Date();
-            const diffMs = now - date;
-            const diffSec = Math.floor(diffMs / 1000);
-            const diffMin = Math.floor(diffSec / 60);
-            const diffHour = Math.floor(diffMin / 60);
-            const diffDay = Math.floor(diffHour / 24);
-            const diffWeek = Math.floor(diffDay / 7);
-            const diffMonth = Math.floor(diffDay / 30);
-            const diffYear = Math.floor(diffDay / 365);
-            
-            if (diffYear > 0) return diffYear === 1 ? '1 साल पहले' : diffYear + ' साल पहले';
-            if (diffMonth > 0) return diffMonth === 1 ? '1 महीना पहले' : diffMonth + ' महीने पहले';
-            if (diffWeek > 0) return diffWeek === 1 ? '1 हफ्ता पहले' : diffWeek + ' हफ्ते पहले';
-            if (diffDay > 0) return diffDay === 1 ? '1 दिन पहले' : diffDay + ' दिन पहले';
-            if (diffHour > 0) return diffHour === 1 ? '1 घंटा पहले' : diffHour + ' घंटे पहले';
-            if (diffMin > 5) return diffMin + ' मिनट पहले';
-            return 'अभी-अभी';
+  <script>
+    // ============================================================
+    // 🕐 TIME AGO - हर कविता का समय दिखाने के लिए
+    // ============================================================
+    function timeAgo(dateStr) {
+        let date = new Date(dateStr);
+        if (!dateStr.includes('T')) {
+            const parts = dateStr.split('-');
+            date = new Date(`${parts[2]}-${parts[1]}-${parts[0]}`);
         }
-
-        document.addEventListener('DOMContentLoaded', function() {
-            document.querySelectorAll('.time-ago').forEach(function(el) {
-                const dateStr = el.getAttribute('data-date');
-                if (dateStr) {
-                    el.textContent = '📅 ' + timeAgo(dateStr);
-                }
-            });
-        });
-
-        // ============================================================
-        // 📲 INSTALL APP – PWA
-        // ============================================================
-        let deferredPrompt;
-        const installContainer = document.getElementById('installContainer');
-        const installBtn = document.getElementById('installBtn');
-
-        if ('serviceWorker' in navigator) {
-            window.addEventListener('load', function() {
-                navigator.serviceWorker.register('/service-worker.js')
-                    .then(function(reg) {
-                        console.log('✅ Service Worker Registered:', reg);
-                        checkInstallSupport();
-                    })
-                    .catch(function(err) {
-                        console.log('❌ Service Worker Error:', err);
-                        showManualInstall();
-                    });
-            });
-        } else {
-            showManualInstall();
-        }
-
-        function checkInstallSupport() {
-            setTimeout(() => {
-                if (!deferredPrompt) {
-                    showManualInstall();
-                }
-            }, 3000);
-        }
-
-        window.addEventListener('beforeinstallprompt', (e) => {
-            e.preventDefault();
-            deferredPrompt = e;
-            installContainer.style.display = 'block';
-            installBtn.textContent = '📲 ऐप इंस्टॉल करें';
-            console.log('✅ Install prompt available');
-        });
-
-        installBtn.addEventListener('click', async () => {
-            if (deferredPrompt) {
-                deferredPrompt.prompt();
-                const result = await deferredPrompt.userChoice;
-                console.log('User choice:', result);
-                deferredPrompt = null;
-                installContainer.style.display = 'none';
-            } else {
-                showManualInstallGuide();
-            }
-        });
-
-        function showManualInstall() {
-            installContainer.style.display = 'block';
-            installBtn.textContent = '📲 होम स्क्रीन पर जोड़ें';
-            installBtn.onclick = showManualInstallGuide;
-        }
-
-        function showManualInstallGuide() {
-            alert('📲 होम स्क्रीन पर जोड़ने के लिए:\n\n' +
-                  '🔹 Chrome/Edge Browser:\n' +
-                  '   1. ऊपर दाएँ ⋮ मेन्यू पर क्लिक करें\n' +
-                  '   2. "Add to Home Screen" या "Install App" चुनें\n' +
-                  '   3. "Add" या "Install" पर क्लिक करें\n\n' +
-                  '🔹 Samsung Internet:\n' +
-                  '   1. नीचे ⋮ मेन्यू पर क्लिक करें\n' +
-                  '   2. "Add page to Home screen" चुनें\n\n' +
-                  '✅ Install होने के बाद App की तरह चलेगा');
-        }
-
-        window.addEventListener('appinstalled', () => {
-            console.log('✅ App installed successfully!');
-            installContainer.style.display = 'none';
-            deferredPrompt = null;
-        });
+        if (isNaN(date.getTime())) return dateStr;
+        const now = new Date();
+        const diffMs = now - date;
+        const diffSec = Math.floor(diffMs / 1000);
+        const diffMin = Math.floor(diffSec / 60);
+        const diffHour = Math.floor(diffMin / 60);
+        const diffDay = Math.floor(diffHour / 24);
+        const diffWeek = Math.floor(diffDay / 7);
+        const diffMonth = Math.floor(diffDay / 30);
+        const diffYear = Math.floor(diffDay / 365);
         
-        // ===== CACHE BUSTING – Auto Reload if old version =====
-        (function() {
-            // अगर URL में ?v= नहीं है और Cache Busting Meta Tags हैं तो Auto Reload
-            if (!window.location.search.includes('v=')) {
-                // Check if page is coming from cache
-                if (performance.navigation.type === 2) {
-                    // Page came from cache (back/forward)
-                    const url = new URL(window.location.href);
-                    url.searchParams.set('v', Date.now());
-                    window.location.replace(url.href);
-                }
+        if (diffYear > 0) return diffYear === 1 ? '1 साल पहले' : diffYear + ' साल पहले';
+        if (diffMonth > 0) return diffMonth === 1 ? '1 महीना पहले' : diffMonth + ' महीने पहले';
+        if (diffWeek > 0) return diffWeek === 1 ? '1 हफ्ता पहले' : diffWeek + ' हफ्ते पहले';
+        if (diffDay > 0) return diffDay === 1 ? '1 दिन पहले' : diffDay + ' दिन पहले';
+        if (diffHour > 0) return diffHour === 1 ? '1 घंटा पहले' : diffHour + ' घंटे पहले';
+        if (diffMin > 5) return diffMin + ' मिनट पहले';
+        return 'अभी-अभी';
+    }
+
+    document.addEventListener('DOMContentLoaded', function() {
+        document.querySelectorAll('.time-ago').forEach(function(el) {
+            const dateStr = el.getAttribute('data-date');
+            if (dateStr) {
+                el.textContent = '📅 ' + timeAgo(dateStr);
             }
-        })();
-    </script>
+        });
+    });
+
+    // ============================================================
+    // 📲 INSTALL APP – PWA (Offline Support)
+    // ============================================================
+    let deferredPrompt;
+    const installContainer = document.getElementById('installContainer');
+    const installBtn = document.getElementById('installBtn');
+
+    if ('serviceWorker' in navigator) {
+        window.addEventListener('load', function() {
+            navigator.serviceWorker.register('/service-worker.js')
+                .then(function(reg) {
+                    console.log('✅ Service Worker Registered:', reg);
+                    checkInstallSupport();
+                })
+                .catch(function(err) {
+                    console.log('❌ Service Worker Error:', err);
+                    showManualInstall();
+                });
+        });
+    } else {
+        showManualInstall();
+    }
+
+    function checkInstallSupport() {
+        setTimeout(() => {
+            if (!deferredPrompt) {
+                showManualInstall();
+            }
+        }, 3000);
+    }
+
+    window.addEventListener('beforeinstallprompt', (e) => {
+        e.preventDefault();
+        deferredPrompt = e;
+        installContainer.style.display = 'block';
+        installBtn.textContent = '📲 ऐप इंस्टॉल करें';
+        console.log('✅ Install prompt available');
+    });
+
+    installBtn.addEventListener('click', async () => {
+        if (deferredPrompt) {
+            deferredPrompt.prompt();
+            const result = await deferredPrompt.userChoice;
+            console.log('User choice:', result);
+            deferredPrompt = null;
+            installContainer.style.display = 'none';
+        } else {
+            showManualInstallGuide();
+        }
+    });
+
+    function showManualInstall() {
+        installContainer.style.display = 'block';
+        installBtn.textContent = '📲 होम स्क्रीन पर जोड़ें';
+        installBtn.onclick = showManualInstallGuide;
+    }
+
+    function showManualInstallGuide() {
+        alert('📲 होम स्क्रीन पर जोड़ने के लिए:\n\n' +
+              '🔹 Chrome/Edge Browser:\n' +
+              '   1. ऊपर दाएँ ⋮ मेन्यू पर क्लिक करें\n' +
+              '   2. "Add to Home Screen" या "Install App" चुनें\n' +
+              '   3. "Add" या "Install" पर क्लिक करें\n\n' +
+              '🔹 Samsung Internet:\n' +
+              '   1. नीचे ⋮ मेन्यू पर क्लिक करें\n' +
+              '   2. "Add page to Home screen" चुनें\n\n' +
+              '✅ Install होने के बाद App की तरह चलेगा');
+    }
+
+    window.addEventListener('appinstalled', () => {
+        console.log('✅ App installed successfully!');
+        installContainer.style.display = 'none';
+        deferredPrompt = null;
+    });
+
+    // ============================================================
+    // 🔄 LIVE BOX VERSION CONTROL – आपका Smart Solution
+    // ============================================================
+    (function() {
+        // ===== 👇 हर बार Update करते समय ये Number बदलें =====
+        const LIVE_VERSION = 'v1';  // v1 → v2 → v3 → ...
+        // =====================================================
+        
+        // 1. URL में Version Add करें (बिना Page Reload के)
+        if (!window.location.search.includes('v=')) {
+            const url = new URL(window.location.href);
+            url.searchParams.set('v', LIVE_VERSION);
+            window.history.replaceState({}, '', url);
+        }
+        
+        // 2. Console में Version Show करें (Debugging के लिए)
+        console.log('📦 Live Box Version:', LIVE_VERSION);
+        console.log('✅ Cache Busting Active – URL:', window.location.href);
+    })();
+
+    // ============================================================
+    // 🚀 OLD CACHE CLEAN – Auto Reload अगर पुराना Version हो
+    // ============================================================
+    (function() {
+        // अगर Page Cache से Load हुआ है तो Force Reload
+        if (performance.navigation.type === 2) {
+            const url = new URL(window.location.href);
+            if (!url.searchParams.has('v')) {
+                url.searchParams.set('v', Date.now());
+                window.location.replace(url.href);
+            }
+        }
+    })();
+            </script>
 </body>
 </html>
