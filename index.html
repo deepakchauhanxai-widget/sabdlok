@@ -44,21 +44,6 @@
     <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+Devanagari:wght@400;600;700&family=Playfair+Display:ital,wght@0,400;0,600;1,400&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
     <link rel="manifest" href="manifest.json">
     <link rel="stylesheet" href="flower-rain.css?v=3">
-    <script>
-    // ===== FORCE SERVICE WORKER UPDATE =====
-    if ('serviceWorker' in navigator) {
-        navigator.serviceWorker.getRegistrations().then(function(registrations) {
-            for(let registration of registrations) {
-                registration.update();
-                console.log('✅ Service Worker Update Checked');
-            }
-        });
-        
-        navigator.serviceWorker.addEventListener('controllerchange', function() {
-            window.location.reload();
-        });
-    }
-    </script>
     
     <style>
         /* ===== YOUR EXISTING CSS (SAME AS BEFORE) ===== */
@@ -765,7 +750,7 @@
     <!-- ============================================================ -->
 <!-- ✨ आज की कविता (Live) – UPDATED CONTENT                        -->
 <!-- ============================================================ -->
-<section class="daily-poem-live glass" id="liveBox-v1">
+<section class="daily-poem-live glass" id="liveBox-v2">
     <div class="container daily-poem-box">
         <div class="daily-header">
             <span class="live-badge">✨ आज की कविता <span class="live-dot"></span></span>
