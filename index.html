@@ -49,13 +49,11 @@
     if ('serviceWorker' in navigator) {
         navigator.serviceWorker.getRegistrations().then(function(registrations) {
             for(let registration of registrations) {
-                // Update check
                 registration.update();
                 console.log('✅ Service Worker Update Checked');
             }
         });
         
-        // New Service Worker को Force Activate करें
         navigator.serviceWorker.addEventListener('controllerchange', function() {
             window.location.reload();
         });
@@ -1026,14 +1024,6 @@
         </div>
     </section>
 
-    <!-- ===== INSTALL APP BUTTON ===== -->
-    <div id="installContainer" style="display:none; text-align:center; margin:1rem 0;">
-        <button id="installBtn" class="btn-primary" style="background:linear-gradient(135deg,#8B5E3C,#6f4a2e); color:white; border:none; padding:0.8rem 2.5rem; border-radius:50px; font-size:1rem; cursor:pointer; box-shadow:0 4px 16px rgba(139,94,60,0.3);">
-            📲 ऐप इंस्टॉल करें
-        </button>
-        <p style="font-size:0.8rem; color:#888; margin-top:0.3rem;">ऑफलाइन पढ़ें · तेज़ · App जैसा अनुभव</p>
-    </div>
-    
     <!-- ===== FOOTER ===== -->
     <footer class="site-footer glass" id="footerSection">
         <div class="container footer-grid">
@@ -1100,127 +1090,10 @@
     });
 
     // ============================================================
-    // 📲 INSTALL APP – PWA (Offline Support)
-    // ============================================================
-    let deferredPrompt;
-    const installContainer = document.getElementById('installContainer');
-    const installBtn = document.getElementById('installBtn');
-
-    if ('serviceWorker' in navigator) {
-        window.addEventListener('load', function() {
-            navigator.serviceWorker.register('/service-worker.js')
-                .then(function(reg) {
-                    console.log('✅ Service Worker Registered:', reg);
-                    checkInstallSupport();
-                })
-                .catch(function(err) {
-                    console.log('❌ Service Worker Error:', err);
-                    showManualInstall();
-                });
-        });
-    } else {
-        showManualInstall();
-    }
-
-    function checkInstallSupport() {
-        setTimeout(() => {
-            if (!deferredPrompt) {
-                showManualInstall();
-            }
-        }, 3000);
-    }
-
-    window.addEventListener('beforeinstallprompt', (e) => {
-        e.preventDefault();
-        deferredPrompt = e;
-        installContainer.style.display = 'block';
-        installBtn.textContent = '📲 ऐप इंस्टॉल करें';
-        console.log('✅ Install prompt available');
-    });
-
-    installBtn.addEventListener('click', async () => {
-        if (deferredPrompt) {
-            deferredPrompt.prompt();
-            const result = await deferredPrompt.userChoice;
-            console.log('User choice:', result);
-            deferredPrompt = null;
-            installContainer.style.display = 'none';
-        } else {
-            showManualInstallGuide();
-        }
-    });
-
-    function showManualInstall() {
-        installContainer.style.display = 'block';
-        installBtn.textContent = '📲 होम स्क्रीन पर जोड़ें';
-        installBtn.onclick = showManualInstallGuide;
-    }
-
-    function showManualInstallGuide() {
-        alert('📲 होम स्क्रीन पर जोड़ने के लिए:\n\n' +
-              '🔹 Chrome/Edge Browser:\n' +
-              '   1. ऊपर दाएँ ⋮ मेन्यू पर क्लिक करें\n' +
-              '   2. "Add to Home Screen" या "Install App" चुनें\n' +
-              '   3. "Add" या "Install" पर क्लिक करें\n\n' +
-              '🔹 Samsung Internet:\n' +
-              '   1. नीचे ⋮ मेन्यू पर क्लिक करें\n' +
-              '   2. "Add page to Home screen" चुनें\n\n' +
-              '✅ Install होने के बाद App की तरह चलेगा');
-    }
-
-    window.addEventListener('appinstalled', () => {
-        console.log('✅ App installed successfully!');
-        installContainer.style.display = 'none';
-        deferredPrompt = null;
-    });
-
-    // ============================================================
-    // 🔥 LIVE BOX – सारा Content यहाँ से Load होगा
-    // 👇 बस यहाँ Text Change करो – बाकी सब Auto
-    // ============================================================
-    
-    // ===== LIVE BOX DATA – यहाँ Change करें =====
-    const liveData = {
-        category: "⏳ समय अनमोल धरोहर",
-        excerpt: `समय अनमोल है, बीतता है तो लौटता नहीं।<br> 
-                 हर पल एक सबक है, हर घड़ी एक राह है।<br> 
-                 समझो, सीखो, जियो — क्योंकि ये पल फिर मिलेगा नहीं।`,
-        highlight: "आज समय का सही उपयोग करोगे, तभी कल समय तुम्हें सफलता का इनाम देगा। 💯",
-        next: "🌙 अकेलापन",
-        link: "poem_time.html?slug=samay-anmol-dharohar"
-    };
-    // =============================================
-
-    // ===== Live Box Load करें =====
-    document.addEventListener('DOMContentLoaded', function() {
-        const contentDiv = document.getElementById('liveContent');
-        const footerDiv = document.getElementById('liveFooter');
-        
-        if (contentDiv) {
-            contentDiv.innerHTML = `
-                <span class="daily-category">${liveData.category}</span>
-                <p class="daily-excerpt">${liveData.excerpt}</p>
-                <div class="highlight">
-                    <span>${liveData.highlight}</span>
-                </div>
-            `;
-        }
-        
-        if (footerDiv) {
-            footerDiv.innerHTML = `
-                <span class="daily-next">📅 कल आएगी : <strong>${liveData.next}</strong></span>
-                <a href="${liveData.link}" class="btn-daily">📖 पूरी कविता पढ़ें →</a>
-            `;
-        }
-        
-        console.log('✅ Live Box Loaded:', liveData.category);
-    });
-
-    // ============================================================
     // 🔄 CACHE BUSTING – Force New Version
     // ============================================================
     (function() {
-        const VERSION = 'v2';  // 👈 हर बार बदलें – v1, v2, v3...
+        const VERSION = 'v2';
         
         if (!window.location.search.includes('v=')) {
             const url = new URL(window.location.href);
