@@ -1,5 +1,5 @@
 // ============================================================
-// 📅 DAILY POEM - Google Sheets API (with Smart Image)
+// 📅 DAILY POEM - Google Sheets API (Only First Row)
 // ============================================================
 
 // 🔗 तुम्हारी API URL
@@ -8,7 +8,7 @@ const API_URL = "https://script.google.com/macros/s/AKfycbxYWYMLhZmB6IUDRedVBgu4
 let poemData = [];
 
 // ============================================================
-// 📥 API से Poems Load करो
+// 📥 API से सिर्फ पहली पंक्ति Load करो
 // ============================================================
 
 async function loadPoemsFromAPI() {
@@ -17,8 +17,9 @@ async function loadPoemsFromAPI() {
         const data = await response.json();
         
         if (data.success && data.data) {
-            poemData = data.data;
-            console.log('✅ Poems Loaded:', poemData.length);
+            // सिर्फ पहली पंक्ति (index 0) लें
+            poemData = data.data.slice(0, 1);
+            console.log('✅ Only First Row Loaded:', poemData.length);
             return poemData;
         } else {
             console.error('API Error:', data.error || 'Unknown error');
@@ -31,22 +32,12 @@ async function loadPoemsFromAPI() {
 }
 
 // ============================================================
-// 📅 आज की Poem Find करो
+// 📅 हमेशा पहली पंक्ति लौटाएं
 // ============================================================
 
 function getTodayPoem() {
     if (poemData.length === 0) return null;
-    
-    const today = new Date().toISOString().split('T')[0];
-    
-    let todayPoem = poemData.find(p => p.date === today);
-    
-    if (!todayPoem) {
-        const index = new Date().getDate() % poemData.length;
-        todayPoem = poemData[index];
-    }
-    
-    return todayPoem;
+    return poemData[0]; // सिर्फ पहली पंक्ति
 }
 
 // ============================================================
@@ -64,7 +55,7 @@ function isValidImageUrl(url) {
 }
 
 // ============================================================
-// 🔥 Live Poem Display करो
+// 🔥 Live Poem Display - सिर्फ पहली पंक्ति के सभी कॉलम दिखाएं
 // ============================================================
 
 async function displayLivePoem() {
@@ -82,12 +73,13 @@ async function displayLivePoem() {
     
     if (!poem) {
         if (bodyEl) {
-            bodyEl.innerHTML = `<p style="text-align:center; color: #b91c1c;">❌ आज की कोई कविता नहीं मिली।</p>`;
+            bodyEl.innerHTML = `<p style="text-align:center; color: #b91c1c;">❌ कोई कविता नहीं मिली।</p>`;
         }
         return;
     }
     
     if (bodyEl) {
+        // सभी कॉलम का डेटा दिखाएं
         let imgHTML = '';
         const imageUrl = poem.img || '';
         
@@ -105,7 +97,7 @@ async function displayLivePoem() {
         }
         
         const description = (poem.description || '').replace(/\n/g, '<br>');
-        const title = poem.title || poem.category || '✨ आज की कविता';
+        const title = poem.title || poem.category || '✨ आज की कविता आने वाली है';
         
         let highlightHTML = '';
         if (poem.highlight && poem.highlight.trim() !== '') {
@@ -139,7 +131,7 @@ async function displayLivePoem() {
         dateEl.textContent = `📅 ${todayDate} · हर दिन एक नई कविता, दिल से सीधे दिल तक।`;
     }
     
-    console.log('✅ Today\'s Poem:', poem.title || poem.category);
+    console.log('✅ First Row Poem:', poem.title || poem.category);
 }
 
 // ============================================================
