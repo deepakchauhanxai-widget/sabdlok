@@ -79,7 +79,7 @@ async function displayLivePoem() {
     }
     
     if (bodyEl) {
-        // सभी कॉलम का डेटा दिखाएं
+        // Image
         let imgHTML = '';
         const imageUrl = poem.img || '';
         
@@ -99,6 +99,19 @@ async function displayLivePoem() {
         const description = (poem.description || '').replace(/\n/g, '<br>');
         const title = poem.title || poem.category || '✨ आज की कविता आने वाली है';
         
+        // ✅ AUTHOR/SIGNATURE - नया जोड़ा गया
+        const author = poem.author || '';
+        let authorHTML = '';
+        if (author && author.trim() !== '') {
+            authorHTML = `
+                <div class="poem-author" style="text-align: right; margin-top: 12px; 
+                    font-style: italic; color: #6b21a5; border-top: 2px solid #e9d5ff; 
+                    padding-top: 10px; font-size: 0.95rem;">
+                    ✍️ <strong>${author}</strong>
+                </div>
+            `;
+        }
+        
         let highlightHTML = '';
         if (poem.highlight && poem.highlight.trim() !== '') {
             highlightHTML = `<div class="live-highlight"><span>${poem.highlight}</span></div>`;
@@ -109,6 +122,7 @@ async function displayLivePoem() {
             <span class="live-poem-category">${title}</span>
             <p class="live-poem-excerpt">${description}</p>
             ${highlightHTML}
+            ${authorHTML}
         `;
     }
     
@@ -132,6 +146,7 @@ async function displayLivePoem() {
     }
     
     console.log('✅ First Row Poem:', poem.title || poem.category);
+    if (poem.author) console.log('✍️ Author:', poem.author);
 }
 
 // ============================================================
