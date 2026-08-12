@@ -3,82 +3,461 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Privacy Policy – शब्दलोक</title>
+    
+    <!-- ===== TITLE ===== -->
+    <title>Privacy Policy – गोपनीयता नीति | शब्दलोक</title>
+    
+    <!-- ===== META ===== -->
+    <meta name="description" content="शब्दलोक की गोपनीयता नीति। जानें हम क्या डेटा इकट्ठा करते हैं, कुकीज़ का उपयोग, आपके अधिकार और सुरक्षा उपाय।">
+    <meta name="robots" content="index, follow">
+    <meta name="theme-color" content="#FAF7F2">
+    <meta name="author" content="Deepak Chauhan">
+    
+    <!-- ===== CANONICAL ===== -->
+    <link rel="canonical" href="https://shabdalok.com/privacy.html">
+    
+    <!-- ===== OPEN GRAPH ===== -->
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="शब्दलोक">
+    <meta property="og:title" content="Privacy Policy – गोपनीयता नीति | शब्दलोक">
+    <meta property="og:description" content="शब्दलोक की गोपनीयता नीति। जानें हम क्या डेटा इकट्ठा करते हैं, कुकीज़ का उपयोग, आपके अधिकार और सुरक्षा उपाय।">
+    <meta property="og:url" content="https://shabdalok.com/privacy.html">
+    <meta property="og:locale" content="hi_IN">
+    <meta property="og:image" content="https://shabdalok.com/images/sabdalock.webp">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    
+    <!-- ===== TWITTER ===== -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Privacy Policy – गोपनीयता नीति | शब्दलोक">
+    <meta name="twitter:description" content="शब्दलोक की गोपनीयता नीति।">
+    <meta name="twitter:image" content="https://shabdalok.com/images/sabdalock.webp">
+    
+    <!-- ===== FAVICON ===== -->
+    <link rel="icon" href="/favicon.ico">
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+    
+    <!-- ===== GOOGLE FONTS ===== -->
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Poppins:wght@300;400;500;600&family=Noto+Serif+Devanagari:wght@400;600&display=swap" rel="stylesheet">
+    
+    <!-- ===== FLOWER CSS ===== -->
+    <link rel="stylesheet" href="flower-rain.css">
+    
     <style>
         * { margin:0; padding:0; box-sizing:border-box; }
         body {
-            background-color: #FAF7F2;
+            background: linear-gradient(135deg, #f8d9ee 0%, #d8e7fb 100%);
+            background-attachment: fixed;
             font-family: 'Poppins', sans-serif;
-            color: #2C2C2C;
+            color: #0f172a;
             line-height: 1.8;
             padding: 0 1rem;
+            position: relative;
+            min-height: 100vh;
         }
-        .container { max-width: 820px; margin: 0 auto; padding: 2rem 0; }
-        .site-header { padding:1.2rem 0 0.8rem; border-bottom:1px solid #E9E1D8; }
-        .header-flex { display:flex; flex-wrap:wrap; justify-content:space-between; align-items:center; gap:0.5rem; }
-        .logo-text { font-family:'Playfair Display',serif; font-weight:600; font-size:1.8rem; color:#2C2C2C; }
-        .logo-sub { font-family:'Noto Serif Devanagari',serif; font-size:0.85rem; color:#8B5E3C; border-left:2px solid #C49A6C; padding-left:0.6rem; margin-left:0.3rem; }
-        .nav-links { display:flex; flex-wrap:wrap; gap:1.2rem 1.8rem; }
-        .nav-links a { text-decoration:none; color:#555; font-size:0.98rem; transition:color 0.2s; }
-        .nav-links a:hover { color:#8B5E3C; }
-        .page-hero { padding:2rem 0 1.5rem; text-align:center; border-bottom:1px solid #E9E1D8; }
-        .page-hero h1 { font-family:'Playfair Display',serif; font-size:2.6rem; color:#2C2C2C; }
-        .back-home { display:inline-block; margin-top:0.5rem; color:#8B5E3C; text-decoration:none; font-weight:500; }
-        .back-home:hover { text-decoration:underline; }
-        .content { padding:2rem 0; }
-        .content h2 { font-family:'Playfair Display',serif; font-size:1.8rem; color:#2C2C2C; margin:1.5rem 0 0.5rem; }
-        .content p { font-family:'Noto Serif Devanagari',serif; font-size:1.1rem; color:#555; margin-bottom:1rem; }
-        .site-footer { background:#FAF7F2; padding:2.5rem 0 2rem; border-top:1px solid #E9E1D8; margin-top:2rem; }
-        .footer-grid { display:grid; grid-template-columns:repeat(auto-fit, minmax(180px,1fr)); gap:2rem; }
-        .footer-col h4 { font-family:'Playfair Display',serif; font-size:1.4rem; color:#2C2C2C; }
-        .footer-col a { display:block; color:#555; text-decoration:none; margin:0.3rem 0; font-size:0.95rem; }
-        .footer-col a:hover { color:#8B5E3C; }
-        .footer-copy { margin-top:0.8rem; font-size:0.8rem; color:#aaa; text-align:center; }
-        @media (max-width:640px) { .header-flex { flex-direction:column; align-items:flex-start; } .page-hero h1 { font-size:2rem; } }
+        
+        .flower-layer {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 0;
+            overflow: hidden;
+        }
+        
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 1rem 0;
+            position: relative;
+            z-index: 1;
+        }
+
+        .site-header {
+            padding: 1rem 1.6rem;
+            margin: 0.5rem 0 1rem;
+            background: rgba(255, 255, 255, 0.2);
+            border: 1px solid rgba(255, 255, 255, 0.25);
+            border-radius: 35px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.04);
+            position: relative;
+            z-index: 2;
+        }
+        .header-flex {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            align-items: center;
+            gap: 0.8rem;
+        }
+        .logo-text {
+            font-family: 'Playfair Display', serif;
+            font-weight: 600;
+            font-size: 1.8rem;
+            color: #1e293b;
+        }
+        .logo-sub {
+            font-family: 'Noto Serif Devanagari', serif;
+            font-size: 0.85rem;
+            color: #475569;
+            border-left: 2px solid rgba(255, 255, 255, 0.6);
+            padding-left: 0.6rem;
+            margin-left: 0.3rem;
+        }
+        .nav-links {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1.2rem 1.8rem;
+        }
+        .nav-links a {
+            text-decoration: none;
+            color: #1e293b;
+            font-size: 0.98rem;
+            transition: all 0.2s;
+            padding: 0.2rem 0.4rem;
+            border-radius: 30px;
+            position: relative;
+            z-index: 2;
+        }
+        .nav-links a::after {
+            content: "";
+            position: absolute;
+            left: 50%;
+            bottom: -3px;
+            width: 0;
+            height: 2px;
+            background: #D97706;
+            transition: .3s;
+            transform: translateX(-50%);
+        }
+        .nav-links a:hover::after { width: 70%; }
+        .nav-links a:hover {
+            color: #0f172a;
+            background: rgba(255, 255, 255, 0.3);
+        }
+        .nav-links a.active {
+            color: #0f172a;
+            font-weight: 600;
+        }
+        .nav-links a.active::after { width: 70%; }
+
+        .hero {
+            padding: 2.5rem 2.5rem;
+            margin: 1rem 0 1.5rem;
+            background: rgba(255, 255, 255, 0.2);
+            border: 1px solid rgba(255, 255, 255, 0.25);
+            border-radius: 40px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.04);
+            text-align: center;
+            position: relative;
+            z-index: 2;
+        }
+        .hero h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.8rem;
+            color: #0f172a;
+        }
+        .hero .sub {
+            font-family: 'Noto Serif Devanagari', serif;
+            font-size: 1.1rem;
+            color: #475569;
+            margin-top: 0.2rem;
+        }
+        .back-home {
+            display: inline-block;
+            margin-top: 0.8rem;
+            color: #0f172a;
+            text-decoration: none;
+            font-weight: 500;
+            background: rgba(255, 255, 255, 0.25);
+            padding: 0.3rem 1.5rem;
+            border-radius: 50px;
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            transition: all 0.2s;
+        }
+        .back-home:hover {
+            background: rgba(255, 255, 255, 0.5);
+            transform: translateY(-2px);
+        }
+
+        .section {
+            padding: 2rem 2.5rem;
+            margin: 1.5rem 0;
+            background: rgba(255, 255, 255, 0.2);
+            border: 1px solid rgba(255, 255, 255, 0.25);
+            border-radius: 30px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.04);
+            position: relative;
+            z-index: 2;
+        }
+        .section-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.8rem;
+            color: #0f172a;
+            margin-bottom: 0.8rem;
+        }
+        .section-title .icon { margin-right: 0.5rem; }
+        .section p {
+            font-family: 'Noto Serif Devanagari', serif;
+            font-size: 1.1rem;
+            color: #1e293b;
+            line-height: 2;
+            margin-bottom: 1rem;
+        }
+        .section p:last-child { margin-bottom: 0; }
+        .section ul {
+            font-family: 'Noto Serif Devanagari', serif;
+            font-size: 1.05rem;
+            color: #1e293b;
+            line-height: 2.2;
+            padding-left: 1.5rem;
+            list-style-type: '✦ ';
+            margin-bottom: 1rem;
+        }
+        .section ul:last-child { margin-bottom: 0; }
+
+        .highlight-box {
+            background: rgba(255, 255, 255, 0.2);
+            border-left: 4px solid #D97706;
+            border-radius: 12px;
+            padding: 1.5rem 1.8rem;
+            margin: 1rem 0;
+        }
+        .highlight-box p { margin-bottom: 0 !important; }
+
+        .contact-card {
+            background: rgba(255, 255, 255, 0.2);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            border-radius: 16px;
+            padding: 1.5rem 2rem;
+            margin-top: 0.5rem;
+            text-align: center;
+        }
+        .contact-card .email {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.6rem;
+            color: #D97706;
+            font-weight: 600;
+        }
+        .contact-card .small {
+            font-size: 0.9rem;
+            color: #475569;
+        }
+
+        .site-footer {
+            background: rgba(255, 255, 255, 0.2);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: 40px 40px 20px 20px;
+            padding: 2.5rem 2rem 2rem;
+            margin: 2rem 0 1rem;
+            position: relative;
+            z-index: 2;
+        }
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+            gap: 2rem;
+        }
+        .footer-col h4 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.4rem;
+            color: #0f172a;
+        }
+        .footer-col a {
+            display: block;
+            color: #1e293b;
+            text-decoration: none;
+            margin: 0.3rem 0;
+            font-size: 0.95rem;
+            transition: all 0.2s;
+            padding: 0.1rem 0.4rem;
+            border-radius: 20px;
+        }
+        .footer-col a:hover {
+            background: rgba(255, 255, 255, 0.25);
+            color: #0f172a;
+        }
+        .footer-copy {
+            margin-top: 0.8rem;
+            font-size: 0.8rem;
+            color: #475569;
+            text-align: center;
+        }
+
+        @media (max-width:640px) {
+            .header-flex { flex-direction: column; align-items: flex-start; }
+            .hero h1 { font-size: 2.2rem; }
+            .hero { padding: 1.5rem 1rem; border-radius: 30px; }
+            .section { padding: 1.5rem 1rem; border-radius: 24px; }
+            .site-header { border-radius: 30px; padding: 1rem 1.2rem; }
+            .site-footer { border-radius: 30px; padding: 1.5rem 1rem; }
+            .logo-text { font-size: 1.4rem; }
+            .contact-card .email { font-size: 1.2rem; }
+        }
     </style>
 </head>
 <body>
+
+<div id="flowerLayer" class="flower-layer"></div>
+
 <div class="container">
+
     <header class="site-header">
         <div class="header-flex">
-            <div><span class="logo-text">शब्दलोक</span><span class="logo-sub">दिल की कलम</span></div>
+            <div>
+                <span class="logo-text">शब्दलोक</span>
+                <span class="logo-sub">दिल की कलम</span>
+            </div>
             <nav class="nav-links">
                 <a href="index.html">🏠 होम</a>
                 <a href="all-poems.html">📖 सभी कविताएँ</a>
                 <a href="categories.html">❤️ श्रेणियाँ</a>
                 <a href="about.html">📖 About</a>
+                <a href="author.html">✍️ लेखक</a>
+                <a href="contact.html">📞 संपर्क</a>
+                <a href="privacy.html" class="active">🔒 Privacy</a>
+                <a href="dmca.html">⚖️ DMCA</a>
             </nav>
         </div>
     </header>
-    <section class="page-hero">
-        <h1>🔒 Privacy Policy</h1>
+
+    <section class="hero">
+        <h1>🔒 गोपनीयता नीति</h1>
+        <p class="sub">आपकी गोपनीयता हमारी जिम्मेदारी है।</p>
         <a href="index.html" class="back-home">← होम पेज पर वापस</a>
     </section>
-    <section class="content">
-        <h2>हम क्या डेटा इकट्ठा करते हैं?</h2>
-        <p>शब्दलोक आपकी कोई व्यक्तिगत जानकारी (जैसे नाम, ईमेल, पता) नहीं इकट्ठा करता, जब तक कि आप स्वयं हमें कॉन्टैक्ट फॉर्म या ईमेल के माध्यम से न भेजें।</p>
-        <h2>Cookies</h2>
-        <p>यह वेबसाइट केवल Google AdSense के लिए कुकीज़ का उपयोग कर सकती है। आप अपने ब्राउज़र की सेटिंग्स में कुकीज़ को नियंत्रित कर सकते हैं।</p>
-        <h2>तीसरे पक्ष के लिंक</h2>
-        <p>हमारी वेबसाइट पर अन्य वेबसाइटों के लिंक हो सकते हैं। उनकी गोपनीयता नीति के लिए वे स्वयं जिम्मेदार हैं।</p>
-        <h2>संपर्क</h2>
-        <p>अगर आपको कोई सवाल है, तो हमें <strong>contact@shabdalok.com</strong> पर ईमेल करें।</p>
+
+    <section class="section">
+        <h2 class="section-title"><span class="icon">📋</span>हमारी गोपनीयता का वादा</h2>
+        <p><strong>शब्दलोक</strong> में हम आपकी <strong>गोपनीयता</strong> को गंभीरता से लेते हैं। यह नीति बताती है कि हम <strong>कौन-सी जानकारी</strong> इकट्ठा करते हैं, <strong>क्यों</strong> करते हैं, और <strong>कैसे</strong> उसका उपयोग करते हैं।</p>
+        <p>हमारा उद्देश्य <strong>पारदर्शी</strong> और <strong>सुरक्षित</strong> अनुभव प्रदान करना है। कृपया इस नीति को ध्यान से पढ़ें।</p>
     </section>
+
+    <section class="section">
+        <h2 class="section-title"><span class="icon">📊</span>हम क्या डेटा इकट्ठा करते हैं?</h2>
+        <p><strong>शब्दलोक</strong> आपकी <strong>न्यूनतम</strong> जानकारी इकट्ठा करता है। हम <strong>बिना आपकी सहमति</strong> के कोई संवेदनशील डेटा नहीं माँगते।</p>
+        <ul>
+            <li><strong>स्वेच्छा से दी गई जानकारी:</strong> जब आप हमें <strong>कॉन्टैक्ट फॉर्म</strong> या <strong>ईमेल</strong> के माध्यम से संपर्क करते हैं, तो आपका नाम और ईमेल पता हमारे पास आता है।</li>
+            <li><strong>स्वचालित डेटा:</strong> हम <strong>Google Analytics</strong> का उपयोग करके यह देखते हैं कि कौन-से पेज सबसे ज्यादा पढ़े जाते हैं — लेकिन यह <strong>अज्ञात</strong> (anonymous) होता है, हमें किसी व्यक्ति की पहचान नहीं दिखती।</li>
+            <li><strong>कुकीज़:</strong> हम <strong>Google AdSense</strong> के लिए कुकीज़ का उपयोग करते हैं, ताकि आपको <strong>प्रासंगिक विज्ञापन</strong> दिख सकें।</li>
+        </ul>
+        <div class="highlight-box">
+            <p><strong>✅ हम <u>कभी नहीं</u> करते:</strong> हम आपका <strong>पता, फोन नंबर, बैंक विवरण, या कोई अन्य संवेदनशील जानकारी</strong> नहीं माँगते या स्टोर नहीं करते।</p>
+        </div>
+    </section>
+
+    <section class="section">
+        <h2 class="section-title"><span class="icon">🍪</span>कुकीज़ (Cookies) का उपयोग</h2>
+        <p><strong>कुकीज़</strong> छोटी टेक्स्ट फ़ाइलें होती हैं जो आपके ब्राउज़र में स्टोर होती हैं। हम निम्नलिखित उद्देश्यों के लिए कुकीज़ का उपयोग करते हैं:</p>
+        <ul>
+            <li><strong>Google AdSense:</strong> विज्ञापनों को आपकी रुचि के अनुसार अनुकूलित करने के लिए</li>
+            <li><strong>Google Analytics:</strong> वेबसाइट ट्रैफ़िक और उपयोग पैटर्न को समझने के लिए</li>
+            <li><strong>याद रखना:</strong> आपकी प्राथमिकताओं (जैसे भाषा) को याद रखने के लिए</li>
+        </ul>
+        <p>आप अपने ब्राउज़र की सेटिंग्स में <strong>कुकीज़ को नियंत्रित</strong> या <strong>अक्षम</strong> कर सकते हैं। लेकिन ध्यान दें — कुकीज़ अक्षम करने पर कुछ सुविधाएँ ठीक से काम नहीं कर सकतीं।</p>
+    </section>
+
+    <section class="section">
+        <h2 class="section-title"><span class="icon">🔗</span>तीसरे पक्ष के लिंक</h2>
+        <p>शब्दलोक पर <strong>अन्य वेबसाइटों के लिंक</strong> हो सकते हैं (जैसे Pinterest, Instagram, आदि)। ये लिंक आपकी सुविधा के लिए हैं।</p>
+        <p>कृपया ध्यान दें — जब आप किसी <strong>तीसरे पक्ष की वेबसाइट</strong> पर जाते हैं, तो <strong>उनकी गोपनीयता नीति</strong> लागू होती है, हमारी नहीं। हम उनकी सामग्री या नीतियों के लिए <strong>जिम्मेदार नहीं</strong> हैं।</p>
+    </section>
+
+    <section class="section">
+        <h2 class="section-title"><span class="icon">🛡️</span>हम आपके डेटा की सुरक्षा कैसे करते हैं</h2>
+        <p>हम आपकी जानकारी को <strong>सुरक्षित</strong> रखने के लिए उचित उपाय करते हैं:</p>
+        <ul>
+            <li><strong>SSL एन्क्रिप्शन:</strong> हमारी वेबसाइट <strong>HTTPS</strong> पर है, जिससे आपका और हमारा डेटा सुरक्षित रहता है</li>
+            <li><strong>न्यूनतम डेटा:</strong> हम <strong>केवल उतना</strong> डेटा रखते हैं जितनी ज़रूरत है</li>
+            <li><strong>नियमित अद्यतन:</strong> हम अपनी सुरक्षा प्रथाओं को <strong>नियमित रूप से</strong> अपडेट करते हैं</li>
+            <li><strong>तीसरे पक्ष तक पहुँच नहीं:</strong> हम आपका डेटा <strong>किसी को नहीं बेचते</strong>, न ही किसी तीसरे पक्ष के साथ साझा करते हैं</li>
+        </ul>
+    </section>
+
+    <section class="section">
+        <h2 class="section-title"><span class="icon">👤</span>आपके अधिकार</h2>
+        <p>हम आपके <strong>गोपनीयता अधिकारों</strong> का सम्मान करते हैं। आपको निम्नलिखित अधिकार हैं:</p>
+        <ul>
+            <li><strong>जानकारी प्राप्त करना:</strong> जानें कि हम आपके बारे में क्या जानकारी रखते हैं</li>
+            <li><strong>सुधार करना:</strong> अगर कोई जानकारी गलत है, तो उसे सुधारने के लिए कहें</li>
+            <li><strong>हटाना:</strong> अपनी जानकारी को हटाने का अनुरोध करें</li>
+            <li><strong>वापसी:</strong> किसी भी समय अपनी सहमति वापस लें</li>
+        </ul>
+        <p>इन अधिकारों का उपयोग करने के लिए, कृपया हमसे <strong>contact@shabdalok.com</strong> पर संपर्क करें। हम <strong>7 दिनों</strong> के भीतर जवाब देंगे।</p>
+    </section>
+
+    <section class="section">
+        <h2 class="section-title"><span class="icon">📅</span>इस नीति में बदलाव</h2>
+        <p>हम समय-समय पर इस गोपनीयता नीति को <strong>अपडेट</strong> कर सकते हैं। कोई भी बदलाव इस पृष्ठ पर प्रकाशित किया जाएगा।</p>
+        <p>कृपया <strong>नियमित रूप से</strong> इस पृष्ठ की समीक्षा करें। <strong>आखिरी बार अपडेट: 12 अगस्त, 2026</strong></p>
+        <div class="highlight-box">
+            <p><strong>📌 सुझाव:</strong> यदि आप किसी बदलाव से असहमत हैं, तो कृपया हमें संपर्क करें या वेबसाइट का उपयोग बंद कर दें।</p>
+        </div>
+    </section>
+
+    <section class="section">
+        <h2 class="section-title"><span class="icon">👶</span>बच्चों की गोपनीयता</h2>
+        <p>शब्दलोक <strong>13 वर्ष से कम</strong> उम्र के बच्चों से जानबूझकर कोई जानकारी नहीं इकट्ठा करता। अगर आपको लगता है कि हमने किसी बच्चे की जानकारी गलती से इकट्ठा कर ली है, तो कृपया हमें <strong>तुरंत</strong> संपर्क करें — हम उसे हटा देंगे।</p>
+    </section>
+
+    <section class="section">
+        <h2 class="section-title"><span class="icon">📧</span>हमसे संपर्क करें</h2>
+        <p>अगर आपके कोई <strong>प्रश्न, चिंता, या अनुरोध</strong> हैं, तो कृपया हमसे संपर्क करने में संकोच न करें।</p>
+        <div class="contact-card">
+            <p style="margin-bottom:0.2rem;">📧 हमें ईमेल करें:</p>
+            <p class="email">contact@shabdalok.com</p>
+            <p class="small" style="margin-top:0.3rem;">हम 24-48 घंटों के भीतर जवाब देते हैं</p>
+        </div>
+        <p style="margin-top:1rem;">आप हमारे <a href="contact.html" style="color:#D97706;text-decoration:none;font-weight:500;">संपर्क पृष्ठ</a> पर भी संदेश भेज सकते हैं।</p>
+    </section>
+
+    <section class="section" style="border-bottom:none;">
+        <div style="background:rgba(255,255,255,0.2);border-radius:20px;padding:2rem;text-align:center;">
+            <p style="font-family:'Playfair Display',serif;font-size:1.6rem;font-style:italic;color:#0f172a;margin-bottom:0.3rem;">
+                "आपका विश्वास ही हमारी सबसे बड़ी पूँजी है।"
+            </p>
+            <p style="font-family:'Noto Serif Devanagari',serif;color:#475569;font-size:1rem;">
+                — शब्दलोक परिवार
+            </p>
+        </div>
+    </section>
+
     <footer class="site-footer">
         <div class="footer-grid">
-            <div class="footer-col"><h4>शब्दलोक</h4><p>दिल की कलम</p></div>
             <div class="footer-col">
-                <a href="index.html">होम</a>
-                <a href="about.html">About</a>
-                <a href="privacy.html">Privacy</a>
-                <a href="terms.html">Terms</a>
-                <a href="contact.html">Contact</a>
-                <a href="dmca.html">DMCA</a>
+                <h4>शब्दलोक</h4>
+                <p style="color:#334155;">दिल की कलम</p>
+            </div>
+            <div class="footer-col">
+                <a href="index.html">🏠 होम</a>
+                <a href="about.html">📖 About</a>
+                <a href="privacy.html">🔒 Privacy</a>
+                <a href="terms.html">📜 Terms</a>
+                <a href="contact.html">📞 Contact</a>
+                <a href="dmca.html">⚖️ DMCA</a>
             </div>
         </div>
-        <div class="footer-copy">© 2026 शब्दलोक | Deepak Chauhan</div>
+        <div class="footer-copy">© 2026 शब्दलोक | Deepak Chauhan & Team</div>
     </footer>
+
 </div>
+
+<script src="flower-rain.js"></script>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const layer = document.getElementById('flowerLayer');
+        if (layer) layer.style.zIndex = '0';
+        
+        if (typeof window.initFlowerRain === 'function') {
+            window.initFlowerRain();
+        } else if (typeof window.flowerRain !== 'undefined' && window.flowerRain.restart) {
+            window.flowerRain.restart();
+        }
+    });
+</script>
+
 </body>
 </html>
