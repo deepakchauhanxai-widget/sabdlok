@@ -3,82 +3,613 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>About – शब्दलोक</title>
+    
+    <!-- ===== TITLE ===== -->
+    <title>शब्दलोक के बारे में – हमारी कहानी, मिशन और टीम | About Us</title>
+    
+    <!-- ===== META ===== -->
+    <meta name="description" content="शब्दलोक की पूरी कहानी – हम क्यों बने, क्या लिखते हैं, हमारी टीम, मिशन और विजन। Deepak Chauhan द्वारा संचालित मौलिक हिंदी कविता वेबसाइट।">
+    <meta name="keywords" content="शब्दलोक के बारे में, About Shabdalok, Deepak Chauhan, हिंदी कविता, मौलिक कविता">
+    <meta name="robots" content="index, follow">
+    <meta name="theme-color" content="#FAF7F2">
+    <meta name="author" content="Deepak Chauhan">
+    
+    <!-- ===== CANONICAL ===== -->
+    <link rel="canonical" href="https://shabdalok.com/about.html">
+    
+    <!-- ===== OPEN GRAPH ===== -->
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="शब्दलोक">
+    <meta property="og:title" content="शब्दलोक के बारे में – हमारी कहानी, मिशन और टीम">
+    <meta property="og:description" content="शब्दलोक की पूरी कहानी – हम क्यों बने, क्या लिखते हैं, हमारी टीम, मिशन और विजन।">
+    <meta property="og:url" content="https://shabdalok.com/about.html">
+    <meta property="og:locale" content="hi_IN">
+    <meta property="og:image" content="https://shabdalok.com/images/sabdalock.webp">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:image:alt" content="शब्दलोक - About Us">
+    
+    <!-- ===== TWITTER ===== -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="शब्दलोक के बारे में – हमारी कहानी, मिशन और टीम">
+    <meta name="twitter:description" content="शब्दलोक की पूरी कहानी – हम क्यों बने, क्या लिखते हैं, हमारी टीम, मिशन और विजन।">
+    <meta name="twitter:image" content="https://shabdalok.com/images/sabdalock.webp">
+    
+    <!-- ===== FAVICON ===== -->
+    <link rel="icon" href="/favicon.ico">
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+    
+    <!-- ===== GOOGLE FONTS ===== -->
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Poppins:wght@300;400;500;600&family=Noto+Serif+Devanagari:wght@400;600&display=swap" rel="stylesheet">
+    
+    <!-- ===== FLOWER CSS ===== -->
+    <link rel="stylesheet" href="flower-rain.css">
+    
     <style>
         * { margin:0; padding:0; box-sizing:border-box; }
         body {
-            background-color: #FAF7F2;
+            background: linear-gradient(135deg, #f8d9ee 0%, #d8e7fb 100%);
+            background-attachment: fixed;
             font-family: 'Poppins', sans-serif;
-            color: #2C2C2C;
+            color: #0f172a;
             line-height: 1.8;
             padding: 0 1rem;
+            position: relative;
+            min-height: 100vh;
         }
-        .container { max-width: 820px; margin: 0 auto; padding: 2rem 0; }
-        .site-header { padding:1.2rem 0 0.8rem; border-bottom:1px solid #E9E1D8; }
-        .header-flex { display:flex; flex-wrap:wrap; justify-content:space-between; align-items:center; gap:0.5rem; }
-        .logo-text { font-family:'Playfair Display',serif; font-weight:600; font-size:1.8rem; color:#2C2C2C; }
-        .logo-sub { font-family:'Noto Serif Devanagari',serif; font-size:0.85rem; color:#8B5E3C; border-left:2px solid #C49A6C; padding-left:0.6rem; margin-left:0.3rem; }
-        .nav-links { display:flex; flex-wrap:wrap; gap:1.2rem 1.8rem; }
-        .nav-links a { text-decoration:none; color:#555; font-size:0.98rem; transition:color 0.2s; }
-        .nav-links a:hover { color:#8B5E3C; }
-        .page-hero { padding:2rem 0 1.5rem; text-align:center; border-bottom:1px solid #E9E1D8; }
-        .page-hero h1 { font-family:'Playfair Display',serif; font-size:2.6rem; color:#2C2C2C; }
-        .back-home { display:inline-block; margin-top:0.5rem; color:#8B5E3C; text-decoration:none; font-weight:500; }
-        .back-home:hover { text-decoration:underline; }
-        .content { padding:2rem 0; }
-        .content h2 { font-family:'Playfair Display',serif; font-size:1.8rem; color:#2C2C2C; margin:1.5rem 0 0.5rem; }
-        .content p { font-family:'Noto Serif Devanagari',serif; font-size:1.1rem; color:#555; margin-bottom:1rem; }
-        .site-footer { background:#FAF7F2; padding:2.5rem 0 2rem; border-top:1px solid #E9E1D8; margin-top:2rem; }
-        .footer-grid { display:grid; grid-template-columns:repeat(auto-fit, minmax(180px,1fr)); gap:2rem; }
-        .footer-col h4 { font-family:'Playfair Display',serif; font-size:1.4rem; color:#2C2C2C; }
-        .footer-col a { display:block; color:#555; text-decoration:none; margin:0.3rem 0; font-size:0.95rem; }
-        .footer-col a:hover { color:#8B5E3C; }
-        .footer-copy { margin-top:0.8rem; font-size:0.8rem; color:#aaa; text-align:center; }
-        @media (max-width:640px) { .header-flex { flex-direction:column; align-items:flex-start; } .page-hero h1 { font-size:2rem; } }
+        
+        /* ===== FLOWER LAYER ===== */
+        .flower-layer {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 0;
+            overflow: hidden;
+        }
+        
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 1rem 0;
+            position: relative;
+            z-index: 1;
+        }
+
+        /* ===== HEADER - GLASS ===== */
+        .site-header {
+            padding: 1rem 1.6rem;
+            margin: 0.5rem 0 1rem;
+            background: rgba(255, 255, 255, 0.2);
+            border: 1px solid rgba(255, 255, 255, 0.25);
+            border-radius: 35px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.04);
+            position: relative;
+            z-index: 2;
+        }
+        .header-flex {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            align-items: center;
+            gap: 0.8rem;
+        }
+        .logo-text {
+            font-family: 'Playfair Display', serif;
+            font-weight: 600;
+            font-size: 1.8rem;
+            color: #1e293b;
+        }
+        .logo-sub {
+            font-family: 'Noto Serif Devanagari', serif;
+            font-size: 0.85rem;
+            color: #475569;
+            border-left: 2px solid rgba(255, 255, 255, 0.6);
+            padding-left: 0.6rem;
+            margin-left: 0.3rem;
+        }
+        .nav-links {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1.2rem 1.8rem;
+        }
+        .nav-links a {
+            text-decoration: none;
+            color: #1e293b;
+            font-size: 0.98rem;
+            transition: all 0.2s;
+            padding: 0.2rem 0.4rem;
+            border-radius: 30px;
+            position: relative;
+            z-index: 2;
+        }
+        .nav-links a::after {
+            content: "";
+            position: absolute;
+            left: 50%;
+            bottom: -3px;
+            width: 0;
+            height: 2px;
+            background: #D97706;
+            transition: .3s;
+            transform: translateX(-50%);
+        }
+        .nav-links a:hover::after {
+            width: 70%;
+        }
+        .nav-links a:hover {
+            color: #0f172a;
+            background: rgba(255, 255, 255, 0.3);
+        }
+        .nav-links a.active {
+            color: #0f172a;
+            font-weight: 600;
+        }
+        .nav-links a.active::after {
+            width: 70%;
+        }
+
+        /* ===== HERO ===== */
+        .hero {
+            padding: 2.5rem 2.5rem;
+            margin: 1rem 0 1.5rem;
+            background: rgba(255, 255, 255, 0.2);
+            border: 1px solid rgba(255, 255, 255, 0.25);
+            border-radius: 40px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.04);
+            text-align: center;
+            position: relative;
+            z-index: 2;
+        }
+        .hero h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.8rem;
+            color: #0f172a;
+        }
+        .hero .tagline {
+            font-family: 'Noto Serif Devanagari', serif;
+            font-size: 1.3rem;
+            color: #0f172a;
+            font-style: italic;
+            margin-top: 0.2rem;
+        }
+        .hero p {
+            color: #334155;
+            max-width: 700px;
+            margin: 0.5rem auto 0;
+        }
+        .back-home {
+            display: inline-block;
+            margin-top: 0.8rem;
+            color: #0f172a;
+            text-decoration: none;
+            font-weight: 500;
+            background: rgba(255, 255, 255, 0.25);
+            padding: 0.3rem 1.5rem;
+            border-radius: 50px;
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            transition: all 0.2s;
+        }
+        .back-home:hover {
+            background: rgba(255, 255, 255, 0.5);
+            transform: translateY(-2px);
+        }
+
+        /* ===== SECTIONS - GLASS ===== */
+        .section {
+            padding: 2rem 2.5rem;
+            margin: 1.5rem 0;
+            background: rgba(255, 255, 255, 0.2);
+            border: 1px solid rgba(255, 255, 255, 0.25);
+            border-radius: 30px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.04);
+            position: relative;
+            z-index: 2;
+        }
+        .section-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 2rem;
+            color: #0f172a;
+            margin-bottom: 0.8rem;
+        }
+        .section-title .icon {
+            margin-right: 0.5rem;
+        }
+        .section p {
+            font-family: 'Noto Serif Devanagari', serif;
+            font-size: 1.1rem;
+            color: #1e293b;
+            line-height: 2;
+            margin-bottom: 1rem;
+        }
+        .section p:last-child {
+            margin-bottom: 0;
+        }
+
+        /* ===== MISSION-VISION GRID ===== */
+        .mv-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1.5rem;
+            margin-top: 0.5rem;
+        }
+        .mv-card {
+            background: rgba(255, 255, 255, 0.2);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            border-radius: 20px;
+            padding: 1.5rem 1.5rem;
+            text-align: center;
+        }
+        .mv-card .emoji {
+            font-size: 2.5rem;
+            display: block;
+            margin-bottom: 0.3rem;
+        }
+        .mv-card h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.4rem;
+            color: #0f172a;
+        }
+        .mv-card p {
+            font-size: 1rem !important;
+            line-height: 1.8 !important;
+            color: #334155 !important;
+            margin-bottom: 0 !important;
+        }
+
+        /* ===== STATS ===== */
+        .stats-grid {
+            display: flex;
+            justify-content: center;
+            gap: 2.5rem;
+            flex-wrap: wrap;
+            background: rgba(255, 255, 255, 0.2);
+            border: 1px solid rgba(255, 255, 255, 0.25);
+            border-radius: 20px;
+            padding: 1.8rem 1.5rem;
+            margin-top: 0.5rem;
+        }
+        .stat-item { text-align: center; }
+        .stat-number {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.4rem;
+            font-weight: 700;
+            color: #D97706;
+            display: block;
+        }
+        .stat-label {
+            font-size: 0.9rem;
+            color: #475569;
+            letter-spacing: 0.5px;
+        }
+
+        /* ===== TEAM ===== */
+        .team-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1.5rem;
+            margin-top: 1.5rem;
+        }
+        .team-card {
+            background: rgba(255, 255, 255, 0.25);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            border-radius: 20px;
+            padding: 1.8rem 1.2rem;
+            text-align: center;
+            transition: all 0.25s;
+            position: relative;
+            z-index: 2;
+        }
+        .team-card:hover {
+            transform: translateY(-4px);
+            background: rgba(255, 255, 255, 0.4);
+            box-shadow: 0 12px 40px rgba(0, 0, 0, 0.06);
+            border-color: rgba(255, 255, 255, 0.6);
+        }
+        .team-card img {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 3px solid rgba(255, 255, 255, 0.5);
+            margin-bottom: 0.8rem;
+            background: rgba(255,255,255,0.2);
+        }
+        .team-card h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.2rem;
+            color: #0f172a;
+        }
+        .team-card .role {
+            font-size: 0.82rem;
+            color: #D97706;
+            font-weight: 600;
+            display: block;
+        }
+        .team-card p {
+            font-size: 0.9rem !important;
+            line-height: 1.6 !important;
+            color: #475569 !important;
+            margin-bottom: 0 !important;
+        }
+
+        /* ===== VALUES ===== */
+        .values-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.8rem 1.5rem;
+            margin-top: 0.5rem;
+        }
+        .values-list span {
+            background: rgba(255, 255, 255, 0.2);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            padding: 0.4rem 1.4rem;
+            border-radius: 40px;
+            font-size: 0.95rem;
+            color: #0f172a;
+            font-weight: 500;
+        }
+
+        /* ===== FOOTER ===== */
+        .site-footer {
+            background: rgba(255, 255, 255, 0.2);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: 40px 40px 20px 20px;
+            padding: 2.5rem 2rem 2rem;
+            margin: 2rem 0 1rem;
+            position: relative;
+            z-index: 2;
+        }
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+            gap: 2rem;
+        }
+        .footer-col h4 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.4rem;
+            color: #0f172a;
+        }
+        .footer-col a {
+            display: block;
+            color: #1e293b;
+            text-decoration: none;
+            margin: 0.3rem 0;
+            font-size: 0.95rem;
+            transition: all 0.2s;
+            padding: 0.1rem 0.4rem;
+            border-radius: 20px;
+        }
+        .footer-col a:hover {
+            background: rgba(255, 255, 255, 0.25);
+            color: #0f172a;
+        }
+        .footer-copy {
+            margin-top: 0.8rem;
+            font-size: 0.8rem;
+            color: #475569;
+            text-align: center;
+        }
+
+        @media (max-width:640px) {
+            .header-flex { flex-direction: column; align-items: flex-start; }
+            .hero h1 { font-size: 2.2rem; }
+            .hero { padding: 1.5rem 1rem; border-radius: 30px; }
+            .section { padding: 1.5rem 1rem; border-radius: 24px; }
+            .mv-grid { grid-template-columns: 1fr; }
+            .site-header { border-radius: 30px; padding: 1rem 1.2rem; }
+            .site-footer { border-radius: 30px; padding: 1.5rem 1rem; }
+            .logo-text { font-size: 1.4rem; }
+            .stats-grid { gap: 1.5rem; padding: 1.2rem; }
+        }
     </style>
 </head>
 <body>
+
+<!-- ===== FLOWER LAYER ===== -->
+<div id="flowerLayer" class="flower-layer"></div>
+
 <div class="container">
+
+    <!-- ===== HEADER ===== -->
     <header class="site-header">
         <div class="header-flex">
-            <div><span class="logo-text">शब्दलोक</span><span class="logo-sub">दिल की कलम</span></div>
+            <div>
+                <span class="logo-text">शब्दलोक</span>
+                <span class="logo-sub">दिल की कलम</span>
+            </div>
             <nav class="nav-links">
                 <a href="index.html">🏠 होम</a>
                 <a href="all-poems.html">📖 सभी कविताएँ</a>
                 <a href="categories.html">❤️ श्रेणियाँ</a>
-                <a href="about.html">📖 About</a>
+                <a href="about.html" class="active">📖 About</a>
+                <a href="author.html">✍️ लेखक</a>
+                <a href="contact.html">📞 संपर्क</a>
             </nav>
         </div>
     </header>
-    <section class="page-hero">
-        <h1>📖 हमारे बारे में</h1>
+
+    <!-- ===== HERO ===== -->
+    <section class="hero">
+        <h1>📖 शब्दलोक के बारे में</h1>
+        <p class="tagline">"जहाँ शब्द दिल की भाषा बोलते हैं"</p>
+        <p>शब्दलोक सिर्फ एक कविता वेबसाइट नहीं — यह उन एहसासों का घर है जिन्हें शब्द नहीं मिल पाते।</p>
         <a href="index.html" class="back-home">← होम पेज पर वापस</a>
     </section>
-    <section class="content">
-        <h2>शब्दलोक क्या है?</h2>
-        <p>शब्दलोक एक हिंदी कविता वेबसाइट है, जहाँ <strong>Deepak Chauhan</strong> द्वारा लिखी गई मौलिक कविताएँ प्रकाशित की जाती हैं।</p>
-        <p>यहाँ प्रेम, माँ, पिता, परिवार, संघर्ष, प्रेरणा, अकेलापन, जीवन दर्शन, प्रकृति, देशभक्ति और समय – हर विषय पर कविताएँ मिलेंगी।</p>
-        <h2>हमारा उद्देश्य</h2>
-        <p>हमारा मानना है कि <strong>हर कविता किसी न किसी की कहानी होती है</strong>। शब्दलोक उन एहसासों को शब्द देने का एक माध्यम है।</p>
-        <p>हम चाहते हैं कि हर पाठक को अपने दिल की बात कहीं न कहीं मिले।</p>
-        <h2>लेखक</h2>
-        <p><strong>Deepak Chauhan</strong> – मैं कविताएँ नहीं लिखता, बल्कि एहसासों को शब्द देता हूँ।</p>
+
+    <!-- ===== OUR STORY ===== -->
+    <section class="section">
+        <h2 class="section-title"><span class="icon">🌟</span>हमारी कहानी</h2>
+        <p><strong>शब्दलोक</strong> की शुरुआत एक साधारण सी सोच से हुई — <strong>"हर दिल में एक कविता छिपी होती है, बस उसे शब्द देने की ज़रूरत होती है।"</strong></p>
+        <p>हमने महसूस किया कि आज की भागदौड़ भरी ज़िंदगी में लोग अपनी भावनाओं को कह नहीं पाते — न तो खुशी को, न ही गम को। कोई प्यार करता है तो कह नहीं पाता, कोई अकेला है तो बयाँ नहीं कर पाता, कोई संघर्ष कर रहा है तो उसे शब्द नहीं मिलते।</p>
+        <p>इसी कमी को पूरा करने के लिए <strong>शब्दलोक</strong> का जन्म हुआ। यहाँ हम <strong>हर भावना को सम्मान</strong> देते हैं — चाहे वह प्रेम हो, माँ का स्नेह, पिता का संघर्ष, परिवार की गर्माहट, अकेलेपन की ठंडक, या देश के लिए जुनून।</p>
+        <p>हमारा मानना है कि <strong>हर पाठक को अपनी कहानी कहीं न कहीं मिलनी चाहिए</strong> — और शब्दलोक वही जगह है।</p>
     </section>
-    <footer class="site-footer">
-        <div class="footer-grid">
-            <div class="footer-col"><h4>शब्दलोक</h4><p>दिल की कलम</p></div>
-            <div class="footer-col">
-                <a href="index.html">होम</a>
-                <a href="about.html">About</a>
-                <a href="privacy.html">Privacy</a>
-                <a href="terms.html">Terms</a>
-                <a href="contact.html">Contact</a>
-                <a href="dmca.html">DMCA</a>
+
+    <!-- ===== MISSION & VISION ===== -->
+    <section class="section">
+        <h2 class="section-title"><span class="icon">🎯</span>हमारा मिशन और विजन</h2>
+        <div class="mv-grid">
+            <div class="mv-card">
+                <span class="emoji">🎯</span>
+                <h3>मिशन</h3>
+                <p>हर भावना को शब्द देना। हर पाठक तक मौलिक, हृदयस्पर्शी कविता पहुँचाना। हिंदी साहित्य को नई पीढ़ी से जोड़ना।</p>
+            </div>
+            <div class="mv-card">
+                <span class="emoji">🔭</span>
+                <h3>विजन</h3>
+                <p>शब्दलोक को हिंदी भाषा का सबसे बड़ा मौलिक कविता मंच बनाना — जहाँ हर दिल को अपनी आवाज़ मिले।</p>
             </div>
         </div>
-        <div class="footer-copy">© 2026 शब्दलोक | Deepak Chauhan</div>
+    </section>
+
+    <!-- ===== STATS ===== -->
+    <section class="section">
+        <h2 class="section-title"><span class="icon">📊</span>एक नज़र में शब्दलोक</h2>
+        <div class="stats-grid">
+            <div class="stat-item"><span class="stat-number">11</span><span class="stat-label">❤️ श्रेणियाँ</span></div>
+            <div class="stat-item"><span class="stat-number">5</span><span class="stat-label">✍️ लेखक</span></div>
+            <div class="stat-item"><span class="stat-number">2026</span><span class="stat-label">📅 स्थापना</span></div>
+        </div>
+    </section>
+
+    <!-- ===== WHAT WE WRITE ===== -->
+    <section class="section">
+        <h2 class="section-title"><span class="icon">✍️</span>हम क्या लिखते हैं?</h2>
+        <p>शब्दलोक पर आपको <strong>11 विविध श्रेणियों</strong> में कविताएँ मिलेंगी — हर श्रेणी एक अलग एहसास है:</p>
+        <div style="display:flex;flex-wrap:wrap;gap:0.6rem 1.2rem;margin:0.5rem 0 1rem;">
+            <span style="background:rgba(255,255,255,0.2);padding:0.3rem 1.2rem;border-radius:30px;font-size:0.95rem;">❤️ प्रेम</span>
+            <span style="background:rgba(255,255,255,0.2);padding:0.3rem 1.2rem;border-radius:30px;font-size:0.95rem;">👩 माँ</span>
+            <span style="background:rgba(255,255,255,0.2);padding:0.3rem 1.2rem;border-radius:30px;font-size:0.95rem;">👨 पिता</span>
+            <span style="background:rgba(255,255,255,0.2);padding:0.3rem 1.2rem;border-radius:30px;font-size:0.95rem;">👨‍👩‍👧 परिवार</span>
+            <span style="background:rgba(255,255,255,0.2);padding:0.3rem 1.2rem;border-radius:30px;font-size:0.95rem;">💪 संघर्ष</span>
+            <span style="background:rgba(255,255,255,0.2);padding:0.3rem 1.2rem;border-radius:30px;font-size:0.95rem;">😊 प्रेरणा</span>
+            <span style="background:rgba(255,255,255,0.2);padding:0.3rem 1.2rem;border-radius:30px;font-size:0.95rem;">🌙 अकेलापन</span>
+            <span style="background:rgba(255,255,255,0.2);padding:0.3rem 1.2rem;border-radius:30px;font-size:0.95rem;">🧠 जीवन दर्शन</span>
+            <span style="background:rgba(255,255,255,0.2);padding:0.3rem 1.2rem;border-radius:30px;font-size:0.95rem;">🌿 प्रकृति</span>
+            <span style="background:rgba(255,255,255,0.2);padding:0.3rem 1.2rem;border-radius:30px;font-size:0.95rem;">🇮🇳 देशभक्ति</span>
+            <span style="background:rgba(255,255,255,0.2);padding:0.3rem 1.2rem;border-radius:30px;font-size:0.95rem;">⏳ समय</span>
+        </div>
+        <p>हर श्रेणी हमारी टीम के किसी विशेष लेखक की <strong>विशेषज्ञता</strong> है। हम कभी भी किसी दूसरे लेखक की रचना किसी और के नाम से नहीं प्रकाशित करते — <strong>हर कविता की अपनी पहचान है</strong>, जैसे हर भावना की होती है।</p>
+    </section>
+
+    <!-- ===== OUR TEAM ===== -->
+    <section class="section">
+        <h2 class="section-title"><span class="icon">👩‍💻</span>हमारी टीम – शब्दलोक परिवार</h2>
+        <p>शब्दलोक सिर्फ एक व्यक्ति नहीं, बल्कि <strong>5 अलग-अलग दिल</strong> हैं — हर एक अपनी भावनाओं, अपनी कलम और अपनी दुनिया के साथ।</p>
+        
+        <div class="team-grid">
+            <div class="team-card">
+                <img src="/images/deepak-chauhan.webp" alt="Deepak Chauhan">
+                <h3>Deepak Chauhan</h3>
+                <span class="role">❤️ प्रेम | 💪 संघर्ष</span>
+                <p>संस्थापक। मानते हैं कि कविता दिल की भाषा है — और यही शब्दलोक का आधार है।</p>
+            </div>
+            <div class="team-card">
+                <img src="/images/sabra.jpg" alt="Sabra">
+                <h3>Sabra</h3>
+                <span class="role">👩 माँ | 👨 पिता | 👨‍👩‍👧 परिवार</span>
+                <p>रिश्तों को शब्दों में पिरोने वाली। परिवार की गर्माहट उनकी कलम में बसती है।</p>
+            </div>
+            <div class="team-card">
+                <img src="/images/radhamani-pala.jpg" alt="Radhamani pala">
+                <h3>Radhamani pala</h3>
+                <span class="role">😊 प्रेरणा | 🌙 अकेलापन</span>
+                <p>तन्हाई में रोशनी ढूंढने वाली। अकेलापन उनकी कविता में उम्मीद बन जाता है।</p>
+            </div>
+            <div class="team-card">
+                <img src="/images/rinki.jpg" alt="Rinki">
+                <h3>Rinki</h3>
+                <span class="role">🧠 जीवन दर्शन | 🌿 प्रकृति | 🇮🇳 देशभक्ति</span>
+                <p>तीन दुनिया — प्रकृति, जीवन, और देश। मिट्टी से लेकर तिरंगे तक उनकी कलम चलती है।</p>
+            </div>
+            <div class="team-card">
+                <img src="/images/anshika.jpg" alt="Anshika">
+                <h3>Anshika</h3>
+                <span class="role">⏳ समय</span>
+                <p>वक्त की हर टिक-टिक में कहानी ढूंढती हैं। समय के साथ चलना उनकी खासियत है।</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== OUR VALUES ===== -->
+    <section class="section">
+        <h2 class="section-title"><span class="icon">💎</span>हमारे मूल्य</h2>
+        <div class="values-list">
+            <span>✅ 100% मौलिक रचनाएँ</span>
+            <span>✅ हर लेखक की अपनी पहचान</span>
+            <span>✅ प्राइवेसी और सम्मान</span>
+            <span>✅ पारदर्शिता</span>
+            <span>✅ भावनाओं को प्राथमिकता</span>
+            <span>✅ लगातार नई कविताएँ</span>
+        </div>
+        <p style="margin-top:1rem;">हम <strong>गुणवत्ता</strong> पर समझौता नहीं करते। हर कविता को हमारी टीम पढ़ती है, समझती है, और उसे सही रूप में आप तक पहुँचाती है।</p>
+    </section>
+
+    <!-- ===== WHY US ===== -->
+    <section class="section">
+        <h2 class="section-title"><span class="icon">❤️</span>शब्दलोक क्यों?</h2>
+        <p><strong>इसलिए क्योंकि:</strong></p>
+        <ul style="font-family:'Noto Serif Devanagari',serif;font-size:1.1rem;color:#1e293b;line-height:2.2;padding-left:1.5rem;list-style-type:'✦ ';">
+            <li>हर शब्द <strong>दिल से</strong> लिखा गया है — बिना किसी कॉपी-पेस्ट के</li>
+            <li>हर कविता की <strong>अपनी एक कहानी</strong> है</li>
+            <li>हमारी टीम <strong>11 विषयों</strong> पर लिखती है — आपको हर मूड के लिए कुछ मिलेगा</li>
+            <li>हम <strong>प्राइवेसी</strong> का पूरा ध्यान रखते हैं — खासकर अपनी महिला लेखिकाओं की</li>
+            <li>हम <strong>निरंतर</strong> नई कविताएँ लाते रहते हैं</li>
+        </ul>
+    </section>
+
+    <!-- ===== THANK YOU ===== -->
+    <section class="section" style="border-bottom:none;">
+        <div style="background:rgba(255,255,255,0.2);border-radius:20px;padding:2.5rem 2rem;text-align:center;">
+            <p style="font-family:'Playfair Display',serif;font-size:1.8rem;font-style:italic;color:#0f172a;margin-bottom:0.5rem;">
+                "हर कविता किसी की कहानी है —<br>और हर कहानी सुनने की हकदार है।"
+            </p>
+            <p style="font-family:'Noto Serif Devanagari',serif;font-size:1.1rem;color:#475569;">
+                — शब्दलोक परिवार
+            </p>
+            <div style="margin-top:0.8rem;font-size:2rem;">🌸 ❤️ 🌸</div>
+        </div>
+    </section>
+
+    <!-- ===== FOOTER ===== -->
+    <footer class="site-footer">
+        <div class="footer-grid">
+            <div class="footer-col">
+                <h4>शब्दलोक</h4>
+                <p style="color:#334155;">दिल की कलम</p>
+            </div>
+            <div class="footer-col">
+                <a href="index.html">🏠 होम</a>
+                <a href="about.html">📖 About</a>
+                <a href="privacy.html">🔒 Privacy</a>
+                <a href="terms.html">📜 Terms</a>
+                <a href="contact.html">📞 Contact</a>
+                <a href="dmca.html">⚖️ DMCA</a>
+            </div>
+        </div>
+        <div class="footer-copy">© 2026 शब्दलोक | Deepak Chauhan & Team</div>
     </footer>
+
 </div>
+
+<!-- ===== FLOWER JS ===== -->
+<script src="flower-rain.js"></script>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const layer = document.getElementById('flowerLayer');
+        if (layer) layer.style.zIndex = '0';
+        
+        if (typeof window.initFlowerRain === 'function') {
+            window.initFlowerRain();
+        } else if (typeof window.flowerRain !== 'undefined' && window.flowerRain.restart) {
+            window.flowerRain.restart();
+        }
+    });
+</script>
+
 </body>
 </html>
