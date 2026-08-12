@@ -3,82 +3,518 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Terms of Use – शब्दलोक</title>
+    
+    <!-- ===== TITLE ===== -->
+    <title>Terms of Use – उपयोग की शर्तें | शब्दलोक</title>
+    
+    <!-- ===== META ===== -->
+    <meta name="description" content="शब्दलोक की उपयोग शर्तें। जानें कंटेंट उपयोग, यूजर दायित्व, बौद्धिक संपदा, अस्वीकरण और कानूनी प्रावधान।">
+    <meta name="robots" content="index, follow">
+    <meta name="theme-color" content="#FAF7F2">
+    <meta name="author" content="Deepak Chauhan">
+    
+    <!-- ===== CANONICAL ===== -->
+    <link rel="canonical" href="https://shabdalok.com/terms.html">
+    
+    <!-- ===== OPEN GRAPH ===== -->
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="शब्दलोक">
+    <meta property="og:title" content="Terms of Use – उपयोग की शर्तें | शब्दलोक">
+    <meta property="og:description" content="शब्दलोक की उपयोग शर्तें। जानें कंटेंट उपयोग, यूजर दायित्व, बौद्धिक संपदा, अस्वीकरण और कानूनी प्रावधान।">
+    <meta property="og:url" content="https://shabdalok.com/terms.html">
+    <meta property="og:locale" content="hi_IN">
+    <meta property="og:image" content="https://shabdalok.com/images/sabdalock.webp">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    
+    <!-- ===== TWITTER ===== -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Terms of Use – उपयोग की शर्तें | शब्दलोक">
+    <meta name="twitter:description" content="शब्दलोक की उपयोग शर्तें।">
+    <meta name="twitter:image" content="https://shabdalok.com/images/sabdalock.webp">
+    
+    <!-- ===== FAVICON ===== -->
+    <link rel="icon" href="/favicon.ico">
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+    
+    <!-- ===== GOOGLE FONTS ===== -->
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Poppins:wght@300;400;500;600&family=Noto+Serif+Devanagari:wght@400;600&display=swap" rel="stylesheet">
+    
+    <!-- ===== FLOWER CSS ===== -->
+    <link rel="stylesheet" href="flower-rain.css">
+    
     <style>
         * { margin:0; padding:0; box-sizing:border-box; }
         body {
-            background-color: #FAF7F2;
+            background: linear-gradient(135deg, #f8d9ee 0%, #d8e7fb 100%);
+            background-attachment: fixed;
             font-family: 'Poppins', sans-serif;
-            color: #2C2C2C;
+            color: #0f172a;
             line-height: 1.8;
             padding: 0 1rem;
+            position: relative;
+            min-height: 100vh;
         }
-        .container { max-width: 820px; margin: 0 auto; padding: 2rem 0; }
-        .site-header { padding:1.2rem 0 0.8rem; border-bottom:1px solid #E9E1D8; }
-        .header-flex { display:flex; flex-wrap:wrap; justify-content:space-between; align-items:center; gap:0.5rem; }
-        .logo-text { font-family:'Playfair Display',serif; font-weight:600; font-size:1.8rem; color:#2C2C2C; }
-        .logo-sub { font-family:'Noto Serif Devanagari',serif; font-size:0.85rem; color:#8B5E3C; border-left:2px solid #C49A6C; padding-left:0.6rem; margin-left:0.3rem; }
-        .nav-links { display:flex; flex-wrap:wrap; gap:1.2rem 1.8rem; }
-        .nav-links a { text-decoration:none; color:#555; font-size:0.98rem; transition:color 0.2s; }
-        .nav-links a:hover { color:#8B5E3C; }
-        .page-hero { padding:2rem 0 1.5rem; text-align:center; border-bottom:1px solid #E9E1D8; }
-        .page-hero h1 { font-family:'Playfair Display',serif; font-size:2.6rem; color:#2C2C2C; }
-        .back-home { display:inline-block; margin-top:0.5rem; color:#8B5E3C; text-decoration:none; font-weight:500; }
-        .back-home:hover { text-decoration:underline; }
-        .content { padding:2rem 0; }
-        .content h2 { font-family:'Playfair Display',serif; font-size:1.8rem; color:#2C2C2C; margin:1.5rem 0 0.5rem; }
-        .content p { font-family:'Noto Serif Devanagari',serif; font-size:1.1rem; color:#555; margin-bottom:1rem; }
-        .site-footer { background:#FAF7F2; padding:2.5rem 0 2rem; border-top:1px solid #E9E1D8; margin-top:2rem; }
-        .footer-grid { display:grid; grid-template-columns:repeat(auto-fit, minmax(180px,1fr)); gap:2rem; }
-        .footer-col h4 { font-family:'Playfair Display',serif; font-size:1.4rem; color:#2C2C2C; }
-        .footer-col a { display:block; color:#555; text-decoration:none; margin:0.3rem 0; font-size:0.95rem; }
-        .footer-col a:hover { color:#8B5E3C; }
-        .footer-copy { margin-top:0.8rem; font-size:0.8rem; color:#aaa; text-align:center; }
-        @media (max-width:640px) { .header-flex { flex-direction:column; align-items:flex-start; } .page-hero h1 { font-size:2rem; } }
+        
+        .flower-layer {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 0;
+            overflow: hidden;
+        }
+        
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 1rem 0;
+            position: relative;
+            z-index: 1;
+        }
+
+        .site-header {
+            padding: 1rem 1.6rem;
+            margin: 0.5rem 0 1rem;
+            background: rgba(255, 255, 255, 0.2);
+            border: 1px solid rgba(255, 255, 255, 0.25);
+            border-radius: 35px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.04);
+            position: relative;
+            z-index: 2;
+        }
+        .header-flex {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            align-items: center;
+            gap: 0.8rem;
+        }
+        .logo-text {
+            font-family: 'Playfair Display', serif;
+            font-weight: 600;
+            font-size: 1.8rem;
+            color: #1e293b;
+        }
+        .logo-sub {
+            font-family: 'Noto Serif Devanagari', serif;
+            font-size: 0.85rem;
+            color: #475569;
+            border-left: 2px solid rgba(255, 255, 255, 0.6);
+            padding-left: 0.6rem;
+            margin-left: 0.3rem;
+        }
+        .nav-links {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1.2rem 1.8rem;
+        }
+        .nav-links a {
+            text-decoration: none;
+            color: #1e293b;
+            font-size: 0.98rem;
+            transition: all 0.2s;
+            padding: 0.2rem 0.4rem;
+            border-radius: 30px;
+            position: relative;
+            z-index: 2;
+        }
+        .nav-links a::after {
+            content: "";
+            position: absolute;
+            left: 50%;
+            bottom: -3px;
+            width: 0;
+            height: 2px;
+            background: #D97706;
+            transition: .3s;
+            transform: translateX(-50%);
+        }
+        .nav-links a:hover::after { width: 70%; }
+        .nav-links a:hover {
+            color: #0f172a;
+            background: rgba(255, 255, 255, 0.3);
+        }
+        .nav-links a.active {
+            color: #0f172a;
+            font-weight: 600;
+        }
+        .nav-links a.active::after { width: 70%; }
+
+        .hero {
+            padding: 2.5rem 2.5rem;
+            margin: 1rem 0 1.5rem;
+            background: rgba(255, 255, 255, 0.2);
+            border: 1px solid rgba(255, 255, 255, 0.25);
+            border-radius: 40px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.04);
+            text-align: center;
+            position: relative;
+            z-index: 2;
+        }
+        .hero h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.8rem;
+            color: #0f172a;
+        }
+        .hero .sub {
+            font-family: 'Noto Serif Devanagari', serif;
+            font-size: 1.1rem;
+            color: #475569;
+            margin-top: 0.2rem;
+        }
+        .back-home {
+            display: inline-block;
+            margin-top: 0.8rem;
+            color: #0f172a;
+            text-decoration: none;
+            font-weight: 500;
+            background: rgba(255, 255, 255, 0.25);
+            padding: 0.3rem 1.5rem;
+            border-radius: 50px;
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            transition: all 0.2s;
+        }
+        .back-home:hover {
+            background: rgba(255, 255, 255, 0.5);
+            transform: translateY(-2px);
+        }
+
+        .section {
+            padding: 2rem 2.5rem;
+            margin: 1.5rem 0;
+            background: rgba(255, 255, 255, 0.2);
+            border: 1px solid rgba(255, 255, 255, 0.25);
+            border-radius: 30px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.04);
+            position: relative;
+            z-index: 2;
+        }
+        .section-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.8rem;
+            color: #0f172a;
+            margin-bottom: 0.8rem;
+        }
+        .section-title .icon { margin-right: 0.5rem; }
+        .section p {
+            font-family: 'Noto Serif Devanagari', serif;
+            font-size: 1.1rem;
+            color: #1e293b;
+            line-height: 2;
+            margin-bottom: 1rem;
+        }
+        .section p:last-child { margin-bottom: 0; }
+        .section ul {
+            font-family: 'Noto Serif Devanagari', serif;
+            font-size: 1.05rem;
+            color: #1e293b;
+            line-height: 2.2;
+            padding-left: 1.5rem;
+            list-style-type: '✦ ';
+            margin-bottom: 1rem;
+        }
+        .section ul:last-child { margin-bottom: 0; }
+
+        .highlight-box {
+            background: rgba(255, 255, 255, 0.2);
+            border-left: 4px solid #D97706;
+            border-radius: 12px;
+            padding: 1.5rem 1.8rem;
+            margin: 1rem 0;
+        }
+        .highlight-box p { margin-bottom: 0 !important; }
+
+        .contact-card {
+            background: rgba(255, 255, 255, 0.2);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            border-radius: 16px;
+            padding: 1.5rem 2rem;
+            margin-top: 0.5rem;
+            text-align: center;
+        }
+        .contact-card .email {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.6rem;
+            color: #D97706;
+            font-weight: 600;
+        }
+        .contact-card .small {
+            font-size: 0.9rem;
+            color: #475569;
+        }
+
+        .site-footer {
+            background: rgba(255, 255, 255, 0.2);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: 40px 40px 20px 20px;
+            padding: 2.5rem 2rem 2rem;
+            margin: 2rem 0 1rem;
+            position: relative;
+            z-index: 2;
+        }
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+            gap: 2rem;
+        }
+        .footer-col h4 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.4rem;
+            color: #0f172a;
+        }
+        .footer-col a {
+            display: block;
+            color: #1e293b;
+            text-decoration: none;
+            margin: 0.3rem 0;
+            font-size: 0.95rem;
+            transition: all 0.2s;
+            padding: 0.1rem 0.4rem;
+            border-radius: 20px;
+        }
+        .footer-col a:hover {
+            background: rgba(255, 255, 255, 0.25);
+            color: #0f172a;
+        }
+        .footer-copy {
+            margin-top: 0.8rem;
+            font-size: 0.8rem;
+            color: #475569;
+            text-align: center;
+        }
+
+        @media (max-width:640px) {
+            .header-flex { flex-direction: column; align-items: flex-start; }
+            .hero h1 { font-size: 2.2rem; }
+            .hero { padding: 1.5rem 1rem; border-radius: 30px; }
+            .section { padding: 1.5rem 1rem; border-radius: 24px; }
+            .site-header { border-radius: 30px; padding: 1rem 1.2rem; }
+            .site-footer { border-radius: 30px; padding: 1.5rem 1rem; }
+            .logo-text { font-size: 1.4rem; }
+            .contact-card .email { font-size: 1.2rem; }
+        }
     </style>
 </head>
 <body>
+
+<div id="flowerLayer" class="flower-layer"></div>
+
 <div class="container">
+
     <header class="site-header">
         <div class="header-flex">
-            <div><span class="logo-text">शब्दलोक</span><span class="logo-sub">दिल की कलम</span></div>
+            <div>
+                <span class="logo-text">शब्दलोक</span>
+                <span class="logo-sub">दिल की कलम</span>
+            </div>
             <nav class="nav-links">
                 <a href="index.html">🏠 होम</a>
                 <a href="all-poems.html">📖 सभी कविताएँ</a>
                 <a href="categories.html">❤️ श्रेणियाँ</a>
                 <a href="about.html">📖 About</a>
+                <a href="author.html">✍️ लेखक</a>
+                <a href="contact.html">📞 संपर्क</a>
+                <a href="privacy.html">🔒 Privacy</a>
+                <a href="terms.html" class="active">📜 Terms</a>
+                <a href="dmca.html">⚖️ DMCA</a>
             </nav>
         </div>
     </header>
-    <section class="page-hero">
-        <h1>📜 Terms of Use</h1>
+
+    <section class="hero">
+        <h1>📜 उपयोग की शर्तें</h1>
+        <p class="sub">कृपया शब्दलोक का उपयोग करने से पहले इन शर्तों को ध्यान से पढ़ें।</p>
         <a href="index.html" class="back-home">← होम पेज पर वापस</a>
     </section>
-    <section class="content">
-        <h2>1. कंटेंट का उपयोग</h2>
-        <p>शब्दलोक पर प्रकाशित सभी कविताएँ <strong>Deepak Chauhan</strong> की मौलिक रचनाएँ हैं। बिना अनुमति के इन्हें कॉपी या पुनः प्रकाशित न करें।</p>
-        <h2>2. व्यक्तिगत उपयोग</h2>
-        <p>आप इन कविताओं को अपने व्यक्तिगत पढ़ने, साझा करने (Social Media पर) के लिए उपयोग कर सकते हैं। व्यावसायिक उपयोग के लिए हमसे संपर्क करें।</p>
-        <h2>3. अस्वीकरण</h2>
-        <p>हम कविताओं की सटीकता के लिए कोई ज़िम्मेदारी नहीं लेते। सभी कविताएँ "जैसी हैं" (as-is) प्रदान की जाती हैं।</p>
-        <h2>4. बदलाव</h2>
-        <p>हम इन शर्तों को कभी भी बिना सूचना के बदल सकते हैं।</p>
+
+    <section class="section">
+        <h2 class="section-title"><span class="icon">📋</span>1. शर्तों से सहमति</h2>
+        <p><strong>शब्दलोक</strong> (https://shabdalok.com) का उपयोग करके आप <strong>इन उपयोग शर्तों</strong> से सहमत होते हैं। यदि आप इन शर्तों से <strong>असहमत</strong> हैं, तो कृपया इस वेबसाइट का उपयोग न करें।</p>
+        <p>हम <strong>किसी भी समय</strong> इन शर्तों को <strong>बिना सूचना</strong> के बदल सकते हैं। नियमित रूप से इस पृष्ठ की समीक्षा करना आपकी जिम्मेदारी है।</p>
+        <div class="highlight-box">
+            <p><strong>📌 अंतिम अपडेट:</strong> 12 अगस्त, 2026</p>
+        </div>
     </section>
+
+    <section class="section">
+        <h2 class="section-title"><span class="icon">📖</span>2. कंटेंट का उपयोग</h2>
+        <p>शब्दलोक पर प्रकाशित <strong>सभी कविताएँ, लेख, शीर्षक, विवरण, ग्राफिक्स और कोड</strong> हमारी टीम की <strong>मौलिक रचनाएँ</strong> हैं और कॉपीराइट कानूनों द्वारा संरक्षित हैं।</p>
+        <p><strong>आप यह कर सकते हैं:</strong></p>
+        <ul>
+            <li>कविताओं को <strong>व्यक्तिगत रूप से</strong> पढ़ना और आनंद लेना</li>
+            <li>सोशल मीडिया पर <strong>क्रेडिट</strong> (शब्दलोक या लेखक का नाम) के साथ साझा करना</li>
+            <li>शैक्षिक उद्देश्यों के लिए <strong>उचित उद्धरण</strong> के साथ उपयोग करना</li>
+        </ul>
+        <p><strong>आप यह नहीं कर सकते:</strong></p>
+        <ul>
+            <li>बिना <strong>लिखित अनुमति</strong> के कविताओं को <strong>कॉपी, पुनर्प्रकाशित, या व्यावसायिक रूप से</strong> उपयोग करना</li>
+            <li>किसी भी सामग्री को <strong>बिना क्रेडिट</strong> के अपने नाम से प्रकाशित करना</li>
+            <li>हमारी सामग्री को <strong>बदलकर</strong> या <strong>विकृत</strong> करके पुनः प्रकाशित करना</li>
+        </ul>
+    </section>
+
+    <section class="section">
+        <h2 class="section-title"><span class="icon">👤</span>3. यूजर दायित्व</h2>
+        <p>शब्दलोक का उपयोग करते समय आप <strong>निम्नलिखित</strong> के लिए सहमत होते हैं:</p>
+        <ul>
+            <li>आप <strong>18 वर्ष या उससे अधिक</strong> आयु के हैं, या माता-पिता की देखरेख में साइट का उपयोग कर रहे हैं</li>
+            <li>आप साइट का उपयोग <strong>कानूनी</strong> और <strong>नैतिक</strong> उद्देश्यों के लिए करेंगे</li>
+            <li>आप <strong>किसी भी प्रकार की दुर्भावनापूर्ण गतिविधि</strong> (हैकिंग, स्पैम, वायरस, आदि) में शामिल नहीं होंगे</li>
+            <li>आप <strong>दूसरों के अधिकारों</strong> का सम्मान करेंगे — विशेष रूप से बौद्धिक संपदा अधिकारों का</li>
+            <li>आप साइट के <strong>सामान्य संचालन</strong> में बाधा नहीं डालेंगे</li>
+        </ul>
+        <div class="highlight-box">
+            <p><strong>⚠️ चेतावनी:</strong> इन शर्तों का उल्लंघन करने पर आपकी <strong>पहुँच रोकी</strong> जा सकती है और <strong>कानूनी कार्रवाई</strong> की जा सकती है।</p>
+        </div>
+    </section>
+
+    <section class="section">
+        <h2 class="section-title"><span class="icon">🧠</span>4. बौद्धिक संपदा अधिकार</h2>
+        <p>शब्दलोक की सभी सामग्री — जिसमें <strong>कविताएँ, डिज़ाइन, लोगो, आइकन, ग्राफिक्स, और कोड</strong> शामिल हैं — हमारी <strong>बौद्धिक संपदा</strong> है और यह <strong>भारतीय कॉपीराइट अधिनियम, 1957</strong> तथा अंतर्राष्ट्रीय कॉपीराइट कानूनों द्वारा संरक्षित है।</p>
+        <p>शब्दलोक <strong>ट्रेडमार्क</strong> और <strong>लोगो</strong> हमारी पहचान हैं। इनका <strong>बिना अनुमति</strong> उपयोग करना प्रतिबंधित है।</p>
+        <p>यदि आपको लगता है कि हमारी सामग्री ने आपके कॉपीराइट का उल्लंघन किया है, तो कृपया हमें <a href="dmca.html" style="color:#D97706;text-decoration:none;font-weight:500;">DMCA पृष्ठ</a> पर दी गई प्रक्रिया के माध्यम से संपर्क करें।</p>
+    </section>
+
+    <section class="section">
+        <h2 class="section-title"><span class="icon">🚫</span>5. निषिद्ध गतिविधियाँ</h2>
+        <p>शब्दलोक का उपयोग करते समय <strong>निम्नलिखित गतिविधियाँ</strong> सख्त वर्जित हैं:</p>
+        <ul>
+            <li><strong>स्क्रैपिंग या माइनिंग:</strong> किसी भी स्वचालित साधन (बॉट, क्रॉलर) का उपयोग करके सामग्री इकट्ठा करना</li>
+            <li><strong>फ़्रेमिंग या एम्बेडिंग:</strong> हमारी सामग्री को बिना अनुमति के किसी अन्य साइट में एम्बेड करना</li>
+            <li><strong>हानिकारक कोड:</strong> वायरस, मैलवेयर, या किसी भी प्रकार के हानिकारक कोड का प्रसार करना</li>
+            <li><strong>फ़िशिंग या स्पैम:</strong> उपयोगकर्ताओं को गुमराह करने वाली गतिविधियाँ</li>
+            <li><strong>अपमानजनक व्यवहार:</strong> किसी भी व्यक्ति या समूह के खिलाफ आपत्तिजनक, अश्लील, या भेदभावपूर्ण टिप्पणी</li>
+        </ul>
+    </section>
+
+    <section class="section">
+        <h2 class="section-title"><span class="icon">⚠️</span>6. अस्वीकरण (Disclaimer)</h2>
+        <p>शब्दलोक पर प्रकाशित सभी कविताएँ <strong>कल्पना, भावनाओं और रचनात्मक अभिव्यक्ति</strong> पर आधारित हैं।</p>
+        <ul>
+            <li>हम कविताओं की <strong>सटीकता, पूर्णता, या विश्वसनीयता</strong> की गारंटी नहीं देते</li>
+            <li>कविताएँ <strong>"जैसी हैं" (as-is)</strong> प्रदान की जाती हैं — बिना किसी वारंटी के</li>
+            <li>कविताओं में व्यक्त विचार <strong>लेखक के निजी</strong> हैं, जरूरी नहीं कि वे पूरे शब्दलोक टीम के विचार हों</li>
+            <li>हम <strong>किसी भी प्रकार के नुकसान</strong> (भावनात्मक, वित्तीय, या कानूनी) के लिए ज़िम्मेदार नहीं हैं जो साइट के उपयोग से हो सकता है</li>
+        </ul>
+    </section>
+
+    <section class="section">
+        <h2 class="section-title"><span class="icon">🔗</span>7. तीसरे पक्ष के लिंक</h2>
+        <p>शब्दलोक पर <strong>अन्य वेबसाइटों के लिंक</strong> हो सकते हैं (जैसे Pinterest, Instagram, आदि)।</p>
+        <ul>
+            <li>ये लिंक <strong>आपकी सुविधा</strong> के लिए हैं</li>
+            <li>हम <strong>उन वेबसाइटों की सामग्री, नीतियों, या प्रथाओं</strong> के लिए ज़िम्मेदार नहीं हैं</li>
+            <li>किसी भी तीसरे पक्ष की वेबसाइट पर जाने से पहले <strong>उनकी शर्तें</strong> पढ़ें</li>
+        </ul>
+    </section>
+
+    <section class="section">
+        <h2 class="section-title"><span class="icon">⚖️</span>8. दायित्व की सीमा (Limitation of Liability)</h2>
+        <p>अधिकतम सीमा तक कानून द्वारा अनुमति, <strong>शब्दलोक</strong> या हमारी टीम <strong>निम्नलिखित</strong> के लिए उत्तरदायी नहीं होगी:</p>
+        <ul>
+            <li><strong>प्रत्यक्ष या अप्रत्यक्ष</strong> क्षति</li>
+            <li><strong>आकस्मिक, परिणामी, या विशेष</strong> क्षति</li>
+            <li><strong>लाभ की हानि</strong> या <strong>डेटा की हानि</strong></li>
+            <li><strong>साइट की अनुपलब्धता</strong> या <strong>तेकनीकी गड़बड़ी</strong> के कारण होने वाला कोई भी नुकसान</li>
+        </ul>
+        <p>यदि आप साइट के उपयोग से <strong>असंतुष्ट</strong> हैं, तो आपका एकमात्र उपाय <strong>साइट का उपयोग बंद करना</strong> है।</p>
+    </section>
+
+    <section class="section">
+        <h2 class="section-title"><span class="icon">🛡️</span>9. इंडेम्निफिकेशन (क्षतिपूर्ति)</h2>
+        <p>आप <strong>शब्दलोक</strong> और हमारी टीम को <strong>सभी दावों, हानियों, और खर्चों</strong> से बचाने के लिए सहमत होते हैं, जो <strong>आपके द्वारा इन शर्तों के उल्लंघन</strong> या <strong>किसी तीसरे पक्ष के अधिकारों के उल्लंघन</strong> के कारण उत्पन्न होते हैं।</p>
+        <p>इसमें <strong>वकील की फीस</strong> और <strong>कानूनी खर्च</strong> भी शामिल हैं।</p>
+    </section>
+
+    <section class="section">
+        <h2 class="section-title"><span class="icon">📅</span>10. शर्तों में बदलाव</h2>
+        <p>हम <strong>किसी भी समय</strong> इन उपयोग शर्तों को <strong>बिना पूर्व सूचना</strong> के संशोधित कर सकते हैं।</p>
+        <ul>
+            <li>कोई भी बदलाव <strong>इस पृष्ठ पर</strong> प्रकाशित किया जाएगा</li>
+            <li>बदलावों के प्रभावी होने की तारीख <strong>ऊपर "अंतिम अपडेट"</strong> में दी गई है</li>
+            <li>बदलाव के बाद साइट का उपयोग करना <strong>नई शर्तों</strong> की स्वीकृति माना जाएगा</li>
+        </ul>
+        <div class="highlight-box">
+            <p><strong>📌 सुझाव:</strong> कृपया इस पृष्ठ को <strong>नियमित रूप से</strong> देखते रहें।</p>
+        </div>
+    </section>
+
+    <section class="section">
+        <h2 class="section-title"><span class="icon">🇮🇳</span>11. शासकीय कानून (Governing Law)</h2>
+        <p>ये शर्तें <strong>भारत के कानूनों</strong> के अनुसार शासित और व्याख्या की जाएंगी, विशेष रूप से <strong>भारतीय कॉपीराइट अधिनियम, 1957</strong> और <strong>सूचना प्रौद्योगिकी अधिनियम, 2000</strong> के अनुसार।</p>
+        <p>किसी भी विवाद का <strong>क्षेत्राधिकार</strong> <strong>उत्तर प्रदेश, भारत</strong> की अदालतों के पास होगा।</p>
+    </section>
+
+    <section class="section">
+        <h2 class="section-title"><span class="icon">⛔</span>12. पहुँच समाप्ति (Termination)</h2>
+        <p>हम <strong>किसी भी समय, बिना सूचना</strong> के, आपकी शब्दलोक तक पहुँच को <strong>समाप्त या प्रतिबंधित</strong> कर सकते हैं, यदि:</p>
+        <ul>
+            <li>आपने <strong>इन शर्तों</strong> का उल्लंघन किया है</li>
+            <li>आपने <strong>हानिकारक</strong> या <strong>अवैध</strong> गतिविधि में भाग लिया है</li>
+            <li>हमें <strong>किसी भी कारण</strong> से आवश्यक लगे</li>
+        </ul>
+        <p>समाप्ति के बाद, सभी <strong>प्रतिबंध</strong> (जैसे कॉपीराइट, दायित्व की सीमा, इंडेम्निफिकेशन) <strong>प्रभावी</strong> रहेंगे।</p>
+    </section>
+
+    <section class="section">
+        <h2 class="section-title"><span class="icon">📧</span>13. हमसे संपर्क करें</h2>
+        <p>यदि आपके <strong>कोई प्रश्न, चिंता, या सुझाव</strong> हैं, तो कृपया हमसे संपर्क करें:</p>
+        <div class="contact-card">
+            <p style="margin-bottom:0.2rem;">📧 हमें ईमेल करें:</p>
+            <p class="email">contact@shabdalok.com</p>
+            <p class="small" style="margin-top:0.3rem;">हम 24-48 घंटों के भीतर जवाब देते हैं</p>
+        </div>
+        <p style="margin-top:1rem;">या हमारे <a href="contact.html" style="color:#D97706;text-decoration:none;font-weight:500;">संपर्क पृष्ठ</a> पर जाएँ।</p>
+    </section>
+
+    <section class="section" style="border-bottom:none;">
+        <div style="background:rgba(255,255,255,0.2);border-radius:20px;padding:2rem;text-align:center;">
+            <p style="font-family:'Playfair Display',serif;font-size:1.6rem;font-style:italic;color:#0f172a;margin-bottom:0.3rem;">
+                "जिम्मेदारी और सम्मान —<br>यही शब्दलोक की पहचान है।"
+            </p>
+            <p style="font-family:'Noto Serif Devanagari',serif;color:#475569;font-size:1rem;">
+                — शब्दलोक परिवार
+            </p>
+        </div>
+    </section>
+
     <footer class="site-footer">
         <div class="footer-grid">
-            <div class="footer-col"><h4>शब्दलोक</h4><p>दिल की कलम</p></div>
             <div class="footer-col">
-                <a href="index.html">होम</a>
-                <a href="about.html">About</a>
-                <a href="privacy.html">Privacy</a>
-                <a href="terms.html">Terms</a>
-                <a href="contact.html">Contact</a>
-                <a href="dmca.html">DMCA</a>
+                <h4>शब्दलोक</h4>
+                <p style="color:#334155;">दिल की कलम</p>
+            </div>
+            <div class="footer-col">
+                <a href="index.html">🏠 होम</a>
+                <a href="about.html">📖 About</a>
+                <a href="privacy.html">🔒 Privacy</a>
+                <a href="terms.html">📜 Terms</a>
+                <a href="contact.html">📞 Contact</a>
+                <a href="dmca.html">⚖️ DMCA</a>
             </div>
         </div>
-        <div class="footer-copy">© 2026 शब्दलोक | Deepak Chauhan</div>
+        <div class="footer-copy">© 2026 शब्दलोक | Deepak Chauhan & Team</div>
     </footer>
+
 </div>
+
+<script src="flower-rain.js"></script>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const layer = document.getElementById('flowerLayer');
+        if (layer) layer.style.zIndex = '0';
+        
+        if (typeof window.initFlowerRain === 'function') {
+            window.initFlowerRain();
+        } else if (typeof window.flowerRain !== 'undefined' && window.flowerRain.restart) {
+            window.flowerRain.restart();
+        }
+    });
+</script>
+
 </body>
 </html>
